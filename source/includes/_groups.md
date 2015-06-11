@@ -35,6 +35,7 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/groups/:group_id"
 ```json
 {
   "type": "group",
+  "name": "Test Group",
   "members": [
          {"id": 1, "name": "Test Name"},
          {"id": 2, "name": "Test Name 2"}
@@ -56,3 +57,57 @@ group_id | yes | Positive Integer | The group to access.  The company must have 
 ### HTTP Request
 
 `GET https://lesson.ly/groups/:group_id`
+
+## Update Group
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/groups/:group_id" -p params
+```
+
+> The following are sample parameters for this request:
+
+```json
+{ 
+  "name": "New Name",
+  "members":
+    [ 
+      {"id": 1 },
+      {"id": 2, "remove": "true"}
+
+    ],
+  "managers":
+    [
+      {"id":  3, "remove": "true" },
+      {"id":  4 }
+    ]
+
+}
+```
+> A successful update will return JSON consisting of the group details repsonse:
+
+```json
+{
+  "type": "update_group",
+  "name": "New Name",
+  "members": [
+         {"id": 1, "name": "Test Name"},
+    ],
+  "managers":  [
+         {"id": 4, "name": "Test Name 4"},
+   ]
+}
+```
+
+This endpoint allows you to update a group and its members and managers
+
+### HTTP Request
+
+`PUT https://lesson.ly/groups/:group_id/` -p params
+
+### Query Parameters
+
+Paramter | Required | Type |  Description
+--- | --- | --- | ---
+group_id | yes | Positive Integer | The group to access.  The company must have access to the group.
+members | no | Array |  The members of a group.  Passing "remove": "true" will remove this association.
+managers | no | Array | The managers of a group.  Passing "remove": "true" will remove this association.

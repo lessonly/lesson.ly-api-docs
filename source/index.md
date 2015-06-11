@@ -13,6 +13,8 @@ includes:
   - authentication
   - users
   - groups
+  - lessons
+  - courses
   - errors
 
 search: true

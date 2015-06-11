@@ -132,7 +132,7 @@ This endpoint allows you to create a user in the api.
 
 ### HTTP Request
 
-`POST https://lesson.ly/users/ -p post_params`
+`POST https://lesson.ly/users/ -p params`
 
 ### Query Parameters
 
@@ -192,11 +192,11 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/users/:user_id" -p params
 }
 ```
 
-This endpoint allows you to create a user in the api. 
+This endpoint allows you to update a user in the api. 
 
 ### HTTP Request
 
-`PUT https://lesson.ly/users/:user_id -p post_params`
+`PUT https://lesson.ly/users/:user_id -p params`
 
 ### Query Parameters
 
@@ -207,6 +207,34 @@ name | no | String | User name to change user to
 email | no | String | User Email to change user to
 role | no | String | User role to change user to. Options: admin, manager, creator, learner
 custom_user_fields |  no | Array | Custom user fields for the update.  If the user does not have a value for the specified "customer_user_field_id" it will be added, otherwise it will be updated to the specified "value".
+
+## Delete User
+
+```shell
+curl -X DELETE "DOMAIN:API_KEY" "https://lesson.ly/api/v1/users/:user_id"
+```
+
+> A successful update returns JSON consisting of the id of the deleted user
+
+```json
+{
+  "type": "delete_user",
+  "id": "3"
+}
+```
+
+This endpoint allows you to delete a user in the api. 
+
+### HTTP Request
+
+`DELETE https://lesson.ly/users/:user_id`
+
+### Query Parameters
+
+Paramter | Required | Type |  Description
+--- | --- | --- | ---
+user_id | yes | Positive Integer | The user to delete.  The company must have access to the user.
+
 
 ## User Groups
 
