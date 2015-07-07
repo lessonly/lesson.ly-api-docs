@@ -15,6 +15,7 @@ includes:
   - groups
   - lessons
   - courses
+  - rates
   - errors
 
 search: true
