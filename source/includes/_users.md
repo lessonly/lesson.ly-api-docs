@@ -67,7 +67,7 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/users/:user_id
 }
 ```
 
-This endpoint retrieves all the users details including their custom field data.  To see the users groups see the user group endpoint.
+This endpoint retrieves all the user's details including their custom field data.  To see the users groups see the user group endpoint.
 
 ### HTTP Request
 
@@ -141,6 +141,7 @@ Paramter | Required | Type |  Description
 name | yes | String | User full name
 email | yes | String | User Email
 role | yes | String | User role. Options: admin, manager, creator, learner
+notify | no | String | Whether or not to notify the user.  Passing 'false' will not send an email notification to the user that their account has been created. Defaults to 'true'.
 custom_user_fields |  no | Array | Custom user field values for specified custom user field ids. Hashses must containt a "customer_user_field_id" and a "value".
 
 ## Update User
@@ -223,7 +224,7 @@ curl -X DELETE "DOMAIN:API_KEY" "https://lesson.ly/api/v1/users/:user_id"
 }
 ```
 
-This endpoint allows you to delete a user in the api. 
+This endpoint allows you to delete a user in the API. 
 
 ### HTTP Request
 
@@ -259,7 +260,7 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/users/:user_id/groups"
 }
 ```
 
-This endpoint allows you to list out a users group memberships and groups they are managing.
+This endpoint allows you to list out a user's group memberships and groups they are managing.
 
 ### HTTP Request
 
@@ -312,7 +313,7 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/users/:user_id/groups/" -p pa
 }
 ```
 
-This endpoint allows you to update a users involvement in various groups.
+This endpoint allows you to update a user's involvement in various groups.
 
 ### HTTP Request
 

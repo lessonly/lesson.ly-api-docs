@@ -48,7 +48,7 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons/:lesson_id
 }
 ```
 
-This endpoint retrieves all the lesson details including statistics about the completion of the course.
+This endpoint retrieves all the lesson details including statistics about the completion of the lesson.
 ### HTTP Request
 
 `GET https://lesson.ly/lessons/:lesson_id`
@@ -78,20 +78,20 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons/:lesson_id/assignment
     {
       "id": 1,
       "assignee_id": 1,
-      "due_by": "09/09/2020",
-      "reassigned_at": "09/09/2020",
-      "completed_at": "09/09/2020",
-      "updated_at": "09/09/2020",
+      "due_by": "09/30/2020",
+      "reassigned_at": "09/30/2020",
+      "completed_at": "09/30/2020",
+      "updated_at": "09/30/2020",
       "status": "Incomplete",
       "score": 20
     },
     {
       "id": 2,
       "assignee_id": 2,
-      "due_by": "09/09/2020",
-      "reassigned_at": "09/09/2020",
-      "completed_at": "09/09/2020",
-      "updated_at": "09/09/2020",
+      "due_by": "09/30/2020",
+      "reassigned_at": "09/30/2020",
+      "completed_at": "09/30/2020",
+      "updated_at": "09/30/2020",
       "status": "Complete",
       "score": 100
     }
@@ -125,7 +125,7 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons/:lesson_id/assignment
   "assignements":[
     {
       "assignee_id": 1,
-      "due_by": "09/09/2020"
+      "due_by": "09/30/2020"
     }
   ]
 }
@@ -141,10 +141,10 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons/:lesson_id/assignment
     {
       "id": 1,
       "assignee_id": 1,
-      "due_by": "09/09/2020",
-      "reassigned_at": null,
-      "completed_at": null,
-      "updated_at": "09/09/2020",
+      "due_by": "09/30/2020",
+      "reassigned_at": "09/30/2020",
+      "completed_at": "09/30/2020",
+      "updated_at": "09/30/2020",
       "status": "Incomplete",
       "score": 0
     }
@@ -152,7 +152,7 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons/:lesson_id/assignment
 }
 ```
 
-This endpoint allows you to make assignments to a particular lesson in the api.
+This endpoint allows you to make assignments to a particular lesson in the API.
 
 ### HTTP Request
 
