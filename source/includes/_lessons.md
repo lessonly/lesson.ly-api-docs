@@ -43,7 +43,7 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons/:lesson_id
   "type": "lesson",
   "id": 1,
   "title": "Lesson 1",
-  "assignee_count": 10,
+  "assignees_count": 10,
   "completed_count": 5
 }
 ```
