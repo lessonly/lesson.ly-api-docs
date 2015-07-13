@@ -22,7 +22,7 @@ This endpoint retrieves all groups.
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/groups`
+`GET https://api.lesson.ly/api/v1/groups`
 
 ## Show Group Details
 
@@ -56,7 +56,7 @@ group_id | yes | Positive Integer | The group to access.  The company must have 
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/groups/:group_id`
+`GET https://api.lesson.ly/api/v1/groups/:group_id`
 
 ## Update Group
 
@@ -102,7 +102,7 @@ This endpoint allows you to update a group and its members and managers
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/groups/:group_id/` -p params
+`PUT https://api.lesson.ly/api/v1/groups/:group_id/` -p params
 
 ### Query Parameters
 
