@@ -42,8 +42,8 @@ This endpoint retrieves all users.
 
 Parameter | Required | Type | Description
 --------- | ------- | ------- | -----------
-page | no | which page in the pagination to fetch.  Default = 1
-per_page | no | how many results to return in each page.  Default = 50
+page | no | Positive Integer | which page in the pagination to fetch.  Default = 1
+per_page | no | Positive Integer | how many results to return in each page.  Default = 50
 
 ## Show User Details
 
