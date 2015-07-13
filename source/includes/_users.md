@@ -3,7 +3,7 @@
 ## List Users
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/users"
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users"
 ```
 
 > The above command returns JSON structured like this:
@@ -36,7 +36,7 @@ This endpoint retrieves all users.
 
 ### HTTP Request
 
-`GET https://lesson.ly/users`
+`GET https://api.lesson.ly/users`
 
 ### Query Parameters
 
@@ -48,7 +48,7 @@ per_page | no | how many results to return in each page.  Default = 50
 ## Show User Details
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/users/:user_id
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id
 ```
 
 > The above command returns JSON structured like this:
@@ -71,7 +71,7 @@ This endpoint retrieves all the user's details including their custom field data
 
 ### HTTP Request
 
-`GET https://lesson.ly/users/:user_id`
+`GET https://api.lesson.ly/users/:user_id`
 
 ### Query Parameters
 
@@ -82,7 +82,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 ## Create User
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/users/" -p params
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/" -p params
 ```
 
 > The following are sample parameters for this request:
@@ -132,7 +132,7 @@ This endpoint allows you to create a user in the api.
 
 ### HTTP Request
 
-`POST https://lesson.ly/users/ -p params`
+`POST https://api.lesson.ly/users/ -p params`
 
 ### Query Parameters
 
@@ -147,7 +147,7 @@ custom_user_fields |  no | Array | Custom user field values for specified custom
 ## Update User
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/users/:user_id" -p params
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id" -p params
 ```
 
 > The following are sample parameters for this request:
@@ -197,7 +197,7 @@ This endpoint allows you to update a user in the api.
 
 ### HTTP Request
 
-`PUT https://lesson.ly/users/:user_id -p params`
+`PUT https://api.lesson.ly/users/:user_id -p params`
 
 ### Query Parameters
 
@@ -212,7 +212,7 @@ custom_user_fields |  no | Array | Custom user fields for the update.  If the us
 ## Delete User
 
 ```shell
-curl -X DELETE "DOMAIN:API_KEY" "https://lesson.ly/api/v1/users/:user_id"
+curl -X DELETE "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id"
 ```
 
 > A successful update returns JSON consisting of the id of the deleted user
@@ -228,7 +228,7 @@ This endpoint allows you to delete a user in the API.
 
 ### HTTP Request
 
-`DELETE https://lesson.ly/users/:user_id`
+`DELETE https://api.lesson.ly/users/:user_id`
 
 ### Query Parameters
 
@@ -240,7 +240,7 @@ user_id | yes | Positive Integer | The user to delete.  The company must have ac
 ## User Groups
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/users/:user_id/groups"
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/groups"
 ```
 
 > The above command returns JSON structured like this:
@@ -264,7 +264,7 @@ This endpoint allows you to list out a user's group memberships and groups they 
 
 ### HTTP Request
 
-`GET https://lesson.ly/users/:user_id/groups`
+`GET https://api.lesson.ly/users/:user_id/groups`
 
 ### Query Parameters
 
@@ -276,7 +276,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 ## Update User Groups
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/users/:user_id/groups/" -p params
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/groups/" -p params
 ```
 
 > The following are sample parameters for this request:
@@ -317,7 +317,7 @@ This endpoint allows you to update a user's involvement in various groups.
 
 ### HTTP Request
 
-`PUT https://lesson.ly/users/:user_id/groups`
+`PUT https://api.lesson.ly/users/:user_id/groups`
 
 ### Query Parameters
 

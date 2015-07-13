@@ -3,7 +3,7 @@
 ## List Lessons
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons"
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons"
 ```
 
 > The above command returns JSON structured like this:
@@ -28,12 +28,12 @@ This endpoint retrieves all lessons.
 
 ### HTTP Request
 
-`GET https://lesson.ly/lessons`
+`GET https://api.lesson.ly/lessons`
 
 ## Show Lesson Details
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons/:lesson_id
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id
 ```
 
 > The above command returns JSON structured like this:
@@ -51,7 +51,7 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons/:lesson_id
 This endpoint retrieves all the lesson details including statistics about the completion of the lesson.
 ### HTTP Request
 
-`GET https://lesson.ly/lessons/:lesson_id`
+`GET https://api.lesson.ly/lessons/:lesson_id`
 
 ### Query Parameters
 
@@ -62,7 +62,7 @@ lesson_id | yes | Positive Integer | The lesson to access.  The company must hav
 ## Lesson Assignments
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons/:lesson_id/assignments
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments
 ```
 
 > The above command returns JSON structured like this:
@@ -102,7 +102,7 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons/:lesson_id/assignment
 This endpoint retrieves all the assignments for a particular lesson.
 ### HTTP Request
 
-`GET https://lesson.ly/lessons/:lesson_id/assignments`
+`GET https://api.lesson.ly/lessons/:lesson_id/assignments`
 
 ### Query Parameters
 
@@ -115,7 +115,7 @@ per_page | no | how many results to return in each page.  Default = 50
 ## Assign Lesson
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons/:lesson_id/assignments" -p params
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments" -p params
 ```
 
 > The following are sample parameters for this request:
@@ -156,7 +156,7 @@ This endpoint allows you to make assignments to a particular lesson in the API.
 
 ### HTTP Request
 
-`PUT https://lesson.ly/lessons/:lesson_id/assignments -p params`
+`PUT https://api.lesson.ly/lessons/:lesson_id/assignments -p params`
 
 ### Query Parameters
 

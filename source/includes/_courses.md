@@ -3,7 +3,7 @@
 ## List Courses
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/courses"
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses"
 ```
 
 > The above command returns JSON structured like this:
@@ -28,12 +28,12 @@ This endpoint retrieves all courses.
 
 ### HTTP Request
 
-`GET https://lesson.ly/courses`
+`GET https://api.lesson.ly/courses`
 
 ## Show Course Details
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/courses/:course_id
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id
 ```
 
 > The above command returns JSON structured like this:
@@ -64,7 +64,7 @@ This endpoint retrieves all the courses details including their lessons and some
 
 ### HTTP Request
 
-`GET https://lesson.ly/courses/:course_id`
+`GET https://api.lesson.ly/courses/:course_id`
 
 ### Query Parameters
 
@@ -75,7 +75,7 @@ course_id | yes | Positive Integer | The course to access.  The company must hav
 ## Course Assignments
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons/:course_id/assignments
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:course_id/assignments
 ```
 
 > The above command returns JSON structured like this:
@@ -107,7 +107,7 @@ curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/lessons/:course_id/assignment
 This endpoint retrieves all the assignments for a particular course.
 ### HTTP Request
 
-`GET https://lesson.ly/lessons/:course_id/assignments`
+`GET https://api.lesson.ly/lessons/:course_id/assignments`
 
 ### Query Parameters
 
@@ -120,7 +120,7 @@ per_page | no | how many results to return in each page.  Default = 50
 ## Assign Course
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/courses/:course_id/assignments" -p params
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id/assignments" -p params
 ```
 
 > The following are sample parameters for this request:
@@ -160,7 +160,7 @@ This endpoint allows you to make assignments to a particular course in the API.
 
 ### HTTP Request
 
-`PUT https://lesson.ly/courses/:course_id/assignments -p params`
+`PUT https://api.lesson.ly/courses/:course_id/assignments -p params`
 
 ### Query Parameters
 
