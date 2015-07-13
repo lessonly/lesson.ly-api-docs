@@ -28,7 +28,7 @@ This endpoint retrieves all courses.
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/courses`
+`GET https://api.lesson.ly/api/v1/courses`
 
 ## Show Course Details
 
@@ -64,7 +64,7 @@ This endpoint retrieves all the courses details including their lessons and some
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/courses/:course_id`
+`GET https://api.lesson.ly/api/v1/courses/:course_id`
 
 ### Query Parameters
 
@@ -107,7 +107,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:course_id/assign
 This endpoint retrieves all the assignments for a particular course.
 ### HTTP Request
 
-`GET https://api.lesson.ly/lessons/:course_id/assignments`
+`GET https://api.lesson.ly/api/v1/lessons/:course_id/assignments`
 
 ### Query Parameters
 
@@ -160,7 +160,7 @@ This endpoint allows you to make assignments to a particular course in the API.
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/courses/:course_id/assignments -p params`
+`PUT https://api.lesson.ly/api/v1/courses/:course_id/assignments -p params`
 
 ### Query Parameters
 
