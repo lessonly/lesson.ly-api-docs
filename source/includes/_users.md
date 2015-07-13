@@ -36,7 +36,7 @@ This endpoint retrieves all users.
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/users`
+`GET https://api.lesson.ly/api/v1/users`
 
 ### Query Parameters
 
@@ -71,7 +71,7 @@ This endpoint retrieves all the user's details including their custom field data
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/users/:user_id`
+`GET https://api.lesson.ly/api/v1/users/:user_id`
 
 ### Query Parameters
 
@@ -132,7 +132,7 @@ This endpoint allows you to create a user in the api.
 
 ### HTTP Request
 
-`POST https://api.lesson.ly/users/ -p params`
+`POST https://api.lesson.ly/api/v1/users/ -p params`
 
 ### Query Parameters
 
@@ -197,7 +197,7 @@ This endpoint allows you to update a user in the api.
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/users/:user_id -p params`
+`PUT https://api.lesson.ly/api/v1/users/:user_id -p params`
 
 ### Query Parameters
 
@@ -228,7 +228,7 @@ This endpoint allows you to delete a user in the API.
 
 ### HTTP Request
 
-`DELETE https://api.lesson.ly/users/:user_id`
+`DELETE https://api.lesson.ly/api/v1/users/:user_id`
 
 ### Query Parameters
 
@@ -264,7 +264,7 @@ This endpoint allows you to list out a user's group memberships and groups they 
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/users/:user_id/groups`
+`GET https://api.lesson.ly/api/v1/users/:user_id/groups`
 
 ### Query Parameters
 
@@ -317,7 +317,7 @@ This endpoint allows you to update a user's involvement in various groups.
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/users/:user_id/groups`
+`PUT https://api.lesson.ly/api/v1/users/:user_id/groups`
 
 ### Query Parameters
 
