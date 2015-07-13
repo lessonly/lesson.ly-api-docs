@@ -1,3 +1,14 @@
+Lesson.ly API Docs
+========
+
+The docs are built with Slate. See below.
+
+To update the docs:
+
+`$ rake`
+
+The output will be in ./builds. Copy the files in that folder directly into the Lesson.ly Amazon S3 bucket called "docs.lesson.ly".
+
 Slate
 ========
 
