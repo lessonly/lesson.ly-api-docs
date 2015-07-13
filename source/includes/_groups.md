@@ -3,7 +3,7 @@
 ## List Groups
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/groups"
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups"
 ```
 
 > The above command returns JSON structured like this:
@@ -22,12 +22,12 @@ This endpoint retrieves all groups.
 
 ### HTTP Request
 
-`GET https://lesson.ly/groups`
+`GET https://api.lesson.ly/groups`
 
 ## Show Group Details
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/groups/:group_id"
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/:group_id"
 ```
 
 > The above command returns JSON structured like this:
@@ -56,12 +56,12 @@ group_id | yes | Positive Integer | The group to access.  The company must have 
 
 ### HTTP Request
 
-`GET https://lesson.ly/groups/:group_id`
+`GET https://api.lesson.ly/groups/:group_id`
 
 ## Update Group
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://lesson.ly/api/v1/groups/:group_id" -p params
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/:group_id" -p params
 ```
 
 > The following are sample parameters for this request:
@@ -102,7 +102,7 @@ This endpoint allows you to update a group and its members and managers
 
 ### HTTP Request
 
-`PUT https://lesson.ly/groups/:group_id/` -p params
+`PUT https://api.lesson.ly/groups/:group_id/` -p params
 
 ### Query Parameters
 
