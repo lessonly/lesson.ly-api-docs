@@ -122,7 +122,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
 
 ```json
 {
-  "assignements":[
+  "assignments":[
     {
       "assignee_id": 1,
       "due_by": "09/30/2020"
