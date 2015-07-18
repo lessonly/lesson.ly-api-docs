@@ -1,0 +1,1154 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="javascripts/all.js" type="text/javascript"></script>
+
+      <script>
+        $(function() {
+          setupLanguages(["shell"]);
+        });
+      </script>
+  </head>
+
+  <body class="index">
+    <a href="#" id="nav-button">
+      <span>
+        Menu
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <div id="logo">
+        <img src="images/logo.png" />
+      </div>
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        
+          <h1 id="introduction">Introduction</h1>
+
+<p>Welcome to the Lesson.ly API documentation! First you will need to get an API key by signing into your account, navigating to the company settings page and clicking &ldquo;Show API credentials&rdquo;.</p>
+
+<p>Currently we only have language bindings for shell, however we are open to providing libraries in other libraries.  Contact us to let us know what libraries you would like to see to connect with Lesson.ly:  <a href="mailto:info@lesson.ly">here</a>.</p>
+
+          <h1 id="authentication">Authentication</h1>
+
+<blockquote>
+<p>The following pattern authorizes an API request:</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"api_endpoint_here"</span>
+
+</code></pre>
+
+<blockquote>
+<p>Make sure to replace <code class="prettyprint">DOMAIN</code> with your Lesson.ly domain and <code class="prettyprint">API_KEY</code> with your personal API key.</p>
+</blockquote>
+
+<p>Lesson.ly uses API keys and basic HTTP authorization to allow access to the API. All API requests must be sent over HTTPS. You can register a new Lesson.ly API key by signing into Lesson.ly and navigating to the settings page.  If you do not see the API key link, you may need to request for the feature to be activated:  <a href="mailto:info@lesson.ly">here</a>.</p>
+
+<aside class="alert">
+You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KEY</code> with your personal API key.
+</aside>
+
+          <h1 id="users">Users</h1>
+
+<h2 id="list-users">List Users</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"users"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"users"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email1@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email2@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all users.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/users</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>no</td>
+<td>Positive Integer</td>
+<td>which page in the pagination to fetch.  Default = 1</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>no</td>
+<td>Positive Integer</td>
+<td>how many results to return in each page.  Default = 50</td>
+</tr>
+</tbody></table>
+
+<h2 id="show-user-details">Show User Details</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test User"</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"custom_field_data"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_field_id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SSID"</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all the user&rsquo;s details including their custom field data.  To see the users groups see the user group endpoint.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/users/:user_id</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The user to access.  The company must have access to the user.</td>
+</tr>
+</tbody></table>
+
+<h2 id="create-user">Create User</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/"</span> -p params
+</code></pre>
+
+<blockquote>
+<p>The following are sample parameters for this request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"custom_user_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"custom_user_field_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Value 1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"custom_user_field_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Value 2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>A successful post returns JSON consisting of the show user detail response</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create_user"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"custom_field_data"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Value 1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Value 2"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows you to create a user in the api. </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://api.lesson.ly/api/v1/users/ -p params</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>yes</td>
+<td>String</td>
+<td>User full name</td>
+</tr>
+<tr>
+<td>email</td>
+<td>yes</td>
+<td>String</td>
+<td>User Email</td>
+</tr>
+<tr>
+<td>role</td>
+<td>yes</td>
+<td>String</td>
+<td>User role. Options: admin, manager, creator, learner</td>
+</tr>
+<tr>
+<td>notify</td>
+<td>no</td>
+<td>String</td>
+<td>Whether or not to notify the user.  Passing &lsquo;false&rsquo; will not send an email notification to the user that their account has been created. Defaults to &#39;true&rsquo;.</td>
+</tr>
+<tr>
+<td>custom_user_fields</td>
+<td>no</td>
+<td>Array</td>
+<td>Custom user field values for specified custom user field ids. Hashses must containt a &ldquo;customer_user_field_id&rdquo; and a &ldquo;value&rdquo;.</td>
+</tr>
+</tbody></table>
+
+<h2 id="update-user">Update User</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id"</span> -p params
+</code></pre>
+
+<blockquote>
+<p>The following are sample parameters for this request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"custom_user_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"custom_user_field_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Value 1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"custom_user_field_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Value 2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>A successful update returns JSON consisting of the show user detail response</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update_user"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"custom_field_data"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Value 1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Value 2"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows you to update a user in the api. </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/users/:user_id -p params</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The user to access.  The company must have access to the user.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>no</td>
+<td>String</td>
+<td>User name to change user to</td>
+</tr>
+<tr>
+<td>email</td>
+<td>no</td>
+<td>String</td>
+<td>User Email to change user to</td>
+</tr>
+<tr>
+<td>role</td>
+<td>no</td>
+<td>String</td>
+<td>User role to change user to. Options: admin, manager, creator, learner</td>
+</tr>
+<tr>
+<td>custom_user_fields</td>
+<td>no</td>
+<td>Array</td>
+<td>Custom user fields for the update.  If the user does not have a value for the specified &ldquo;customer_user_field_id&rdquo; it will be added, otherwise it will be updated to the specified &ldquo;value&rdquo;.</td>
+</tr>
+</tbody></table>
+
+<h2 id="delete-user">Delete User</h2>
+<pre class="highlight shell"><code>curl -X DELETE <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id"</span>
+</code></pre>
+
+<blockquote>
+<p>A successful update returns JSON consisting of the id of the deleted user</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delete_user"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows you to delete a user in the API. </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE https://api.lesson.ly/api/v1/users/:user_id</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The user to delete.  The company must have access to the user.</td>
+</tr>
+</tbody></table>
+
+<h2 id="user-groups">User Groups</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id/groups"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">
+</span><span class="p">{</span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_groups"</span><span class="p">,</span><span class="w">
+ </span><span class="s2">"memberships"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w"> 
+        </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Group"</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Group 3"</span><span class="p">},</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"managing"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">[</span><span class="w"> 
+        </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Group5"</span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows you to list out a user&rsquo;s group memberships and groups they are managing.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/users/:user_id/groups</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The user to access.  The company must have access to the user.</td>
+</tr>
+</tbody></table>
+
+<h2 id="update-user-groups">Update User Groups</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id/groups/"</span> -p params
+</code></pre>
+
+<blockquote>
+<p>The following are sample parameters for this request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"memberships"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w"> 
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"remove"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">}</span><span class="w">
+
+    </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"managing"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s2">"remove"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="mi">4</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>A successful update will return JSON consisting of the user group repsonse:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update_user_groups"</span><span class="p">,</span><span class="w">
+ </span><span class="s2">"memberships"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w"> 
+        </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Group"</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Group 3"</span><span class="p">},</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"managing"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">[</span><span class="w"> 
+        </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Group5"</span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows you to update a user&rsquo;s involvement in various groups.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/users/:user_id/groups</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The user to access.  The company must have access to the user.</td>
+</tr>
+<tr>
+<td>memberships</td>
+<td>no</td>
+<td>Array</td>
+<td>The groups in which the user is a member.  Passing &ldquo;remove&rdquo;: &ldquo;true&rdquo; will remove this association.</td>
+</tr>
+<tr>
+<td>managing</td>
+<td>no</td>
+<td>Array</td>
+<td>The groups in which the user is managing.  Passing &ldquo;remove&rdquo;: &ldquo;true&rdquo; will remove this association.</td>
+</tr>
+</tbody></table>
+
+          <h1 id="groups">Groups</h1>
+
+<h2 id="list-groups">List Groups</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"groups"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Group 1"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Group 2"</span><span class="p">},</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all groups.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/groups</code></p>
+
+<h2 id="show-group-details">Show Group Details</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups/:group_id"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Group"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"members"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name"</span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 2"</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"managers"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="w">
+         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name"</span><span class="p">},</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves a listing of a groups members and managers.</p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>group_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The group to access.  The company must have access to the group.</td>
+</tr>
+</tbody></table>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/groups/:group_id</code></p>
+
+<h2 id="update-group">Update Group</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups/:group_id"</span> -p params
+</code></pre>
+
+<blockquote>
+<p>The following are sample parameters for this request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"members"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w"> 
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"remove"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">}</span><span class="w">
+
+    </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"managers"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s2">"remove"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="mi">4</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>A successful update will return JSON consisting of the group details repsonse:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update_group"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"members"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name"</span><span class="p">},</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"managers"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="w">
+         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 4"</span><span class="p">},</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows you to update a group and its members and managers</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/groups/:group_id/</code> -p params</p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>group_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The group to access.  The company must have access to the group.</td>
+</tr>
+<tr>
+<td>members</td>
+<td>no</td>
+<td>Array</td>
+<td>The members of a group.  Passing &ldquo;remove&rdquo;: &ldquo;true&rdquo; will remove this association.</td>
+</tr>
+<tr>
+<td>managers</td>
+<td>no</td>
+<td>Array</td>
+<td>The managers of a group.  Passing &ldquo;remove&rdquo;: &ldquo;true&rdquo; will remove this association.</td>
+</tr>
+</tbody></table>
+
+          <h1 id="lessons">Lessons</h1>
+
+<h2 id="list-lessons">List Lessons</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lessons"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lessons"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Lesson"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Second Lesson"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all lessons.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/lessons</code></p>
+
+<h2 id="show-lesson-details">Show Lesson Details</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lesson 1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all the lesson details including statistics about the completion of the lesson.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/lessons/:lesson_id</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>lesson_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The lesson to access.  The company must have access to the lesson.</td>
+</tr>
+</tbody></table>
+
+<h2 id="lesson-assignments">Lesson Assignments</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson_assignments"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_assignments"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"assignments"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incomplete"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Complete"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all the assignments for a particular lesson.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>lesson_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The lesson to access.  The company must have access to the lesson.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>no</td>
+<td>which page in the pagination to fetch.  Default = 1</td>
+<td></td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>no</td>
+<td>how many results to return in each page.  Default = 50</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="assign-lesson">Assign Lesson</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments"</span> -p params
+</code></pre>
+
+<blockquote>
+<p>The following are sample parameters for this request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"assignments"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+
+<blockquote>
+<p>A successful update returns JSON formatted version of the assignments made</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update_lesson_assignments"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"assignments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incomplete"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows you to make assignments to a particular lesson in the API.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments -p params</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>lesson_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The lesson to access.  The company must have access to the user.</td>
+</tr>
+<tr>
+<td>assignments</td>
+<td>no</td>
+<td>Hash</td>
+<td>A hash of assignments to be made to the lesson.  If the assignment for a particular user already exists, the user will be reassigned the lesson.</td>
+</tr>
+</tbody></table>
+
+          <h1 id="courses">Courses</h1>
+
+<h2 id="list-courses">List Courses</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/courses"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"courses"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"courses"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course 1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course 2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all courses.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/courses</code></p>
+
+<h2 id="show-course-details">Show Course Details</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/courses/:course_id
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"owner_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course 1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description of Course 1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lessons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Lesson"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Second Lesson"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all the courses details including their lessons and some other statistics about the completion of the course and its assignees.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/courses/:course_id</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>course_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The course to access.  The company must have access to the course.</td>
+</tr>
+</tbody></table>
+
+<h2 id="course-assignments">Course Assignments</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:course_id/assignments
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course_assignments"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_assignments"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"assignments"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all the assignments for a particular course.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/lessons/:course_id/assignments</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>course_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The course to access.  The company must have access to the lesson.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>no</td>
+<td>which page in the pagination to fetch.  Default = 1</td>
+<td></td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>no</td>
+<td>how many results to return in each page.  Default = 50</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="assign-course">Assign Course</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/courses/:course_id/assignments"</span> -p params
+</code></pre>
+
+<blockquote>
+<p>The following are sample parameters for this request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"assignements"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+
+<blockquote>
+<p>A successful update returns JSON formatted version of the assignments made</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update_course_assignments"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"assignments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incomplete"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows you to make assignments to a particular course in the API.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/courses/:course_id/assignments -p params</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>lesson_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The course to access.  The company must have access to the user.</td>
+</tr>
+<tr>
+<td>assignments</td>
+<td>no</td>
+<td>Hash</td>
+<td>A hash of assignments to be made to the course.  If the assignment for a particular user already exists, the user will be reassigned the course.</td>
+</tr>
+</tbody></table>
+
+          <h1 id="rate-limiting">Rate Limiting</h1>
+
+<p>Lesson.ly currently limits the rate of requests made to the API.  At the limit of 100 requests per minute the API will return &ldquo;403 Forbidden (Rate Limit Exceeded)&rdquo;.  To avoid hitting this rate limit, you can adjust your scripts and workflows to add pauses in between subsequent API requests.</p>
+
+          <h1 id="errors">Errors</h1>
+
+<p>The Lesson.ly API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Malformed Request &ndash; Verify that the parameters required are being passed in and all parameters have the format specified in the documentation.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Verify that you have passed your company&rsquo;s domain and API key correctly.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden &ndash; The endpoint that you have tried to access you do not have privaleges to.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; The resource in the endpoint could not be found.  Verify the resource id.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed &ndash; You tried to access an endpoint with an invalid method</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
