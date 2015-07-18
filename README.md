@@ -1,13 +1,13 @@
 Lesson.ly API Docs
 ========
 
-The docs are built with Slate. See below.
+The docs are built with [Slate](https://github.com/tripit/slate). See below.
 
-To update the docs:
+To update the docs, commit your changes and run:
 
-`$ rake`
+`$ rake publish`
 
-The output will be in ./builds. Copy the files in that folder directly into the Lesson.ly Amazon S3 bucket called "docs.lesson.ly".
+The changes will be immediately available at [docs.lesson.ly](http://docs.lesson.ly). Don't forget to `$ git push` your changes as well.
 
 Slate
 ========
