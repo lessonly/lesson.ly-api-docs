@@ -212,7 +212,7 @@ custom_user_fields |  no | Array | Custom user fields for the update.  If the us
 ## Delete User
 
 ```shell
-curl -X DELETE "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id"
+curl -X DELETE -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id"
 ```
 
 > A successful update returns JSON consisting of the id of the deleted user
