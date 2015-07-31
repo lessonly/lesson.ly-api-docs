@@ -127,7 +127,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id/assign
 
 ```json
 {
-  "assignements":[
+  "assignments":[
     {
       "assignee_id": 1,
       "due_by": "09/30/2020"
@@ -166,6 +166,6 @@ This endpoint allows you to make assignments to a particular course in the API.
 
 Paramter | Required | Type |  Description
 --- | --- | --- | ---
-lesson_id | yes | Positive Integer | The course to access.  The company must have access to the user.
+course_id | yes | Positive Integer | The course to access. The company must have access to the user.
 assignments | no | Hash | A hash of assignments to be made to the course.  If the assignment for a particular user already exists, the user will be reassigned the course.
 
