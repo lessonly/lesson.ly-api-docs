@@ -963,7 +963,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </tbody></table>
 
 <h2 id="course-assignments">Course Assignments</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:course_id/assignments
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/courses/:course_id/assignments
 </span></code></pre>
 
 <blockquote>
@@ -996,7 +996,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/lessons/:course_id/assignments</code></p>
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/courses/:course_id/assignments</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1036,7 +1036,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <p>The following are sample parameters for this request:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"assignements"</span><span class="p">:[</span><span class="w">
+  </span><span class="s2">"assignments"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09/30/2020"</span><span class="w">
@@ -1082,10 +1082,10 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </tr>
 </thead><tbody>
 <tr>
-<td>lesson_id</td>
+<td>course_id</td>
 <td>yes</td>
 <td>Positive Integer</td>
-<td>The course to access.  The company must have access to the user.</td>
+<td>The course to access. The company must have access to the user.</td>
 </tr>
 <tr>
 <td>assignments</td>
