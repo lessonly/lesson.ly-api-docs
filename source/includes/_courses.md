@@ -75,7 +75,7 @@ course_id | yes | Positive Integer | The course to access.  The company must hav
 ## Course Assignments
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:course_id/assignments
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id/assignments
 ```
 
 > The above command returns JSON structured like this:
@@ -107,7 +107,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:course_id/assign
 This endpoint retrieves all the assignments for a particular course.
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1/lessons/:course_id/assignments`
+`GET https://api.lesson.ly/api/v1/courses/:course_id/assignments`
 
 ### Query Parameters
 
