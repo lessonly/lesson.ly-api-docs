@@ -78,22 +78,22 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
     {
       "id": 1,
       "assignee_id": 1,
-      "due_by": "09/30/2020",
-      "reassigned_at": "09/30/2020",
-      "completed_at": "09/30/2020",
-      "updated_at": "09/30/2020",
-      "status": "Incomplete",
+      "due_by": "2020-09-30T00:00:00Z",
+      "reassigned_at": "2020-09-30T00:00:00Z",
+      "completed_at": "2020-09-30T00:00:00Z",
+      "updated_at": "2020-09-30T00:00:00Z",
+      "status": "Completed",
       "score": 20
     },
     {
       "id": 2,
       "assignee_id": 2,
-      "due_by": "09/30/2020",
-      "reassigned_at": "09/30/2020",
-      "completed_at": "09/30/2020",
-      "updated_at": "09/30/2020",
-      "status": "Complete",
-      "score": 100
+      "due_by": "2020-09-30T00:00:00Z",
+      "reassigned_at": "2020-09-30T00:00:00Z",
+      "completed_at": null,
+      "updated_at": "2020-09-30T00:00:00Z",
+      "status": "Incomplete",
+      "score": 0
     }
   ]
 }
@@ -125,7 +125,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
   "assignments":[
     {
       "assignee_id": 1,
-      "due_by": "09/30/2020"
+      "due_by": "2020-09-30T00:00:00Z"
     }
   ]
 }
@@ -141,10 +141,10 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
     {
       "id": 1,
       "assignee_id": 1,
-      "due_by": "09/30/2020",
-      "reassigned_at": "09/30/2020",
-      "completed_at": "09/30/2020",
-      "updated_at": "09/30/2020",
+      "due_by": "2020-09-30T00:00:00Z",
+      "reassigned_at": "2020-09-30T00:00:00Z",
+      "completed_at": "2020-09-30T00:00:00Z",
+      "updated_at": "2020-09-30T00:00:00Z",
       "status": "Incomplete",
       "score": 0
     }

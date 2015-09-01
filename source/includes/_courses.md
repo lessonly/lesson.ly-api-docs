@@ -91,14 +91,14 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:course_id/assign
     {
       "id": 1,
       "assignee_id": 1,
-      "due_by": "09/30/2020",
-      "reassigned_at": "09/30/2020"
+      "due_by": "2020-09-30T00:00:00Z",
+      "reassigned_at": "2020-09-30T00:00:00Z"
     },
     {
       "id": 2,
       "assignee_id": 2,
-      "due_by": "09/30/2020",
-      "reassigned_at": "09/30/2020"
+      "due_by": "2020-09-30T00:00:00Z",
+      "reassigned_at": "2020-09-30T00:00:00Z"
     }
   ]
 }
@@ -130,7 +130,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id/assign
   "assignments":[
     {
       "assignee_id": 1,
-      "due_by": "09/30/2020"
+      "due_by": "2020-09-30T00:00:00Z"
     }
   ]
 }
@@ -146,9 +146,9 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id/assign
     {
       "id": 1,
       "assignee_id": 1,
-      "due_by": "09/30/2020",
-      "reassigned_at": "09/30/2020",
-      "completed_at": "09/30/2020",
+      "due_by": "2020-09-30T00:00:00Z",
+      "reassigned_at": "2020-09-30T00:00:00Z",
+      "completed_at": "2020-09-30T00:00:00Z",
       "status": "Incomplete",
       "score": 0
     }
