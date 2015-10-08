@@ -37,11 +37,11 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/:group_id"
   "type": "group",
   "name": "Test Group",
   "members": [
-         {"id": 1, "name": "Test Name"},
-         {"id": 2, "name": "Test Name 2"}
+         {"id": 1, "ext_uid": "ABC123", "name": "Test Name"},
+         {"id": 2, "ext_uid": "DEF456", "name": "Test Name 2"}
     ],
   "managers":  [
-         {"id": 1, "name": "Test Name"},
+         {"id": 1, "ext_uid": "ABC123", "name": "Test Name"},
    ]
 }
 ```
@@ -90,10 +90,10 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/:group_id" -p para
   "type": "update_group",
   "name": "New Name",
   "members": [
-         {"id": 1, "name": "Test Name"},
+         {"id": 1, "ext_uid": "ABC123", "name": "Test Name"},
     ],
   "managers":  [
-         {"id": 4, "name": "Test Name 4"},
+         {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"},
    ]
 }
 ```
