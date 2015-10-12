@@ -20,13 +20,15 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users"
         "id": 1,
         "name": "User Name",
         "email": "email1@example.com",
-        "role": "learner"
+        "role": "learner",
+        "ext_uid": "ABC123"
       },
       {
         "id": 2,
         "name": "User Name",
         "email": "email2@example.com",
-        "role": "learner"
+        "role": "learner",
+        "ext_uid": "DEF456"
       }
     ]
 }
@@ -60,6 +62,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id
   "name": "Test User", 
   "email": "test@test.com", 
   "role": "learner",
+  "ext_uid": "ABC123",
   "custom_field_data": 
     [
       {"id": "custom_field_id", "name": "SSID", "value": "12345"},
@@ -179,6 +182,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id" -p params
   "name": "User Name", 
   "email": "email@example.com", 
   "role": "learner",
+  "ext_uid": "ABC123",
   "custom_field_data": 
     [
       {

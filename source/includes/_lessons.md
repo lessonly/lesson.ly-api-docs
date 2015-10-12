@@ -78,6 +78,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
     {
       "id": 1,
       "assignee_id": 1,
+      "ext_uid": "ABC123",
       "due_by": "2020-09-30T00:00:00Z",
       "reassigned_at": "2020-09-30T00:00:00Z",
       "completed_at": "2020-09-30T00:00:00Z",
@@ -88,6 +89,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
     {
       "id": 2,
       "assignee_id": 2,
+      "ext_uid": "DEF456",
       "due_by": "2020-09-30T00:00:00Z",
       "reassigned_at": "2020-09-30T00:00:00Z",
       "completed_at": null,
@@ -141,6 +143,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
     {
       "id": 1,
       "assignee_id": 1,
+      "ext_uid": "ABC123",
       "due_by": "2020-09-30T00:00:00Z",
       "reassigned_at": "2020-09-30T00:00:00Z",
       "completed_at": "2020-09-30T00:00:00Z",
