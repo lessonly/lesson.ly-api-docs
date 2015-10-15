@@ -92,13 +92,15 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email1@example.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="w">
+        </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email2@example.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="w">
+        </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -147,6 +149,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test User"</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"custom_field_data"</span><span class="p">:</span><span class="w"> 
     </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_field_id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SSID"</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">},</span><span class="w">
@@ -306,6 +309,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"custom_field_data"</span><span class="p">:</span><span class="w"> 
     </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
@@ -560,11 +564,11 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Group"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"members"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name"</span><span class="p">},</span><span class="w">
-         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 2"</span><span class="p">}</span><span class="w">
+         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name"</span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 2"</span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
   </span><span class="s2">"managers"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="w">
-         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name"</span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name"</span><span class="p">},</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -624,10 +628,10 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update_group"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Name"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"members"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name"</span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name"</span><span class="p">},</span><span class="w">
     </span><span class="p">],</span><span class="w">
   </span><span class="s2">"managers"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="w">
-         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 4"</span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JKL012"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 4"</span><span class="p">},</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -755,6 +759,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
@@ -765,6 +770,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -839,6 +845,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
@@ -979,12 +986,14 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -1055,6 +1064,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
