@@ -95,6 +95,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/" -p params
   "name": "User Name",
   "email": "email@example.com",
   "role": "learner",
+  "ext_uid": "ABC123",
   "custom_user_fields": [
     {
       "custom_user_field_id": 1,
@@ -117,6 +118,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/" -p params
   "name": "User Name", 
   "email": "email@example.com", 
   "role": "learner",
+  "ext_uid": "ABC123",
   "custom_field_data": 
     [
       {
@@ -144,6 +146,7 @@ Paramter | Required | Type |  Description
 name | yes | String | User full name
 email | yes | String | User Email
 role | yes | String | User role. Options: admin, manager, creator, learner
+ext_uid | no | String | The user's ID in another system, useful for linking data.
 notify | no | String | Whether or not to notify the user.  Passing 'false' will not send an email notification to the user that their account has been created. Defaults to 'true'.
 custom_user_fields |  no | Array | Custom user field values for specified custom user field ids. Hashses must containt a "customer_user_field_id" and a "value".
 
@@ -160,6 +163,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id" -p params
   "name": "User Name",
   "email": "email@example.com",
   "role": "learner",
+  "ext_uid": "ABC123",
   "custom_user_fields": [
     {
       "custom_user_field_id": 1,
@@ -211,6 +215,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 name | no | String | User name to change user to
 email | no | String | User Email to change user to
 role | no | String | User role to change user to. Options: admin, manager, creator, learner
+ext_uid | no | String | The user's ID in another system, useful for linking data.
 custom_user_fields |  no | Array | Custom user fields for the update.  If the user does not have a value for the specified "customer_user_field_id" it will be added, otherwise it will be updated to the specified "value".
 
 ## Delete User
