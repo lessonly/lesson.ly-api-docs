@@ -192,6 +192,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"custom_user_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"custom_user_field_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -214,6 +215,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"custom_field_data"</span><span class="p">:</span><span class="w"> 
     </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
@@ -263,6 +265,12 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <td>User role. Options: admin, manager, creator, learner</td>
 </tr>
 <tr>
+<td>ext_uid</td>
+<td>no</td>
+<td>String</td>
+<td>The user&rsquo;s ID in another system, useful for linking data.</td>
+</tr>
+<tr>
 <td>notify</td>
 <td>no</td>
 <td>String</td>
@@ -287,6 +295,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"custom_user_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"custom_user_field_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -363,6 +372,12 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <td>no</td>
 <td>String</td>
 <td>User role to change user to. Options: admin, manager, creator, learner</td>
+</tr>
+<tr>
+<td>ext_uid</td>
+<td>no</td>
+<td>String</td>
+<td>The user&rsquo;s ID in another system, useful for linking data.</td>
 </tr>
 <tr>
 <td>custom_user_fields</td>
