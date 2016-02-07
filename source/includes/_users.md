@@ -337,4 +337,61 @@ memberships | no | Array |  The groups in which the user is a member.  Passing "
 managing | no | Array | The groups in which the user is managing.  Passing "remove": "true" will remove this association.
 
 
+## User Assignments
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignments"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "user_assignments",
+  "assignments":[
+    {
+      "type": "Assignment",
+      "id": 1,
+      "assignee_id": 1,
+      "ext_uid": "ABC123",
+      "assignable_id": 1,
+      "assignable_type": "Lesson",
+      "due_by": "2020-09-30T00:00:00Z",
+      "reassigned_at": "2020-09-30T00:00:00Z",
+      "completed_at": "2020-09-30T00:00:00Z",
+      "updated_at": "2020-09-30T00:00:00Z",
+      "status": "Completed",
+      "score": 20
+    },
+    {
+      "type": "Assignment",
+      "id": 2,
+      "assignee_id": 2,
+      "ext_uid": "DEF456",
+      "assignable_id": 2,
+      "assignable_type": "Course",
+      "due_by": "2020-09-30T00:00:00Z",
+      "reassigned_at": "2020-09-30T00:00:00Z",
+      "completed_at": null,
+      "updated_at": "2020-09-30T00:00:00Z",
+      "status": "Incomplete",
+      "score": 0
+    }
+  ]
+}
+```
+
+This endpoint allows you to list out a the assignments a user has been given
+
+### HTTP Request
+
+`GET https://api.lesson.ly/api/v1/users/:user_id/assignments`
+
+### Query Parameters
+
+Paramter | Required | Type |  Description
+--- | --- | --- | ---
+user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
+
+
 
