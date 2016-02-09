@@ -404,7 +404,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignment
 
 ```json
 {
-  "assigments":
+  "assignments":
     [ 
       {
         "assignable_id": 1, 
@@ -468,5 +468,5 @@ This endpoint allows you to create assignments for a user
 Paramter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
-assignments | no | Array |  Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of "Lesson" or "Course"
+assignments | yes | Array |  Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of "Lesson" or "Course"
 
