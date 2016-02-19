@@ -56,3 +56,46 @@ This endpoint retrieves all the tag details.
 Paramter | Required | Type |  Description
 --- | --- | --- | ---
 tag_id | yes | Positive Integer | The tag to access.  The company must have access to the tag.
+
+## Tag Lessons
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/tags/:tag_id/lessons
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "type": "tag_lessons",
+    "lessons": [
+        {
+            "id": 5,
+            "title": "Marketing 101",
+            "assignees_count": 21,
+            "completed_count": 1,
+            "retake_score": 90,
+            "description": "A quick overview about how we do marketing."
+        },
+        {
+            "id": 456,
+            "title": "Development 101",
+            "assignees_count": 11,
+            "completed_count": 5,
+            "retake_score": 95,
+            "description": "A quick overview about how we do development."
+        }
+    ]
+}
+```
+
+This endpoint retrieves all the lessons tagged with a particular tag.
+### HTTP Request
+
+`GET https://api.lesson.ly/api/v1/tags/:tag_id/lessons`
+
+### Query Parameters
+
+Paramter | Required | Type |  Description
+--- | --- | --- | ---
+tag_id | yes | Positive Integer | The tag to access.  The company must have access to the tag.
