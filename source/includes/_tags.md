@@ -10,17 +10,17 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/tags"
 
 ```json
 {
-    "type": "tags",
-    "tags": [
-        {
-            "id": 1,
-            "name": "Marketing"
-        },
-        {
-            "id": 2,
-            "name": "Development"
-        }
-    ]
+  "type": "tags",
+  "tags": [
+    {
+      "id": 1,
+      "name": "Marketing"
+    },
+    {
+      "id": 2,
+      "name": "Development"
+    }
+  ]
 }
 ```
 
@@ -40,9 +40,9 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/tags/:tag_id
 
 ```json
 {
-    "type": "tag",
-    "id": 1,
-    "name": "Marketing"
+  "type": "tag",
+  "id": 1,
+  "name": "Marketing"
 }
 ```
 
@@ -67,25 +67,25 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/tags/:tag_id/lessons
 
 ```json
 {
-    "type": "tag_lessons",
-    "lessons": [
-        {
-            "id": 5,
-            "title": "Marketing 101",
-            "assignees_count": 21,
-            "completed_count": 1,
-            "retake_score": 90,
-            "description": "A quick overview about how we do marketing."
-        },
-        {
-            "id": 456,
-            "title": "Development 101",
-            "assignees_count": 11,
-            "completed_count": 5,
-            "retake_score": 95,
-            "description": "A quick overview about how we do development."
-        }
-    ]
+  "type": "tag_lessons",
+  "lessons": [
+    {
+      "id": 5,
+      "title": "Marketing 101",
+      "assignees_count": 21,
+      "completed_count": 1,
+      "retake_score": 90,
+      "description": "A quick overview about how we do marketing."
+    },
+    {
+      "id": 456,
+      "title": "Development 101",
+      "assignees_count": 11,
+      "completed_count": 5,
+      "retake_score": 95,
+      "description": "A quick overview about how we do development."
+    }
+  ]
 }
 ```
 
@@ -110,34 +110,34 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/tags/:tag_id/courses
 
 ```json
 {
-    "type": "tag_courses",
-    "courses": [
+  "type": "tag_courses",
+  "courses": [
+    {
+      "id": 123,
+      "title": "Onboarding Course",
+      "assignees_count": 15,
+      "completed_count": 11,
+      "description": "This course will get you up to speed in our company.",
+      "lessons": [
         {
-            "id": 123,
-            "title": "Onboarding Course",
-            "assignees_count": 15,
-            "completed_count": 11,
-            "description": "This course will get you up to speed in our company.",
-            "lessons": [
-              {
-                  "id": 5,
-                  "title": "Marketing 101",
-                  "assignees_count": 21,
-                  "completed_count": 1,
-                  "retake_score": 90,
-                  "description": "A quick overview about how we do marketing."
-              },
-              {
-                  "id": 456,
-                  "title": "Development 101",
-                  "assignees_count": 11,
-                  "completed_count": 5,
-                  "retake_score": 95,
-                  "description": "A quick overview about how we do development."
-              }
-            ]
+          "id": 5,
+          "title": "Marketing 101",
+          "assignees_count": 21,
+          "completed_count": 1,
+          "retake_score": 90,
+          "description": "A quick overview about how we do marketing."
+        },
+        {
+          "id": 456,
+          "title": "Development 101",
+          "assignees_count": 11,
+          "completed_count": 5,
+          "retake_score": 95,
+          "description": "A quick overview about how we do development."
         }
-    ]
+      ]
+    }
+  ]
 }
 ```
 
