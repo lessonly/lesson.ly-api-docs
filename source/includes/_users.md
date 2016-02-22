@@ -63,9 +63,13 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id
   "email": "test@test.com", 
   "role": "learner",
   "ext_uid": "ABC123",
-  "custom_field_data": 
+  "custom_user_field_data": 
     [
-      {"id": "custom_field_id", "name": "SSID", "value": "12345"},
+      {
+        "id": 1,
+        "custom_user_field_id": 1, 
+        "value": "Custom Value 1"
+      },
     ]
 }
 ```
@@ -119,14 +123,16 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/" -p params
   "email": "email@example.com", 
   "role": "learner",
   "ext_uid": "ABC123",
-  "custom_field_data": 
+  "custom_user_field_data": 
     [
       {
         "id": 1, 
+        "custom_user_field_id": 1,
         "value": "Custom Value 1"
       },
       {
         "id": 2, 
+        "custom_user_field_id": 2,
         "value": "Custom Value 2"
       }
     ]
@@ -187,14 +193,16 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id" -p params
   "email": "email@example.com", 
   "role": "learner",
   "ext_uid": "ABC123",
-  "custom_field_data": 
+  "custom_user_field_data": 
     [
       {
-        "id": 1, 
+        "id": 1,
+        "custom_user_field_id": 1,
         "value": "Custom Value 1"
       },
       {
         "id": 2, 
+        "custom_user_field_id": 2,
         "value": "Custom Value 2"
       }
     ]
