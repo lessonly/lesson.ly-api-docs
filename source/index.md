@@ -14,6 +14,7 @@ includes:
   - groups
   - lessons
   - courses
+  - tags
   - rates
   - errors
 
