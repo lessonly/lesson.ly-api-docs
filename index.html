@@ -150,9 +150,13 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"custom_field_data"</span><span class="p">:</span><span class="w"> 
+  </span><span class="s2">"custom_user_field_data"</span><span class="p">:</span><span class="w"> 
     </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_field_id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SSID"</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"custom_user_field_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Value 1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -216,14 +220,16 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"custom_field_data"</span><span class="p">:</span><span class="w"> 
+  </span><span class="s2">"custom_user_field_data"</span><span class="p">:</span><span class="w"> 
     </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"custom_user_field_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Value 1"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"custom_user_field_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Value 2"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -319,14 +325,16 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"custom_field_data"</span><span class="p">:</span><span class="w"> 
+  </span><span class="s2">"custom_user_field_data"</span><span class="p">:</span><span class="w"> 
     </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"custom_user_field_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Value 1"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"custom_user_field_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Value 2"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
