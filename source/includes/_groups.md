@@ -58,6 +58,61 @@ group_id | yes | Positive Integer | The group to access.  The company must have 
 
 `GET https://api.lesson.ly/api/v1/groups/:group_id`
 
+## Create Group
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/" -p params
+```
+
+> The following are sample parameters for this request:
+
+```json
+{
+  "name": "create_group",
+  "members":
+    [
+      {"id": 1 },
+      {"id": 2, "remove": "true"}
+
+    ],
+  "managers":
+    [
+      {"id":  3, "remove": "true" },
+      {"id":  4 }
+    ]
+
+}
+```
+> A successful update will return JSON consisting of the group details repsonse:
+
+```json
+{
+  "type": "create_group",
+  "name": "New Name",
+  "members": [
+         {"id": 1, "ext_uid": "ABC123", "name": "Test Name"},
+    ],
+  "managers":  [
+         {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"},
+   ]
+}
+```
+
+This endpoint allows you to update a group and its members and managers
+
+### HTTP Request
+
+`POST https://api.lesson.ly/api/v1/groups/` -p params
+
+### Query Parameters
+
+Paramter | Required | Type |  Description
+--- | --- | --- | ---
+name | yes | String | The name of the group
+members | no | Array |  The members of a group.
+managers | no | Array | The managers of a group.
+
+
 ## Update Group
 
 ```shell
