@@ -72,12 +72,12 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/" -p params
   "members":
     [
       {"id": 1 },
-      {"id": 2, "remove": "true"}
+      {"id": 2 }
 
     ],
   "managers":
     [
-      {"id":  3, "remove": "true" },
+      {"id":  3 },
       {"id":  4 }
     ]
 
@@ -90,10 +90,12 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/" -p params
   "type": "create_group",
   "name": "New Name",
   "members": [
-         {"id": 1, "ext_uid": "ABC123", "name": "Test Name"},
+         {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"},
+         {"id": 2, "ext_uid": "ABC123", "name": "Test Name 2"}
     ],
   "managers":  [
-         {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"},
+         {"id": 3, "ext_uid": "JKL012", "name": "Test Name 3"},
+         {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"}
    ]
 }
 ```
@@ -145,7 +147,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/:group_id" -p para
   "type": "update_group",
   "name": "New Name",
   "members": [
-         {"id": 1, "ext_uid": "ABC123", "name": "Test Name"},
+         {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"},
     ],
   "managers":  [
          {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"},
@@ -164,5 +166,6 @@ This endpoint allows you to update a group and its members and managers
 Paramter | Required | Type |  Description
 --- | --- | --- | ---
 group_id | yes | Positive Integer | The group to access.  The company must have access to the group.
+name | no | String | The name of the group.
 members | no | Array |  The members of a group.  Passing "remove": "true" will remove this association.
 managers | no | Array | The managers of a group.  Passing "remove": "true" will remove this association.
