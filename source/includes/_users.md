@@ -149,7 +149,7 @@ This endpoint allows you to create a user in the api.
 
 Paramter | Required | Type |  Description
 --- | --- | --- | ---
-name | yes | String | User full name
+name | yes | String | User full name. Cannot begin with a space and the following characters are restricted: `!@#\$%\^&*+=()&#124;[];
 email | yes | String | User Email
 role | yes | String | User role. Options: admin, manager, creator, learner
 ext_uid | no | String | The user's ID in another system, useful for linking data.
