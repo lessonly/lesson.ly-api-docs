@@ -46,6 +46,7 @@ Parameter | Required | Type | Description
 --------- | ------- | ------- | -----------
 page | no | Positive Integer | which page in the pagination to fetch.  Default = 1
 per_page | no | Positive Integer | how many results to return in each page.  Default = 50
+filter | no | String | Specified user filter for users list.  Supported filters are email and ext_uid.
 
 ## Show User Details
 
