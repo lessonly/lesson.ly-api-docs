@@ -11,6 +11,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users"
 ```json
 {
   "type": "users",
+  "resource_type": "user",
   "total_users": 2000,
   "page": 1,
   "per_page": 2,
@@ -59,6 +60,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id
 ```json
  {
   "type": "user",
+  "resource_type": "user",
   "id": 1, 
   "name": "Test User", 
   "email": "test@test.com", 
@@ -119,6 +121,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/" -p params
 ```json
  {
   "type": "create_user",
+  "resource_type": "user",
   "id": 1, 
   "name": "User Name", 
   "email": "email@example.com", 
@@ -189,6 +192,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id" -p params
 ```json
  {
   "type": "update_user",
+  "resource_type": "user",
   "id": 1, 
   "name": "User Name", 
   "email": "email@example.com", 
@@ -360,6 +364,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignment
   "assignments":[
     {
       "type": "Assignment",
+      "resource_type": "assignment",
       "id": 1,
       "assignee_id": 1,
       "ext_uid": "ABC123",
@@ -374,6 +379,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignment
     },
     {
       "type": "Assignment",
+      "resource_type": "assigment",
       "id": 2,
       "assignee_id": 2,
       "ext_uid": "DEF456",
@@ -436,6 +442,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignment
   "assignments":[
     {
       "type": "Assignment",
+      "resource_type": "assignment",
       "id": 1,
       "assignee_id": 1,
       "ext_uid": "ABC123",
@@ -450,6 +457,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignment
     },
     {
       "type": "Assignment",
+      "resource_type": "assignment",
       "id": 3,
       "assignee_id": 2,
       "ext_uid": "DEF456",

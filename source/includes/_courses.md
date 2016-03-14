@@ -41,6 +41,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id
 ```json
 {
   "type": "course",
+  "resource_type": "course",
   "id": 1,
   "owner_id": 12,
   "title": "Course 1",
@@ -90,6 +91,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id/assign
   "assignments":[
     {
       "id": 1,
+      "resource_type": "assignment",
       "assignee_id": 1,
       "ext_uid": "ABC123",
       "due_by": "2020-09-30T00:00:00Z",
@@ -97,6 +99,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id/assign
     },
     {
       "id": 2,
+      "resource_type": "assignment",
       "assignee_id": 2,
       "ext_uid": "DEF456",
       "due_by": "2020-09-30T00:00:00Z",
@@ -147,6 +150,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id/assign
   "assignments": [
     {
       "id": 1,
+      "resource_type": "assignment",
       "assignee_id": 1,
       "ext_uid": "ABC123",
       "due_by": "2020-09-30T00:00:00Z",
