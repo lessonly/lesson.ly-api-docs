@@ -54,11 +54,39 @@ This endpoint retrieves all the lesson details including statistics about the co
 
 `GET https://api.lesson.ly/api/v1/lessons/:lesson_id`
 
+
+## Update Lesson
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id -p params
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "lesson",
+  "id": 1,
+  "title": "Lesson 1",
+  "assignees_count": 10,
+  "completed_count": 5,
+  "retake_score": 80
+}
+```
+
+This endpoint allows the updating of a single lesson and its attributes
+### HTTP Request
+
+`PUT https://api.lesson.ly/api/v1/lessons/:lesson_id -p params`
+
 ### Query Parameters
 
 Paramter | Required | Type |  Description
 --- | --- | --- | ---
 lesson_id | yes | Positive Integer | The lesson to access.  The company must have access to the lesson.
+title | no | String | The title of the lesson.
+retake_score | no | Positive Integer | The retake score of the lesson.
+public | no | Boolean | Whether or not the lesson is public
 
 ## Lesson Assignments
 
