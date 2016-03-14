@@ -45,7 +45,19 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id
   "title": "Lesson 1",
   "assignees_count": 10,
   "completed_count": 5,
-  "retake_score": 80
+  "retake_score": 80,
+  "public": false,
+  "created_at: "2020-09-30T00:00:00Z",
+  "last_updated_at": "2020-09-30T00:00:00Z",
+  "tags" : [
+    {
+      "id": 1,
+      "name": "test_tag"
+    }
+  ],
+  "links" : {
+    shareable: "https://lesson-shareable-link"
+  }
 }
 ```
 
