@@ -47,7 +47,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id
   "completed_count": 5,
   "retake_score": 80,
   "public": false,
-  "created_at: "2020-09-30T00:00:00Z",
+  "created_at": "2020-09-30T00:00:00Z",
   "last_updated_at": "2020-09-30T00:00:00Z",
   "tags" : [
     {
@@ -56,7 +56,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id
     }
   ],
   "links" : {
-    shareable: "https://lesson-shareable-link"
+    "shareable": "https://lesson-shareable-link"
   }
 }
 ```
