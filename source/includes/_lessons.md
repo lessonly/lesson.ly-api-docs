@@ -41,6 +41,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id
 ```json
 {
   "type": "lesson",
+  "resource_type": "lesson",
   "id": 1,
   "title": "Lesson 1",
   "assignees_count": 10,
@@ -66,11 +67,52 @@ This endpoint retrieves all the lesson details including statistics about the co
 
 `GET https://api.lesson.ly/api/v1/lessons/:lesson_id`
 
+
+## Update Lesson
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id -p params
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "update_lesson",
+  "resource_type": "lesson",
+  "id": 1,
+  "title": "Lesson 1",
+  "assignees_count": 10,
+  "completed_count": 5,
+  "retake_score": 80,
+  "public": false,
+  "created_at": "2020-09-30T00:00:00Z",
+  "last_updated_at": "2020-09-30T00:00:00Z",
+  "tags" : [
+    {
+      "id": 1,
+      "name": "test_tag"
+    }
+  ],
+  "links" : {
+    "shareable": "https://lesson-shareable-link"
+  }
+}
+```
+
+This endpoint allows the updating of a single lesson and its attributes
+### HTTP Request
+
+`PUT https://api.lesson.ly/api/v1/lessons/:lesson_id -p params`
+
 ### Query Parameters
 
 Paramter | Required | Type |  Description
 --- | --- | --- | ---
 lesson_id | yes | Positive Integer | The lesson to access.  The company must have access to the lesson.
+title | no | String | The title of the lesson.
+retake_score | no | Positive Integer | The retake score of the lesson.
+public | no | Boolean | Whether or not the lesson is public
 
 ## Lesson Assignments
 
@@ -90,6 +132,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
   "assignments":[
     {
       "id": 1,
+      "resource_type": "assignment",
       "assignee_id": 1,
       "ext_uid": "ABC123",
       "due_by": "2020-09-30T00:00:00Z",
@@ -101,6 +144,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
     },
     {
       "id": 2,
+      "resource_type": "assignment",
       "assignee_id": 2,
       "ext_uid": "DEF456",
       "due_by": "2020-09-30T00:00:00Z",
@@ -155,6 +199,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
   "assignments": [
     {
       "id": 1,
+      "resource_type": "assignment",
       "assignee_id": 1,
       "ext_uid": "ABC123",
       "due_by": "2020-09-30T00:00:00Z",

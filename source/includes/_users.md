@@ -11,6 +11,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users"
 ```json
 {
   "type": "users",
+  "resource_type": "user",
   "total_users": 2000,
   "page": 1,
   "per_page": 2,
@@ -46,6 +47,7 @@ Parameter | Required | Type | Description
 --------- | ------- | ------- | -----------
 page | no | Positive Integer | which page in the pagination to fetch.  Default = 1
 per_page | no | Positive Integer | how many results to return in each page.  Default = 50
+filter | no | String | Specified user filter for users list.  Supported filters are email and ext_uid.
 
 ## Show User Details
 
@@ -58,14 +60,19 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id
 ```json
  {
   "type": "user",
+  "resource_type": "user",
   "id": 1, 
   "name": "Test User", 
   "email": "test@test.com", 
   "role": "learner",
   "ext_uid": "ABC123",
-  "custom_field_data": 
+  "custom_user_field_data": 
     [
-      {"id": "custom_field_id", "name": "SSID", "value": "12345"},
+      {
+        "id": 1,
+        "custom_user_field_id": 1, 
+        "value": "Custom Value 1"
+      },
     ]
 }
 ```
@@ -114,19 +121,22 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/" -p params
 ```json
  {
   "type": "create_user",
+  "resource_type": "user",
   "id": 1, 
   "name": "User Name", 
   "email": "email@example.com", 
   "role": "learner",
   "ext_uid": "ABC123",
-  "custom_field_data": 
+  "custom_user_field_data": 
     [
       {
         "id": 1, 
+        "custom_user_field_id": 1,
         "value": "Custom Value 1"
       },
       {
         "id": 2, 
+        "custom_user_field_id": 2,
         "value": "Custom Value 2"
       }
     ]
@@ -143,7 +153,7 @@ This endpoint allows you to create a user in the api.
 
 Paramter | Required | Type |  Description
 --- | --- | --- | ---
-name | yes | String | User full name
+name | yes | String | User full name. Cannot begin with a space and the following characters are restricted: `!@#\$%\^&*+=()&#124;[];
 email | yes | String | User Email
 role | yes | String | User role. Options: admin, manager, creator, learner
 ext_uid | no | String | The user's ID in another system, useful for linking data.
@@ -182,19 +192,22 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id" -p params
 ```json
  {
   "type": "update_user",
+  "resource_type": "user",
   "id": 1, 
   "name": "User Name", 
   "email": "email@example.com", 
   "role": "learner",
   "ext_uid": "ABC123",
-  "custom_field_data": 
+  "custom_user_field_data": 
     [
       {
-        "id": 1, 
+        "id": 1,
+        "custom_user_field_id": 1,
         "value": "Custom Value 1"
       },
       {
         "id": 2, 
+        "custom_user_field_id": 2,
         "value": "Custom Value 2"
       }
     ]
@@ -351,6 +364,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignment
   "assignments":[
     {
       "type": "Assignment",
+      "resource_type": "assignment",
       "id": 1,
       "assignee_id": 1,
       "ext_uid": "ABC123",
@@ -365,6 +379,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignment
     },
     {
       "type": "Assignment",
+      "resource_type": "assigment",
       "id": 2,
       "assignee_id": 2,
       "ext_uid": "DEF456",
@@ -427,6 +442,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignment
   "assignments":[
     {
       "type": "Assignment",
+      "resource_type": "assignment",
       "id": 1,
       "assignee_id": 1,
       "ext_uid": "ABC123",
@@ -441,6 +457,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignment
     },
     {
       "type": "Assignment",
+      "resource_type": "assignment",
       "id": 3,
       "assignee_id": 2,
       "ext_uid": "DEF456",
