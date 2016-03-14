@@ -14,10 +14,12 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/tags"
   "tags": [
     {
       "id": 1,
+      "resource_type": "tag",
       "name": "Marketing"
     },
     {
       "id": 2,
+      "resource_type": "tag",
       "name": "Development"
     }
   ]
@@ -41,6 +43,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/tags/:tag_id
 ```json
 {
   "type": "tag",
+  "resource_type": "tag",
   "id": 1,
   "name": "Marketing"
 }
@@ -71,6 +74,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/tags/:tag_id/lessons
   "lessons": [
     {
       "id": 5,
+      "resource_type": "tag",
       "title": "Marketing 101",
       "assignees_count": 21,
       "completed_count": 1,
@@ -79,6 +83,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/tags/:tag_id/lessons
     },
     {
       "id": 456,
+      "resource_type": "tag",
       "title": "Development 101",
       "assignees_count": 11,
       "completed_count": 5,
@@ -114,6 +119,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/tags/:tag_id/courses
   "courses": [
     {
       "id": 123,
+      "resource_type": "tag",
       "title": "Onboarding Course",
       "assignees_count": 15,
       "completed_count": 11,
@@ -121,6 +127,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/tags/:tag_id/courses
       "lessons": [
         {
           "id": 5,
+          "resource_type": "lesson",
           "title": "Marketing 101",
           "assignees_count": 21,
           "completed_count": 1,
@@ -129,6 +136,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/tags/:tag_id/courses
         },
         {
           "id": 456,
+          "resource_type": "lesson",
           "title": "Development 101",
           "assignees_count": 11,
           "completed_count": 5,
