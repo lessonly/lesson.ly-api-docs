@@ -83,6 +83,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"users"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"total_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
   </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -134,6 +135,12 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <td>Positive Integer</td>
 <td>how many results to return in each page.  Default = 50</td>
 </tr>
+<tr>
+<td>filter</td>
+<td>no</td>
+<td>String</td>
+<td>Specified user filter for users list.  Supported filters are email and ext_uid.</td>
+</tr>
 </tbody></table>
 
 <h2 id="show-user-details">Show User Details</h2>
@@ -145,6 +152,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </blockquote>
 <pre class="highlight json"><code><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test User"</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w"> 
@@ -215,6 +223,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </blockquote>
 <pre class="highlight json"><code><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create_user"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w"> 
@@ -320,6 +329,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </blockquote>
 <pre class="highlight json"><code><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update_user"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w"> 
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w"> 
@@ -564,6 +574,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"assignments"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Assignment"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
@@ -578,6 +589,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Assignment"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assigment"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
@@ -650,6 +662,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"assignments"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Assignment"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
@@ -664,6 +677,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Assignment"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
@@ -744,6 +758,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Group"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"members"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
          </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name"</span><span class="p">},</span><span class="w">
          </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 2"</span><span class="p">}</span><span class="w">
@@ -807,6 +822,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create_group"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Name"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"members"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
          </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 1"</span><span class="p">},</span><span class="w">
@@ -864,6 +880,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w"> 
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"members"</span><span class="p">:</span><span class="w">
     </span><span class="p">[</span><span class="w"> 
       </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span><span class="w">
@@ -884,6 +901,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update_group"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Name"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"members"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
          </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 1"</span><span class="p">},</span><span class="w">
@@ -975,11 +993,24 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lesson 1"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
   </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"retake_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w">
+  </span><span class="s2">"retake_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"shareable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://lesson-shareable-link"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -988,6 +1019,42 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://api.lesson.ly/api/v1/lessons/:lesson_id</code></p>
+
+<h2 id="update-lesson">Update Lesson</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id -p params
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update_lesson"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lesson 1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"retake_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"shareable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://lesson-shareable-link"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows the updating of a single lesson and its attributes</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/lessons/:lesson_id -p params</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1004,6 +1071,24 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <td>yes</td>
 <td>Positive Integer</td>
 <td>The lesson to access.  The company must have access to the lesson.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>no</td>
+<td>String</td>
+<td>The title of the lesson.</td>
+</tr>
+<tr>
+<td>retake_score</td>
+<td>no</td>
+<td>Positive Integer</td>
+<td>The retake score of the lesson.</td>
+</tr>
+<tr>
+<td>public</td>
+<td>no</td>
+<td>Boolean</td>
+<td>Whether or not the lesson is public</td>
 </tr>
 </tbody></table>
 
@@ -1023,6 +1108,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"assignments"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
@@ -1034,6 +1120,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
@@ -1094,7 +1181,8 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"assignments"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="w">
+      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1109,7 +1197,10 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"assignments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lesson"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
@@ -1148,7 +1239,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <td>assignments</td>
 <td>no</td>
 <td>Hash</td>
-<td>A hash of assignments to be made to the lesson.  If the assignment for a particular user already exists, the user will be reassigned the lesson.</td>
+<td>A hash of assignments to be made to the lesson.  If the assignment for a particular user already exists, the user will be reassigned the lesson. Set <code class="prettyprint">notify</code> to <code class="prettyprint">true</code> to send an email to the assignee.</td>
 </tr>
 </tbody></table>
 
@@ -1191,6 +1282,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"owner_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course 1"</span><span class="p">,</span><span class="w">
@@ -1250,6 +1342,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"assignments"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
@@ -1257,6 +1350,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
@@ -1313,7 +1407,8 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"assignments"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="w">
+      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1328,7 +1423,10 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"assignments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
@@ -1366,7 +1464,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <td>assignments</td>
 <td>no</td>
 <td>Hash</td>
-<td>A hash of assignments to be made to the course.  If the assignment for a particular user already exists, the user will be reassigned the course.</td>
+<td>A hash of assignments to be made to the course.  If the assignment for a particular user already exists, the user will be reassigned the course. Set <code class="prettyprint">notify</code> to <code class="prettyprint">true</code> to send an email to the assignee.</td>
 </tr>
 </tbody></table>
 
@@ -1384,10 +1482,12 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marketing"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Development"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -1409,6 +1509,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marketing"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1450,6 +1551,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"lessons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marketing 101"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
       </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -1458,6 +1560,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Development 101"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
       </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
@@ -1504,6 +1607,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
   </span><span class="s2">"courses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Onboarding Course"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
       </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
@@ -1511,6 +1615,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
       </span><span class="s2">"lessons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marketing 101"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
           </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -1519,6 +1624,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Development 101"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
           </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
