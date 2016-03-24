@@ -184,7 +184,8 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
   "assignments":[
     {
       "assignee_id": 1,
-      "due_by": "2020-09-30T00:00:00Z"
+      "due_by": "2020-09-30T00:00:00Z",
+      "notify": true
     }
   ]
 }
@@ -201,6 +202,8 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
       "id": 1,
       "resource_type": "assignment",
       "assignee_id": 1,
+      "assignable_type": "Lesson",
+      "assignable_id": 3,
       "ext_uid": "ABC123",
       "due_by": "2020-09-30T00:00:00Z",
       "reassigned_at": "2020-09-30T00:00:00Z",
@@ -224,4 +227,4 @@ This endpoint allows you to make assignments to a particular lesson in the API.
 Paramter | Required | Type |  Description
 --- | --- | --- | ---
 lesson_id | yes | Positive Integer | The lesson to access.  The company must have access to the user.
-assignments | no | Hash | A hash of assignments to be made to the lesson.  If the assignment for a particular user already exists, the user will be reassigned the lesson.
+assignments | no | Hash | A hash of assignments to be made to the lesson.  If the assignment for a particular user already exists, the user will be reassigned the lesson. `notify` is optional and defaults to `false`.
