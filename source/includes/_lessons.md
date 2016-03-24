@@ -227,4 +227,4 @@ This endpoint allows you to make assignments to a particular lesson in the API.
 Paramter | Required | Type |  Description
 --- | --- | --- | ---
 lesson_id | yes | Positive Integer | The lesson to access.  The company must have access to the user.
-assignments | no | Hash | A hash of assignments to be made to the lesson.  If the assignment for a particular user already exists, the user will be reassigned the lesson. Set `notify` to `true` to send an email to the assignee.
+assignments | no | Hash | A hash of assignments to be made to the lesson.  If the assignment for a particular user already exists, the user will be reassigned the lesson. Set `notify` to `true` to send an email to the assignee; it will come from notifications@lesson.ly.
