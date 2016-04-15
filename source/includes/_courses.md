@@ -93,17 +93,29 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id/assign
       "id": 1,
       "resource_type": "assignment",
       "assignee_id": 1,
+      "assignable_type": "Course",
+      "assignable_id": 1,
       "ext_uid": "ABC123",
       "due_by": "2020-09-30T00:00:00Z",
-      "reassigned_at": "2020-09-30T00:00:00Z"
+      "reassigned_at": "2020-09-30T00:00:00Z",
+      "status": "Completed",
+      "started_at": "2016-03-28T14:15:17Z",
+      "completed_at": "2016-03-28T18:20:06Z",
+      "updated_at": "2016-03-28T18:20:06Z"
     },
     {
       "id": 2,
       "resource_type": "assignment",
       "assignee_id": 2,
+      "assignable_type": "Course",
+      "assignable_id": 1,
       "ext_uid": "DEF456",
       "due_by": "2020-09-30T00:00:00Z",
-      "reassigned_at": "2020-09-30T00:00:00Z"
+      "reassigned_at": "2020-09-30T00:00:00Z",
+      "status": "Incomplete",
+      "started_at": "2016-03-28T14:15:17Z",
+      "completed_at": null,
+      "updated_at": "2016-03-28T18:20:06Z"
     }
   ]
 }
