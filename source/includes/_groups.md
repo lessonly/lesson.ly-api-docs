@@ -35,8 +35,9 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/:group_id"
 ```json
 {
   "type": "group",
-  "name": "Test Group",
   "resource_type": "group",
+  "id": 12345,
+  "name": "Test Group",
   "members": [
          {"id": 1, "ext_uid": "ABC123", "name": "Test Name"},
          {"id": 2, "ext_uid": "DEF456", "name": "Test Name 2"}
@@ -90,6 +91,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/" -p params
 {
   "type": "create_group",
   "resource_type": "group",
+  "id": 12345,
   "name": "New Name",
   "members": [
          {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"},
@@ -128,7 +130,6 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/:group_id" -p para
 ```json
 { 
   "name": "New Name",
-  "resource_type": "group",
   "members":
     [ 
       {"id": 1 },
@@ -149,6 +150,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/:group_id" -p para
 {
   "type": "update_group",
   "resource_type": "group",
+  "id": 12345,
   "name": "New Name",
   "members": [
          {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"},
