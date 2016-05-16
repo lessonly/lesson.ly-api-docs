@@ -58,7 +58,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id
 > The above command returns JSON structured like this:
 
 ```json
- {
+{
   "type": "user",
   "resource_type": "user",
   "id": 1, 
@@ -322,8 +322,9 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/groups/" -
 > A successful update will return JSON consisting of the user group repsonse:
 
 ```json
-{"type": "update_user_groups",
- "memberships":
+{
+  "type": "update_user_groups",
+  "memberships":
     [ 
         {"id": 1, "name": "Test Group"},
         {"id": 3, "name": "Test Group 3"},
