@@ -97,6 +97,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id/assign
       "assignable_id": 1,
       "ext_uid": "ABC123",
       "due_by": "2020-09-30T00:00:00Z",
+      "assigned_at": "2020-03-20T00:00:00Z",
       "reassigned_at": "2020-09-30T00:00:00Z",
       "status": "Completed",
       "started_at": "2016-03-28T14:15:17Z",

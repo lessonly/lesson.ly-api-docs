@@ -136,6 +136,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
       "assignee_id": 1,
       "ext_uid": "ABC123",
       "due_by": "2020-09-30T00:00:00Z",
+      "assigned_at": "2020-03-20T00:00:00Z",
       "reassigned_at": "2020-09-30T00:00:00Z",
       "completed_at": "2020-09-30T00:00:00Z",
       "updated_at": "2020-09-30T00:00:00Z",
