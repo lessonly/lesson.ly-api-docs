@@ -3,7 +3,7 @@
 ## List Users
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users"
+<%= api_get_request('/users') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -52,7 +52,7 @@ filter | no | String | Specified user filter for users list.  Supported filters 
 ## Show User Details
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id
+<%= api_get_request("/users/:user_id") %>
 ```
 
 > The above command returns JSON structured like this:
@@ -61,16 +61,16 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id
 {
   "type": "user",
   "resource_type": "user",
-  "id": 1, 
-  "name": "Test User", 
-  "email": "test@test.com", 
+  "id": 1,
+  "name": "Test User",
+  "email": "test@test.com",
   "role": "learner",
   "ext_uid": "ABC123",
-  "custom_user_field_data": 
+  "custom_user_field_data":
     [
       {
         "id": 1,
-        "custom_user_field_id": 1, 
+        "custom_user_field_id": 1,
         "value": "Custom Value 1"
       },
     ]
@@ -92,7 +92,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 ## Create User
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/" -p params
+<%= post_request("/users") %>
 ```
 
 > The following are sample parameters for this request:
@@ -122,20 +122,20 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/" -p params
  {
   "type": "create_user",
   "resource_type": "user",
-  "id": 1, 
-  "name": "User Name", 
-  "email": "email@example.com", 
+  "id": 1,
+  "name": "User Name",
+  "email": "email@example.com",
   "role": "learner",
   "ext_uid": "ABC123",
-  "custom_user_field_data": 
+  "custom_user_field_data":
     [
       {
-        "id": 1, 
+        "id": 1,
         "custom_user_field_id": 1,
         "value": "Custom Value 1"
       },
       {
-        "id": 2, 
+        "id": 2,
         "custom_user_field_id": 2,
         "value": "Custom Value 2"
       }
@@ -143,7 +143,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/" -p params
 }
 ```
 
-This endpoint allows you to create a user in the api. 
+This endpoint allows you to create a user in the api.
 
 ### HTTP Request
 
@@ -163,7 +163,7 @@ custom_user_fields |  no | Array | Custom user field values for specified custom
 ## Update User
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id" -p params
+<%= post_request("/users/:user_id") %>
 ```
 
 > The following are sample parameters for this request:
@@ -193,12 +193,12 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id" -p params
  {
   "type": "update_user",
   "resource_type": "user",
-  "id": 1, 
-  "name": "User Name", 
-  "email": "email@example.com", 
+  "id": 1,
+  "name": "User Name",
+  "email": "email@example.com",
   "role": "learner",
   "ext_uid": "ABC123",
-  "custom_user_field_data": 
+  "custom_user_field_data":
     [
       {
         "id": 1,
@@ -206,7 +206,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id" -p params
         "value": "Custom Value 1"
       },
       {
-        "id": 2, 
+        "id": 2,
         "custom_user_field_id": 2,
         "value": "Custom Value 2"
       }
@@ -214,7 +214,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id" -p params
 }
 ```
 
-This endpoint allows you to update a user in the api. 
+This endpoint allows you to update a user in the api.
 
 ### HTTP Request
 
@@ -246,7 +246,7 @@ curl -X DELETE -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id"
 }
 ```
 
-This endpoint allows you to delete a user in the API. 
+This endpoint allows you to delete a user in the API.
 
 ### HTTP Request
 
@@ -262,7 +262,7 @@ user_id | yes | Positive Integer | The user to delete.  The company must have ac
 ## User Groups
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/groups"
+<%= api_get_request("/users/:user_id/groups") %>
 ```
 
 > The above command returns JSON structured like this:
@@ -271,12 +271,12 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/groups"
 
 {"type": "user_groups",
  "memberships":
-    [ 
+    [
         {"id": 1, "name": "Test Group"},
         {"id": 3, "name": "Test Group 3"},
     ],
-  "managing": 
-    [ 
+  "managing":
+    [
         {"id": 1, "name": "Test Group5"},
     ]
 }
@@ -298,7 +298,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 ## Update User Groups
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/groups/" -p params
+<%= post_request("/users/:user_id/groups") %>
 ```
 
 > The following are sample parameters for this request:
@@ -306,7 +306,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/groups/" -
 ```json
 {
   "memberships":
-    [ 
+    [
       {"id": 1 },
       {"id": 2, "remove": "true"}
 
@@ -325,12 +325,12 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/groups/" -
 {
   "type": "update_user_groups",
   "memberships":
-    [ 
+    [
         {"id": 1, "name": "Test Group"},
         {"id": 3, "name": "Test Group 3"},
     ],
-  "managing": 
-    [ 
+  "managing":
+    [
         {"id": 1, "name": "Test Group5"},
     ]
 }
@@ -354,7 +354,7 @@ managing | no | Array | The groups in which the user is managing.  Passing "remo
 ## User Assignments
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignments"
+<%= post_request("/users/:user_id/assignments") %>
 ```
 
 > The above command returns JSON structured like this:
@@ -413,7 +413,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 ## Create User Assignments
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignments/" -p params
+<%= post_request("/users/:user_id/assignments") %>
 ```
 
 > The following are sample parameters for this request:
@@ -421,17 +421,17 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignment
 ```json
 {
   "assignments":
-    [ 
+    [
       {
-        "assignable_id": 1, 
-        "assignable_type": "Lesson", 
-        "due_by": "2020-09-30" 
-      } 
+        "assignable_id": 1,
+        "assignable_type": "Lesson",
+        "due_by": "2020-09-30"
+      }
       {
-        "assignable_id": 3, 
-        "assignable_type": "Course", 
-        "due_by": "2020-09-30" 
-      } 
+        "assignable_id": 3,
+        "assignable_type": "Course",
+        "due_by": "2020-09-30"
+      }
     ]
 }
 ```
@@ -475,7 +475,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id/assignment
 }
 ```
 
-This endpoint allows you to create assignments for a user
+This endpoint allows you to create assignments for a user. Please note that it will always notify the user. If you want to suppress notifications, use the Lesson Assignments call.
 
 ### HTTP Request
 
@@ -487,4 +487,3 @@ Paramter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
 assignments | yes | Array |  Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of "Lesson" or "Course"
-

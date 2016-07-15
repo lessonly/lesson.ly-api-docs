@@ -9,6 +9,16 @@ set :markdown,
     with_toc_data: true,
     no_intra_emphasis: true
 
+helpers do
+  def api_get_request(endpoint)
+    "curl -u \"DOMAIN:API_KEY\" \"https://api.lesson.ly/api/v1#{endpoint}\""
+  end
+
+  def post_request(endpoint)
+    "curl -H \"Content-Type: application/json\" -u \"DOMAIN:API_KEY\" -d 'JSON_PARAMS' \"https://api.lesson.ly/api/v1#{endpoint}\""
+  end
+end
+
 # Assets
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
