@@ -138,7 +138,7 @@ per_page | no | how many results to return in each page.  Default = 50
 ## Assign Course
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id/assignments" -p params
+<%= put_request("/courses/:course_id/assignments") %>
 ```
 
 > The following are sample parameters for this request:
@@ -191,4 +191,3 @@ Paramter | Required | Type |  Description
 --- | --- | --- | ---
 course_id | yes | Positive Integer | The course to access. The company must have access to the user.
 assignments | no | Hash | A hash of assignments to be made to the course.  If the assignment for a particular user already exists, the user will be reassigned the course. Set `notify` to `true` to send an email to the assignee; it will come from notifications@lesson.ly.
-

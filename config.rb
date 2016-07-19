@@ -17,6 +17,10 @@ helpers do
   def post_request(endpoint)
     "curl -H \"Content-Type: application/json\" -u \"DOMAIN:API_KEY\" -d 'JSON_PARAMS' \"https://api.lesson.ly/api/v1#{endpoint}\""
   end
+
+	def put_request(endpoint)
+    "curl -H \"Content-Type: application/json\" -u \"DOMAIN:API_KEY\" -d 'JSON_PARAMS' \"https://api.lesson.ly/api/v1#{endpoint}\""
+  end
 end
 
 # Assets

@@ -175,7 +175,7 @@ per_page | no | how many results to return in each page.  Default = 50
 ## Assign Lesson
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments" -p params
+<%= put_request("/lessons/:lesson_id/assignments") %>
 ```
 
 > The following are sample parameters for this request:
