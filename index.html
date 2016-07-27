@@ -249,7 +249,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://api.lesson.ly/api/v1/users/ -p params</code></p>
+<p><code class="prettyprint">POST https://api.lesson.ly/api/v1/users/ -d params</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -355,7 +355,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/users/:user_id -p params</code></p>
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/users/:user_id -d params</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -644,12 +644,14 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lesson"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30"</span><span class="w">
+        </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
       </span><span class="p">}</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30"</span><span class="w">
+        </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -695,7 +697,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint allows you to create assignments for a user. Please note that it will always notify the user. If you want to suppress notifications, use the Lesson Assignments call.</p>
+<p>This endpoint allows you to create assignments for a user.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -721,7 +723,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <td>assignments</td>
 <td>yes</td>
 <td>Array</td>
-<td>Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of &ldquo;Lesson&rdquo; or &ldquo;Course&rdquo;</td>
+<td>Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of &ldquo;Lesson&rdquo; or &ldquo;Course&rdquo;. By default, an email will be sent to the assignee; it will come from notifications@lesson.ly. To suppress the email notification set <code class="prettyprint">notify</code> to <code class="prettyprint">false</code>.</td>
 </tr>
 </tbody></table>
 
@@ -796,7 +798,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <p><code class="prettyprint">GET https://api.lesson.ly/api/v1/groups/:group_id</code></p>
 
 <h2 id="create-group">Create Group</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups/"</span> -p params
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups/"</span> -d params
 </code></pre>
 
 <blockquote>
@@ -842,7 +844,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://api.lesson.ly/api/v1/groups/</code> -p params</p>
+<p><code class="prettyprint">POST https://api.lesson.ly/api/v1/groups/</code> -d params</p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -875,7 +877,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </tbody></table>
 
 <h2 id="update-group">Update Group</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups/:group_id"</span> -p params
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups/:group_id"</span> -d params
 </code></pre>
 
 <blockquote>
@@ -919,7 +921,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/groups/:group_id/</code> -p params</p>
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/groups/:group_id/</code> -d params</p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1024,7 +1026,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <p><code class="prettyprint">GET https://api.lesson.ly/api/v1/lessons/:lesson_id</code></p>
 
 <h2 id="update-lesson">Update Lesson</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id -p params
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id -d params
 </span></code></pre>
 
 <blockquote>
@@ -1057,7 +1059,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/lessons/:lesson_id -p params</code></p>
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/lessons/:lesson_id -d params</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1186,7 +1188,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1221,7 +1223,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments -p params</code></p>
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments -d params</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1243,7 +1245,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <td>assignments</td>
 <td>no</td>
 <td>Hash</td>
-<td>A hash of assignments to be made to the lesson.  If the assignment for a particular user already exists, the user will be reassigned the lesson. Set <code class="prettyprint">notify</code> to <code class="prettyprint">true</code> to send an email to the assignee; it will come from notifications@lesson.ly.</td>
+<td>A hash of assignments to be made to the lesson.  If the assignment for a particular user already exists, the user will be reassigned the lesson. By default, an email will be sent to the assignee; it will come from notifications@lesson.ly. To suppress the email notification set <code class="prettyprint">notify</code> to <code class="prettyprint">false</code>.</td>
 </tr>
 </tbody></table>
 
@@ -1425,7 +1427,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1459,7 +1461,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/courses/:course_id/assignments -p params</code></p>
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/courses/:course_id/assignments -d params</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1481,7 +1483,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <td>assignments</td>
 <td>no</td>
 <td>Hash</td>
-<td>A hash of assignments to be made to the course.  If the assignment for a particular user already exists, the user will be reassigned the course. Set <code class="prettyprint">notify</code> to <code class="prettyprint">true</code> to send an email to the assignee; it will come from notifications@lesson.ly.</td>
+<td>A hash of assignments to be made to the course.  If the assignment for a particular user already exists, the user will be reassigned the course. By default, an email will be sent to the assignee; it will come from notifications@lesson.ly. To suppress the email notification set <code class="prettyprint">notify</code> to <code class="prettyprint">false</code>.</td>
 </tr>
 </tbody></table>
 
