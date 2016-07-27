@@ -147,7 +147,7 @@ This endpoint allows you to create a user in the api.
 
 ### HTTP Request
 
-`POST https://api.lesson.ly/api/v1/users/ -p params`
+`POST https://api.lesson.ly/api/v1/users/ -d params`
 
 ### Query Parameters
 
@@ -218,7 +218,7 @@ This endpoint allows you to update a user in the api.
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/api/v1/users/:user_id -p params`
+`PUT https://api.lesson.ly/api/v1/users/:user_id -d params`
 
 ### Query Parameters
 
@@ -425,12 +425,14 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
       {
         "assignable_id": 1,
         "assignable_type": "Lesson",
-        "due_by": "2020-09-30"
+        "due_by": "2020-09-30",
+        "notify": false
       }
       {
         "assignable_id": 3,
         "assignable_type": "Course",
-        "due_by": "2020-09-30"
+        "due_by": "2020-09-30",
+        "notify": false
       }
     ]
 }
@@ -475,7 +477,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 }
 ```
 
-This endpoint allows you to create assignments for a user. Please note that it will always notify the user. If you want to suppress notifications, use the Lesson Assignments call.
+This endpoint allows you to create assignments for a user.
 
 ### HTTP Request
 
@@ -486,4 +488,4 @@ This endpoint allows you to create assignments for a user. Please note that it w
 Paramter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
-assignments | yes | Array |  Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of "Lesson" or "Course"
+assignments | yes | Array |  Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of "Lesson" or "Course". By default, an email will be sent to the assignee; it will come from notifications@lesson.ly. To suppress the email notification set `notify` to `false`.

@@ -149,7 +149,7 @@ per_page | no | how many results to return in each page.  Default = 50
     {
       "assignee_id": 1,
       "due_by": "2020-09-30T00:00:00Z",
-      "notify": true
+      "notify": false
     }
   ]
 }
@@ -183,11 +183,11 @@ This endpoint allows you to make assignments to a particular course in the API.
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/api/v1/courses/:course_id/assignments -p params`
+`PUT https://api.lesson.ly/api/v1/courses/:course_id/assignments -d params`
 
 ### Query Parameters
 
 Paramter | Required | Type |  Description
 --- | --- | --- | ---
 course_id | yes | Positive Integer | The course to access. The company must have access to the user.
-assignments | no | Hash | A hash of assignments to be made to the course.  If the assignment for a particular user already exists, the user will be reassigned the course. Set `notify` to `true` to send an email to the assignee; it will come from notifications@lesson.ly.
+assignments | no | Hash | A hash of assignments to be made to the course.  If the assignment for a particular user already exists, the user will be reassigned the course. By default, an email will be sent to the assignee; it will come from notifications@lesson.ly. To suppress the email notification set `notify` to `false`.

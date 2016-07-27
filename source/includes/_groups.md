@@ -63,7 +63,7 @@ group_id | yes | Positive Integer | The group to access.  The company must have 
 ## Create Group
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/" -p params
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/" -d params
 ```
 
 > The following are sample parameters for this request:
@@ -108,7 +108,7 @@ This endpoint allows you to update a group and its members and managers
 
 ### HTTP Request
 
-`POST https://api.lesson.ly/api/v1/groups/` -p params
+`POST https://api.lesson.ly/api/v1/groups/` -d params
 
 ### Query Parameters
 
@@ -122,7 +122,7 @@ managers | no | Array | The managers of a group.
 ## Update Group
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/:group_id" -p params
+curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/:group_id" -d params
 ```
 
 > The following are sample parameters for this request:
@@ -165,7 +165,7 @@ This endpoint allows you to update a group and its members and managers
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/api/v1/groups/:group_id/` -p params
+`PUT https://api.lesson.ly/api/v1/groups/:group_id/` -d params
 
 ### Query Parameters
 
