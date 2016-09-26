@@ -9,7 +9,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups"
 > The above command returns JSON structured like this:
 
 ```json
-{ 
+{
   "type": "groups",
   "groups": [
     {"id": 1, "name": "Group 1"},
@@ -63,7 +63,7 @@ group_id | yes | Positive Integer | The group to access.  The company must have 
 ## Create Group
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/" -d params
+<%= post_request("/groups") %>
 ```
 
 > The following are sample parameters for this request:
@@ -104,11 +104,11 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/" -d params
 }
 ```
 
-This endpoint allows you to update a group and its members and managers
+This endpoint allows you to create a group and its members and managers
 
 ### HTTP Request
 
-`POST https://api.lesson.ly/api/v1/groups/` -d params
+`POST https://api.lesson.ly/api/v1/groups/ -d params`
 
 ### Query Parameters
 
@@ -122,16 +122,16 @@ managers | no | Array | The managers of a group.
 ## Update Group
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/:group_id" -d params
+<%= put_request("/groups/:group_id") %>
 ```
 
 > The following are sample parameters for this request:
 
 ```json
-{ 
+{
   "name": "New Name",
   "members":
-    [ 
+    [
       {"id": 1 },
       {"id": 2, "remove": "true"}
 
@@ -165,7 +165,7 @@ This endpoint allows you to update a group and its members and managers
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/api/v1/groups/:group_id/` -d params
+`PUT https://api.lesson.ly/api/v1/groups/:group_id/ -d params`
 
 ### Query Parameters
 
