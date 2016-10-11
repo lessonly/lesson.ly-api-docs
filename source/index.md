@@ -15,6 +15,7 @@ includes:
   - lessons
   - courses
   - tags
+  - assignments
   - rates
   - errors
 
