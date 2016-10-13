@@ -52,7 +52,7 @@ This endpoint retrieves a listing of a groups members and managers.
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 group_id | yes | Positive Integer | The group to access.  The company must have access to the group.
 
@@ -112,7 +112,7 @@ This endpoint allows you to create a group and its members and managers
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 name | yes | String | The name of the group
 members | no | Array |  The members of a group.
@@ -122,7 +122,7 @@ managers | no | Array | The managers of a group.
 ## Update Group
 
 ```shell
-<%= put_request("/groups/:group_id") %>
+<%= put_request_with_params("/groups/:group_id") %>
 ```
 
 > The following are sample parameters for this request:
@@ -169,9 +169,83 @@ This endpoint allows you to update a group and its members and managers
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 group_id | yes | Positive Integer | The group to access.  The company must have access to the group.
 name | no | String | The name of the group.
 members | no | Array |  The members of a group.  Passing "remove": "true" will remove this association.
 managers | no | Array | The managers of a group.  Passing "remove": "true" will remove this association.
+
+## Archive Group
+
+```shell
+<%= put_request("/groups/:group_id/archive") %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "archived_at": "2016-09-26T13:05:01.174-04:00",
+    "archived_by_user_id": null,
+    "id": 12631,
+    "members": [
+           {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"}
+      ],
+    "managers":  [
+           {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"}
+     ],
+    "name": "/",
+    "resource_type": "group",
+    "type": "group"
+}
+```
+
+This endpoint allows the archiving of a single group
+
+### HTTP Request
+
+`PUT https://api.lesson.ly/api/v1/groups/:group_id/archive`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+group_id | yes | Positive Integer | The group to archive.  The company must have access to the group.
+
+## Restore Group
+
+```shell
+<%= put_request("/groups/:group_id/restore") %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "archived_at": null,
+    "archived_by_user_id": null,
+    "id": 12631,
+    "members": [
+           {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"}
+      ],
+    "managers":  [
+           {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"}
+     ],
+    "name": "/",
+    "resource_type": "group",
+    "type": "group"
+}
+```
+
+This endpoint allows the restoring of a single archived group
+
+### HTTP Request
+
+`PUT https://api.lesson.ly/api/v1/groups/:group_id/restore`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+group_id | yes | Positive Integer | The group to restore.  The company must have access to the group.
