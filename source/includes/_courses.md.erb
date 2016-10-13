@@ -117,7 +117,7 @@ course_id | yes | Positive Integer | The course to access.  The company must hav
 }
 ```
 
-This endpoint allows the archiving of a single course
+This endpoint allows the archiving of a single course.
 
 ### HTTP Request
 
@@ -173,7 +173,7 @@ course_id | yes | Positive Integer | The course to archive.  The company must ha
 }
 ```
 
-This endpoint allows the restoring of a single archived course
+This endpoint allows the restoring of a single archived course.
 
 ### HTTP Request
 
@@ -235,6 +235,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id/assign
 ```
 
 This endpoint retrieves all the assignments for a particular course.
+
 ### HTTP Request
 
 `GET https://api.lesson.ly/api/v1/courses/:course_id/assignments`
@@ -250,7 +251,7 @@ per_page | no | how many results to return in each page.  Default = 50
 ## Assign Course
 
 ```shell
-<%= put_request_with_params("/courses/:course_id/assignments") %>
+<%= put_request("/courses/:course_id/assignments", params: true) %>
 ```
 
 > The following are sample parameters for this request:

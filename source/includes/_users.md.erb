@@ -163,7 +163,7 @@ custom_user_fields |  no | Array | Custom user field values for specified custom
 ## Update User
 
 ```shell
-<%= put_request_with_params("/users/:user_id") %>
+<%= put_request("/users/:user_id", params: true) %>
 ```
 
 > The following are sample parameters for this request:
@@ -255,7 +255,7 @@ custom_user_fields |  no | Array | Custom user fields for the update.  If the us
 }
 ```
 
-This endpoint allows the archiving of a single user
+This endpoint allows the archiving of a single user.
 
 ### HTTP Request
 
@@ -290,7 +290,7 @@ user_id | yes | Positive Integer | The user to archive.  The company must have a
 }
 ```
 
-This endpoint allows the restoring of a single archived user
+This endpoint allows the restoring of a single archived user.
 
 ### HTTP Request
 
@@ -468,7 +468,7 @@ managing | no | Array | The groups in which the user is managing.  Passing "remo
 }
 ```
 
-This endpoint allows you to list out a the assignments a user has been given
+This endpoint allows you to list out a the assignments a user has been given.
 
 ### HTTP Request
 

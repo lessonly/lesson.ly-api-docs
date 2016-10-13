@@ -104,7 +104,7 @@ group_id | yes | Positive Integer | The group to access.  The company must have 
 }
 ```
 
-This endpoint allows you to create a group and its members and managers
+This endpoint allows you to create a group and its members and managers.
 
 ### HTTP Request
 
@@ -122,7 +122,7 @@ managers | no | Array | The managers of a group.
 ## Update Group
 
 ```shell
-<%= put_request_with_params("/groups/:group_id") %>
+<%= put_request("/groups/:group_id", params: true) %>
 ```
 
 > The following are sample parameters for this request:
@@ -161,7 +161,7 @@ managers | no | Array | The managers of a group.
 }
 ```
 
-This endpoint allows you to update a group and its members and managers
+This endpoint allows you to update a group and its members and managers.
 
 ### HTTP Request
 
@@ -201,7 +201,7 @@ managers | no | Array | The managers of a group.  Passing "remove": "true" will 
 }
 ```
 
-This endpoint allows the archiving of a single group
+This endpoint allows the archiving of a single group.
 
 ### HTTP Request
 
@@ -238,7 +238,7 @@ group_id | yes | Positive Integer | The group to archive.  The company must have
 }
 ```
 
-This endpoint allows the restoring of a single archived group
+This endpoint allows the restoring of a single archived group.
 
 ### HTTP Request
 

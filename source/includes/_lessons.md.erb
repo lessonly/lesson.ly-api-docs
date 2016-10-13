@@ -100,7 +100,8 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id -d par
 }
 ```
 
-This endpoint allows the updating of a single lesson and its attributes
+This endpoint allows the updating of a single lesson and its attributes.
+
 ### HTTP Request
 
 `PUT https://api.lesson.ly/api/v1/lessons/:lesson_id -d params`
@@ -149,7 +150,8 @@ public | no | Boolean | Whether or not the lesson is public
 }
 ```
 
-This endpoint allows the archiving of a single lesson
+This endpoint allows the archiving of a single lesson.
+
 ### HTTP Request
 
 `PUT https://api.lesson.ly/api/v1/lessons/:lesson_id/archive`
@@ -195,7 +197,8 @@ lesson_id | yes | Positive Integer | The lesson to archive.  The company must ha
 }
 ```
 
-This endpoint allows the restoring of a single archived lesson
+This endpoint allows the restoring of a single archived lesson.
+
 ### HTTP Request
 
 `PUT https://api.lesson.ly/api/v1/lessons/:lesson_id/restore`
@@ -267,7 +270,7 @@ per_page | no | how many results to return in each page.  Default = 50
 ## Assign Lesson
 
 ```shell
-<%= put_request_with_params("/lessons/:lesson_id/assignments") %>
+<%= put_request("/lessons/:lesson_id/assignments", params: true) %>
 ```
 
 > The following are sample parameters for this request:

@@ -18,12 +18,14 @@ helpers do
     "curl -H \"Content-Type: application/json\" -u \"DOMAIN:API_KEY\" -d 'JSON_PARAMS' \"https://api.lesson.ly/api/v1#{endpoint}\""
   end
 
-  def put_request(endpoint)
-    "curl -X PUT -u \"DOMAIN:API_KEY\" \"https://api.lesson.ly/api/v1#{endpoint}\""
-  end
-
-  def put_request_with_params(endpoint)
-    "curl -X PUT -H \"Content-Type: application/json\" -u \"DOMAIN:API_KEY\" -d 'JSON_PARAMS' \"https://api.lesson.ly/api/v1#{endpoint}\""
+  def put_request(endpoint, params: false)
+    command = []
+    command << 'curl -X PUT -H'
+    command << '"Content-Type: application/json"' if params
+    command << '-u "DOMAIN:API_KEY"'
+    command << "-d 'JSON_PARAMS'" if params
+    command << "\"https://api.lesson.ly/api/v1#{endpoint}\""
+    command.join(' ')
   end
 end
 
