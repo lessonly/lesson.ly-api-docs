@@ -179,7 +179,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -255,7 +255,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -361,7 +361,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -405,6 +405,96 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </tr>
 </tbody></table>
 
+<h2 id="archive-user">Archive User</h2>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id/archive"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-13T09:34:24.151-04:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"custom_user_field_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">739413</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beta Learner"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows the archiving of a single user.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/users/:user_id/archive</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The user to archive.  The company must have access to the user.</td>
+</tr>
+</tbody></table>
+
+<h2 id="restore-user">Restore User</h2>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id/restore"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"custom_user_field_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">739413</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beta Learner"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows the restoring of a single archived user.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/users/:user_id/restore</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The user to restore.  The company must have access to the user.</td>
+</tr>
+</tbody></table>
+
 <h2 id="delete-user">Delete User</h2>
 <pre class="highlight shell"><code>curl -X DELETE -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id"</span>
 </code></pre>
@@ -428,7 +518,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -473,7 +563,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -537,7 +627,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -607,7 +697,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint allows you to list out a the assignments a user has been given</p>
+<p>This endpoint returns a list of assignments for a given user.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -617,7 +707,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -707,7 +797,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -779,7 +869,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -840,7 +930,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint allows you to create a group and its members and managers</p>
+<p>This endpoint allows you to create a group and its members and managers.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -850,7 +940,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -917,7 +1007,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint allows you to update a group and its members and managers</p>
+<p>This endpoint allows you to update a group and its members and managers.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -927,7 +1017,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -956,6 +1046,100 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <td>no</td>
 <td>Array</td>
 <td>The managers of a group.  Passing &ldquo;remove&rdquo;: &ldquo;true&rdquo; will remove this association.</td>
+</tr>
+</tbody></table>
+
+<h2 id="archive-group">Archive Group</h2>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups/:group_id/archive"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-26T13:05:01.174-04:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12631</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"members"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+           </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 1"</span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"managers"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="w">
+           </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JKL012"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 4"</span><span class="p">}</span><span class="w">
+     </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows the archiving of a single group.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/groups/:group_id/archive</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>group_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The group to archive.  The company must have access to the group.</td>
+</tr>
+</tbody></table>
+
+<h2 id="restore-group">Restore Group</h2>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups/:group_id/restore"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12631</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"members"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+           </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 1"</span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"managers"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="w">
+           </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JKL012"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Name 4"</span><span class="p">}</span><span class="w">
+     </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows the restoring of a single archived group.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/groups/:group_id/restore</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>group_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The group to restore.  The company must have access to the group.</td>
 </tr>
 </tbody></table>
 
@@ -1055,7 +1239,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint allows the updating of a single lesson and its attributes</p>
+<p>This endpoint allows the updating of a single lesson and its attributes.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1065,7 +1249,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -1094,6 +1278,120 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <td>no</td>
 <td>Boolean</td>
 <td>Whether or not the lesson is public</td>
+</tr>
+</tbody></table>
+
+<h2 id="archive-lesson">Archive Lesson</h2>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id/archive"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-12T16:12:09.850-04:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-06T16:09:41Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43530</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-06T16:18:01Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"shareable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://lesson-shareable-link"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"retake_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Untitled Lesson"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows the archiving of a single lesson.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/lessons/:lesson_id/archive</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>lesson_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The lesson to archive.  The company must have access to the lesson.</td>
+</tr>
+</tbody></table>
+
+<h2 id="restore-lesson">Restore Lesson</h2>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id/restore"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-06T16:09:41Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43530</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-06T16:18:01Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"shareable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://lesson-shareable-link"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"retake_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Untitled Lesson"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows the restoring of a single archived lesson.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/lessons/:lesson_id/restore</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>lesson_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The lesson to restore.  The company must have access to the lesson.</td>
 </tr>
 </tbody></table>
 
@@ -1150,7 +1448,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -1229,7 +1527,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -1318,7 +1616,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -1329,6 +1627,138 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <td>yes</td>
 <td>Positive Integer</td>
 <td>The course to access.  The company must have access to the course.</td>
+</tr>
+</tbody></table>
+
+<h2 id="archive-course">Archive Course</h2>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/courses/:course_id/archive"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-13T09:51:13.549-04:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-30T15:23:12Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3934</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lessons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Lesson"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Second Lesson"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"shareable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://course-shareable-link"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empty Course"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows the archiving of a single course.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/courses/:course_id/archive</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>course_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The course to archive.  The company must have access to the course.</td>
+</tr>
+</tbody></table>
+
+<h2 id="restore-course">Restore Course</h2>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/courses/:course_id/restore"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-30T15:23:12Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3934</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lessons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Lesson"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Second Lesson"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"shareable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://course-shareable-link"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empty Course"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows the restoring of a single archived course.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/courses/:course_id/restore</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>course_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The course to restore.  The company must have access to the course.</td>
 </tr>
 </tbody></table>
 
@@ -1389,7 +1819,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -1467,7 +1897,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -1544,7 +1974,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -1600,7 +2030,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -1666,7 +2096,7 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
 <table><thead>
 <tr>
-<th>Paramter</th>
+<th>Parameter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -1677,6 +2107,147 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <td>yes</td>
 <td>Positive Integer</td>
 <td>The tag to access.  The company must have access to the tag.</td>
+</tr>
+</tbody></table>
+
+          <h1 id="assignments">Assignments</h1>
+
+<h2 id="list-assignments">List Assignments</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/assignments"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignments"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_assignments"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"assignments"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lesson"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-20T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Completed"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"started_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-28T14:15:17Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-28T18:20:06Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-28T18:20:06Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incomplete"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"started_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-28T14:15:17Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-28T18:20:06Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all assignments.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/assignments</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>no</td>
+<td>Positive Integer</td>
+<td>which page in the pagination to fetch.  Default = 1</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>no</td>
+<td>Positive Integer</td>
+<td>how many results to return in each page.  Default = 50</td>
+</tr>
+<tr>
+<td>gt</td>
+<td>no</td>
+<td>String</td>
+<td>Specified greater than filter for assignments list.  Supported filters are (updated_at). Please follow ISO8601 date format.</td>
+</tr>
+</tbody></table>
+
+<h2 id="show-assignments-by-status">Show Assignments by Status</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/assignments/:status"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignments"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_assignments"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"assignments"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incomplete"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"started_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-28T14:15:17Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-28T18:20:06Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all assignments by their status.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/assignments/:status</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>yes</td>
+<td>String</td>
+<td>An assignment status. Supported statues are: incomplete, completed, overdue, or grade_pending</td>
 </tr>
 </tbody></table>
 
