@@ -56,7 +56,7 @@ This endpoint retrieves all the tag details.
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 tag_id | yes | Positive Integer | The tag to access.  The company must have access to the tag.
 
@@ -101,7 +101,7 @@ This endpoint retrieves all the lessons tagged with a particular tag.
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 tag_id | yes | Positive Integer | The tag to access.  The company must have access to the tag.
 
@@ -156,6 +156,6 @@ This endpoint retrieves all the courses tagged with a particular tag.
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 tag_id | yes | Positive Integer | The tag to access.  The company must have access to the tag.

@@ -85,7 +85,7 @@ This endpoint retrieves all the user's details including their custom field data
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
 
@@ -151,7 +151,7 @@ This endpoint allows you to create a user in the api.
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 name | yes | String | User full name. Cannot begin with a space and the following characters are restricted: `!@#\$%\^&*+=()&#124;[];
 email | yes | String | User Email
@@ -163,7 +163,7 @@ custom_user_fields |  no | Array | Custom user field values for specified custom
 ## Update User
 
 ```shell
-<%= put_request("/users/:user_id") %>
+<%= put_request("/users/:user_id", params: true) %>
 ```
 
 > The following are sample parameters for this request:
@@ -222,7 +222,7 @@ This endpoint allows you to update a user in the api.
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
 name | no | String | User name to change user to
@@ -230,6 +230,77 @@ email | no | String | User Email to change user to
 role | no | String | User role to change user to. Options: admin, manager, creator, learner
 ext_uid | no | String | The user's ID in another system, useful for linking data.
 custom_user_fields |  no | Array | Custom user fields for the update.  If the user does not have a value for the specified "customer_user_field_id" it will be added, otherwise it will be updated to the specified "value".
+
+
+## Archive User
+
+```shell
+<%= put_request("/users/:user_id/archive") %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "archived_at": "2016-10-13T09:34:24.151-04:00",
+    "archived_by_user_id": null,
+    "custom_user_field_data": [],
+    "email": "learner@example.com",
+    "ext_uid": null,
+    "id": 739413,
+    "name": "Beta Learner",
+    "resource_type": "user",
+    "role": "learner",
+    "type": "user"
+}
+```
+
+This endpoint allows the archiving of a single user.
+
+### HTTP Request
+
+`PUT https://api.lesson.ly/api/v1/users/:user_id/archive`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+user_id | yes | Positive Integer | The user to archive.  The company must have access to the user.
+
+## Restore User
+
+```shell
+<%= put_request("/users/:user_id/restore") %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "archived_at": null,
+    "archived_by_user_id": null,
+    "custom_user_field_data": [],
+    "email": "learner@example.com",
+    "ext_uid": null,
+    "id": 739413,
+    "name": "Beta Learner",
+    "resource_type": "user",
+    "role": "learner",
+    "type": "user"
+}
+```
+
+This endpoint allows the restoring of a single archived user.
+
+### HTTP Request
+
+`PUT https://api.lesson.ly/api/v1/users/:user_id/restore`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+user_id | yes | Positive Integer | The user to restore.  The company must have access to the user.
 
 ## Delete User
 
@@ -254,7 +325,7 @@ This endpoint allows you to delete a user in the API.
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to delete.  The company must have access to the user.
 
@@ -290,7 +361,7 @@ This endpoint allows you to list out a user's group memberships and groups they 
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
 
@@ -344,7 +415,7 @@ This endpoint allows you to update a user's involvement in various groups.
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
 memberships | no | Array |  The groups in which the user is a member.  Passing "remove": "true" will remove this association.
@@ -397,7 +468,7 @@ managing | no | Array | The groups in which the user is managing.  Passing "remo
 }
 ```
 
-This endpoint allows you to list out a the assignments a user has been given
+This endpoint returns a list of assignments for a given user.
 
 ### HTTP Request
 
@@ -405,7 +476,7 @@ This endpoint allows you to list out a the assignments a user has been given
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
 
@@ -485,7 +556,7 @@ This endpoint allows you to create assignments for a user.
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
 assignments | yes | Array |  Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of "Lesson" or "Course". By default, an email will be sent to the assignee; it will come from notifications@lesson.ly. To suppress the email notification set `notify` to `false`.

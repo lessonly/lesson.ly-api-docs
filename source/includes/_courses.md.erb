@@ -69,9 +69,121 @@ This endpoint retrieves all the courses details including their lessons and some
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 course_id | yes | Positive Integer | The course to access.  The company must have access to the course.
+
+## Archive Course
+
+```shell
+<%= put_request("/courses/:course_id/archive") %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "archived_at": "2016-10-13T09:51:13.549-04:00",
+    "archived_by_user_id": null,
+    "assignees_count": 4,
+    "completed_count": 0,
+    "created_at": "2016-04-30T15:23:12Z",
+    "description": "",
+    "id": 3934,
+    "last_updated_at": null,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "First Lesson"
+      },
+      {
+        "id": 1,
+        "title": "Second Lesson"
+      }
+    ],
+    "links": {
+        "shareable": "https://course-shareable-link"
+    },
+    "public": false,
+    "resource_type": "course",
+    "tags": [
+      {
+        "id": 1,
+        "name": "test_tag"
+      }
+    ],
+    "title": "Empty Course",
+    "type": "course"
+}
+```
+
+This endpoint allows the archiving of a single course.
+
+### HTTP Request
+
+`PUT https://api.lesson.ly/api/v1/courses/:course_id/archive`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+course_id | yes | Positive Integer | The course to archive.  The company must have access to the course.
+
+## Restore Course
+
+```shell
+<%= put_request("/courses/:course_id/restore") %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "archived_at": null,
+    "archived_by_user_id": null,
+    "assignees_count": 4,
+    "completed_count": 0,
+    "created_at": "2016-04-30T15:23:12Z",
+    "description": "",
+    "id": 3934,
+    "last_updated_at": null,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "First Lesson"
+      },
+      {
+        "id": 1,
+        "title": "Second Lesson"
+      }
+    ],
+    "links": {
+        "shareable": "https://course-shareable-link"
+    },
+    "public": false,
+    "resource_type": "course",
+    "tags": [
+      {
+        "id": 1,
+        "name": "test_tag"
+      }
+    ],
+    "title": "Empty Course",
+    "type": "course"
+}
+```
+
+This endpoint allows the restoring of a single archived course.
+
+### HTTP Request
+
+`PUT https://api.lesson.ly/api/v1/courses/:course_id/restore`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+course_id | yes | Positive Integer | The course to restore.  The company must have access to the course.
 
 ## Course Assignments
 
@@ -123,13 +235,14 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id/assign
 ```
 
 This endpoint retrieves all the assignments for a particular course.
+
 ### HTTP Request
 
 `GET https://api.lesson.ly/api/v1/courses/:course_id/assignments`
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 course_id | yes | Positive Integer | The course to access.  The company must have access to the lesson.
 page | no | which page in the pagination to fetch.  Default = 1
@@ -138,7 +251,7 @@ per_page | no | how many results to return in each page.  Default = 50
 ## Assign Course
 
 ```shell
-<%= put_request("/courses/:course_id/assignments") %>
+<%= put_request("/courses/:course_id/assignments", params: true) %>
 ```
 
 > The following are sample parameters for this request:
@@ -187,7 +300,7 @@ This endpoint allows you to make assignments to a particular course in the API.
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 course_id | yes | Positive Integer | The course to access. The company must have access to the user.
 assignments | no | Hash | A hash of assignments to be made to the course.  If the assignment for a particular user already exists, the user will be reassigned the course. By default, an email will be sent to the assignee; it will come from notifications@lesson.ly. To suppress the email notification set `notify` to `false`.
