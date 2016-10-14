@@ -20,8 +20,8 @@ helpers do
 
   def put_request(endpoint, params: false)
     command = []
-    command << 'curl -X PUT -H'
-    command << '"Content-Type: application/json"' if params
+    command << 'curl -X PUT'
+    command << '-H "Content-Type: application/json"' if params
     command << '-u "DOMAIN:API_KEY"'
     command << "-d 'JSON_PARAMS'" if params
     command << "\"https://api.lesson.ly/api/v1#{endpoint}\""
