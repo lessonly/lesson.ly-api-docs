@@ -89,6 +89,37 @@ Parameter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
 
+## Show user learning library statistics
+
+```shell
+<%= api_get_request("/users/:user_id/learning_library_statistics") %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "user_learning_library_statistics",
+  "learning_library_statistics": {
+     "unique_lesson_and_course_views": 2,
+     "total_completed": null,
+     "total_views": 2
+  }
+}
+```
+
+This endpoint retrieves all the user's learning library statistics.
+
+### HTTP Request
+
+`GET https://api.lesson.ly/api/v1/users/:user_id/learning_library_statistics`
+
+### Query Parameters
+
+Paramter | Required | Type |  Description
+--- | --- | --- | ---
+user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
+
 ## Create User
 
 ```shell
