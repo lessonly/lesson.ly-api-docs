@@ -89,7 +89,7 @@ Parameter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
 
-## Show user learning library statistics
+## Show User Learning Library Statistics
 
 ```shell
 <%= api_get_request("/users/:user_id/learning_library_statistics") %>
@@ -101,9 +101,9 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 {
   "type": "user_learning_library_statistics",
   "learning_library_statistics": {
-     "unique_lesson_and_course_views": 2,
-     "total_completed": null,
-     "total_views": 2
+     "total_completed": 3,
+     "total_views": 50,
+     "unique_lesson_and_course_views": 10
   }
 }
 ```
