@@ -48,9 +48,9 @@
         
           <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to the Lesson.ly API documentation! First you will need to get an API key by signing into your account, navigating to the company settings page and clicking &ldquo;Show API credentials&rdquo;.</p>
+<p>Welcome to the Lessonly API documentation! First you will need to get an API key by signing into your account, navigating to the company settings page and clicking &ldquo;Show API credentials&rdquo;.</p>
 
-<p>Currently we only have language bindings for shell, however we are open to providing libraries in other libraries.  Contact us to let us know what libraries you would like to see to connect with Lesson.ly:  <a href="mailto:info@lesson.ly">here</a>.</p>
+<p>Currently we only have language bindings for shell, however we are open to providing libraries in other libraries.  Contact us to let us know what libraries you would like to see to connect with Lessonly:  <a href="mailto:info@lessonly.com">here</a>.</p>
 
           <h1 id="authentication">Authentication</h1>
 
@@ -63,13 +63,13 @@ curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"api_endpoint_
 </code></pre>
 
 <blockquote>
-<p>Make sure to replace <code class="prettyprint">DOMAIN</code> with your Lesson.ly domain and <code class="prettyprint">API_KEY</code> with your personal API key.</p>
+<p>Make sure to replace <code class="prettyprint">DOMAIN</code> with your Lessonly domain and <code class="prettyprint">API_KEY</code> with your personal API key.</p>
 </blockquote>
 
-<p>Lesson.ly uses API keys and basic HTTP authorization to allow access to the API. All API requests must be sent over HTTPS. You can register a new Lesson.ly API key by signing into Lesson.ly and navigating to the settings page.  If you do not see the API key link, you may need to request for the feature to be activated:  <a href="mailto:info@lesson.ly">here</a>.</p>
+<p>Lessonly uses API keys and basic HTTP authorization to allow access to the API. All API requests must be sent over HTTPS. You can register a new Lessonly API key by signing into Lessonly and navigating to the settings page.  If you do not see the API key link, you may need to request for the feature to be activated:  <a href="mailto:info@lessonly.com">here</a>.</p>
 
 <aside class="alert">
-You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KEY</code> with your personal API key.
+You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY</code> with your personal API key.
 </aside>
 
           <h1 id="users">Users</h1>
@@ -180,6 +180,48 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The user to access.  The company must have access to the user.</td>
+</tr>
+</tbody></table>
+
+<h2 id="show-user-learning-library-statistics">Show User Learning Library Statistics</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id/learning_library_statistics"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_learning_library_statistics"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"learning_library_statistics"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"total_completed"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"total_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"unique_lesson_and_course_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all the user&rsquo;s learning library statistics.<br>
+<em>Note: this endpoint is available only to customers whose plan includes the Learning Library</em></p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/users/:user_id/learning_library_statistics</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
 <th>Required</th>
 <th>Type</th>
 <th>Description</th>
@@ -2253,11 +2295,11 @@ You must replace <code>DOMAIN</code> with your Lesson.ly domain and <code>API_KE
 
           <h1 id="rate-limiting">Rate Limiting</h1>
 
-<p>Lesson.ly currently limits the rate of requests made to the API.  At the limit of 500 requests per minute the API will return &ldquo;403 Forbidden (Rate Limit Exceeded)&rdquo;.  To avoid hitting this rate limit, you can adjust your scripts and workflows to add pauses in between subsequent API requests.</p>
+<p>Lessonly currently limits the rate of requests made to the API.  At the limit of 500 requests per minute the API will return &ldquo;403 Forbidden (Rate Limit Exceeded)&rdquo;.  To avoid hitting this rate limit, you can adjust your scripts and workflows to add pauses in between subsequent API requests.</p>
 
           <h1 id="errors">Errors</h1>
 
-<p>The Lesson.ly API uses the following error codes:</p>
+<p>The Lessonly API uses the following error codes:</p>
 
 <table><thead>
 <tr>
