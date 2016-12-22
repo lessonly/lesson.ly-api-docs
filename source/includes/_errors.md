@@ -1,6 +1,6 @@
 # Errors
 
-The Lesson.ly API uses the following error codes:
+The Lessonly API uses the following error codes:
 
 Error Code | Meaning
 ---------- | -------
