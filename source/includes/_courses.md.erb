@@ -57,7 +57,11 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id
       "id": 1,
       "title": "Second Lesson"
     }
-  ]
+  ],
+  "links": {
+    "overview": "https://mycompany.lessonly.com/lessons/48804-course-1",
+    "shareable": "https://mycompany.lessonly.com/lesson/48804-course-1"
+  }
 }
 ```
 
@@ -102,7 +106,8 @@ course_id | yes | Positive Integer | The course to access.  The company must hav
       }
     ],
     "links": {
-        "shareable": "https://course-shareable-link"
+      "overview": "https://mycompany.lessonly.com/courses/3934-empty-course",
+      "shareable": "https://mycompany.lessonly.com/course/3934-empty-course"
     },
     "public": false,
     "resource_type": "course",
@@ -158,7 +163,8 @@ course_id | yes | Positive Integer | The course to archive.  The company must ha
       }
     ],
     "links": {
-        "shareable": "https://course-shareable-link"
+      "overview": "https://mycompany.lessonly.com/courses/3934-empty-course",
+      "shareable": "https://mycompany.lessonly.com/course/3934-empty-course"
     },
     "public": false,
     "resource_type": "course",
