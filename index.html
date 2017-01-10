@@ -2211,7 +2211,9 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint retrieves all assignments.</p>
+<p>This endpoint returns paginated assignments in no particular order across all of your users, lessons, and courses. Optionally, you can filter by assignments with activity after a given ISO8601 timestamp by passing <code class="prettyprint">gt[updated_at]=TIMESTAMP</code> in the query string.</p>
+
+<p>To view assignments for a particular <a href="#user-assignments">user</a>, <a href="#lesson-assignments">lesson</a>, or <a href="#course-assignments">course</a> please use those dedicated endpoints.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
