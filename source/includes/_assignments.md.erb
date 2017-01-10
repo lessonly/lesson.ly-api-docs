@@ -49,7 +49,9 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/assignments"
 }
 ```
 
-This endpoint retrieves all assignments.
+This endpoint returns paginated assignments in no particular order across all of your users, lessons, and courses. Optionally, you can filter by assignments with activity after a given ISO8601 timestamp by passing `gt[updated_at]=TIMESTAMP` in the query string.
+
+To view assignments for a particular [user](#user-assignments), [lesson](#lesson-assignments), or [course](#course-assignments) please use those dedicated endpoints.
 
 ### HTTP Request
 
