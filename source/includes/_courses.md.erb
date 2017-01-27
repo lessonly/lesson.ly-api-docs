@@ -43,7 +43,6 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id
   "type": "course",
   "resource_type": "course",
   "id": 1,
-  "owner_id": 12,
   "title": "Course 1",
   "assignees_count": 10,
   "completed_count": 4,
@@ -54,14 +53,26 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/courses/:course_id
       "title": "First Lesson"
     },
     {
-      "id": 1,
+      "id": 2,
       "title": "Second Lesson"
+    }
+  ],
+  "public": false,
+  "created_at": "2020-09-30T00:00:00Z",
+  "last_updated_at": "2020-09-30T00:00:00Z",
+  "tags" : [
+    {
+      "id": 1,
+      "name": "test_tag",
+      "resource_type": "tag"
     }
   ],
   "links": {
     "overview": "https://mycompany.lessonly.com/lessons/48804-course-1",
     "shareable": "https://mycompany.lessonly.com/lesson/48804-course-1"
-  }
+  },
+  "archived_at": null,
+  "archived_by_user_id": null
 }
 ```
 

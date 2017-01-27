@@ -66,14 +66,15 @@ filter | no | String | Specified user filter for users list.  Supported filters 
   "email": "test@test.com",
   "role": "learner",
   "ext_uid": "ABC123",
-  "custom_user_field_data":
-    [
-      {
-        "id": 1,
-        "custom_user_field_id": 1,
-        "value": "Custom Value 1"
-      },
-    ]
+  "custom_user_field_data": [
+    {
+      "id": 1,
+      "custom_user_field_id": 1,
+      "value": "Custom Value 1"
+    }
+  ],
+  "archived_at": null,
+  "archived_by_user_id": null
 }
 ```
 
@@ -108,7 +109,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 }
 ```
 
-This endpoint retrieves all the user's learning library statistics.  
+This endpoint retrieves all the user's learning library statistics.
 *Note: this endpoint is available only to customers whose plan includes the Learning Library*
 
 ### HTTP Request
