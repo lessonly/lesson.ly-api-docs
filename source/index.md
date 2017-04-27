@@ -16,6 +16,7 @@ includes:
   - courses
   - tags
   - assignments
+  - company_settings
   - rates
   - errors
 

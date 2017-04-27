@@ -1,0 +1,38 @@
+# Company Settings
+
+## Update Webhook URL
+
+```shell
+<%= put_request("/company_settings", params: true) %>
+```
+
+> The following are sample parameters for this request:
+
+```json
+{
+  "lesson_completed_callback_url": "https://webhook.mycompany.com",
+  "lesson_completed_callback_authorization": "Tm93IGlzIHRo"
+}
+```
+
+> A successful update returns a JSON representation of the updated webhook configuration:
+
+```json
+{
+  "lesson_completed_callback_url": "https://webhook.mycompany.com",
+  "lesson_completed_callback_authorization": "Tm93IGlzIHRo"
+}
+```
+
+This endpoint allows you to update the recipient URL for webhooks sent upon Lesson completion. See the docs for [more information on webhooks](http://www.lessonly.com/documentation/reporting-webhook-documentation/).
+
+### HTTP Request
+
+`PUT https://api.lesson.ly/api/v1/company_settings`
+
+### Query Parameters
+
+Parameter                               | Required | Type   | Description
+----------------------------------------|----------|--------|------------
+lesson_completed_callback_url           | no       | String | the URL to which webhooks should be sent
+lesson_completed_callback_authorization | no       | String | the optional value of an `Authorization: VALUE` header to be sent with webhooks
