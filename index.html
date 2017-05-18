@@ -75,7 +75,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
           <h1 id="users">Users</h1>
 
 <h2 id="list-users">List Users</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users"</span>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/users"</span>
 </code></pre>
 
 <blockquote>
@@ -111,7 +111,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/users?filter[email]=email@example.com</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/users?filter[email]=email@example.com</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -144,7 +144,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="show-user-details">Show User Details</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id"</span>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/users/:user_id"</span>
 </code></pre>
 
 <blockquote>
@@ -174,7 +174,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/users/:user_id</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/users/:user_id</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -195,7 +195,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="show-user-learning-library-statistics">Show User Learning Library Statistics</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id/learning_library_statistics"</span>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/users/:user_id/learning_library_statistics"</span>
 </code></pre>
 
 <blockquote>
@@ -216,7 +216,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/users/:user_id/learning_library_statistics</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/users/:user_id/learning_library_statistics</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -237,7 +237,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="create-user">Create User</h2>
-<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lesson.ly/api/v1/users"</span>
+<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lessonly.com/api/v1/users"</span>
 </code></pre>
 
 <blockquote>
@@ -292,7 +292,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://api.lesson.ly/api/v1/users/ -d params</code></p>
+<p><code class="prettyprint">POST https://api.lessonly.com/api/v1/users/ -d params</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -343,7 +343,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="update-user">Update User</h2>
-<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id"</span>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lessonly.com/api/v1/users/:user_id"</span>
 </code></pre>
 
 <blockquote>
@@ -398,7 +398,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/users/:user_id -d params</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/users/:user_id -d params</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -449,7 +449,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="archive-user">Archive User</h2>
-<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id/archive"</span>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/users/:user_id/archive"</span>
 </code></pre>
 
 <blockquote>
@@ -473,7 +473,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/users/:user_id/archive</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/users/:user_id/archive</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -494,7 +494,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="restore-user">Restore User</h2>
-<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id/restore"</span>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/users/:user_id/restore"</span>
 </code></pre>
 
 <blockquote>
@@ -518,7 +518,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/users/:user_id/restore</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/users/:user_id/restore</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -539,7 +539,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="delete-user">Delete User</h2>
-<pre class="highlight shell"><code>curl -X DELETE -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id"</span>
+<pre class="highlight shell"><code>curl -X DELETE -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/users/:user_id"</span>
 </code></pre>
 
 <blockquote>
@@ -555,7 +555,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE https://api.lesson.ly/api/v1/users/:user_id</code></p>
+<p><code class="prettyprint">DELETE https://api.lessonly.com/api/v1/users/:user_id</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -576,7 +576,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="user-groups">User Groups</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id/groups"</span>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/users/:user_id/groups"</span>
 </code></pre>
 
 <blockquote>
@@ -600,7 +600,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/users/:user_id/groups</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/users/:user_id/groups</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -621,7 +621,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="update-user-groups">Update User Groups</h2>
-<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id/groups"</span>
+<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lessonly.com/api/v1/users/:user_id/groups"</span>
 </code></pre>
 
 <blockquote>
@@ -664,7 +664,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/users/:user_id/groups</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/users/:user_id/groups</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -697,7 +697,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="user-assignments">User Assignments</h2>
-<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id/assignments"</span>
+<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lessonly.com/api/v1/users/:user_id/assignments"</span>
 </code></pre>
 
 <blockquote>
@@ -744,7 +744,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/users/:user_id/assignments</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/users/:user_id/assignments</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -765,7 +765,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="create-user-assignments">Create User Assignments</h2>
-<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lesson.ly/api/v1/users/:user_id/assignments"</span>
+<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lessonly.com/api/v1/users/:user_id/assignments"</span>
 </code></pre>
 
 <blockquote>
@@ -834,7 +834,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://api.lesson.ly/api/v1/users/:user_id/assignments</code></p>
+<p><code class="prettyprint">POST https://api.lessonly.com/api/v1/users/:user_id/assignments</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -856,14 +856,14 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>assignments</td>
 <td>yes</td>
 <td>Array</td>
-<td>Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of &ldquo;Lesson&rdquo; or &ldquo;Course&rdquo;. By default, an email will be sent to the assignee; it will come from notifications@lesson.ly. To suppress the email notification set <code class="prettyprint">notify</code> to <code class="prettyprint">false</code>.</td>
+<td>Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of &ldquo;Lesson&rdquo; or &ldquo;Course&rdquo;. By default, an email will be sent to the assignee; it will come from notifications@lessonly.com. To suppress the email notification set <code class="prettyprint">notify</code> to <code class="prettyprint">false</code>.</td>
 </tr>
 </tbody></table>
 
           <h1 id="groups">Groups</h1>
 
 <h2 id="list-groups">List Groups</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups"</span>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/groups"</span>
 </code></pre>
 
 <blockquote>
@@ -882,10 +882,10 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/groups</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/groups</code></p>
 
 <h2 id="show-group-details">Show Group Details</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups/:group_id"</span>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/groups/:group_id"</span>
 </code></pre>
 
 <blockquote>
@@ -930,10 +930,10 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/groups/:group_id</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/groups/:group_id</code></p>
 
 <h2 id="create-group">Create Group</h2>
-<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lesson.ly/api/v1/groups"</span>
+<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lessonly.com/api/v1/groups"</span>
 </code></pre>
 
 <blockquote>
@@ -979,7 +979,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://api.lesson.ly/api/v1/groups/ -d params</code></p>
+<p><code class="prettyprint">POST https://api.lessonly.com/api/v1/groups/ -d params</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1012,7 +1012,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="update-group">Update Group</h2>
-<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lesson.ly/api/v1/groups/:group_id"</span>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lessonly.com/api/v1/groups/:group_id"</span>
 </code></pre>
 
 <blockquote>
@@ -1056,7 +1056,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/groups/:group_id/ -d params</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/groups/:group_id/ -d params</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1095,7 +1095,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="archive-group">Archive Group</h2>
-<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups/:group_id/archive"</span>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/groups/:group_id/archive"</span>
 </code></pre>
 
 <blockquote>
@@ -1121,7 +1121,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/groups/:group_id/archive</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/groups/:group_id/archive</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1142,7 +1142,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="restore-group">Restore Group</h2>
-<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups/:group_id/restore"</span>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/groups/:group_id/restore"</span>
 </code></pre>
 
 <blockquote>
@@ -1168,7 +1168,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/groups/:group_id/restore</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/groups/:group_id/restore</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1189,7 +1189,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="group-assignments">Group Assignments</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/groups/:group_id/assignments"</span>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/groups/:group_id/assignments"</span>
 </code></pre>
 
 <blockquote>
@@ -1215,7 +1215,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/groups/:group_id/assignments</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/groups/:group_id/assignments</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1238,7 +1238,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
           <h1 id="lessons">Lessons</h1>
 
 <h2 id="list-lessons">List Lessons</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons"</span>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/lessons"</span>
 </code></pre>
 
 <blockquote>
@@ -1263,10 +1263,10 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/lessons</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/lessons</code></p>
 
 <h2 id="show-lesson-details">Show Lesson Details</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/lessons/:lesson_id
 </span></code></pre>
 
 <blockquote>
@@ -1303,10 +1303,10 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/lessons/:lesson_id</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/lessons/:lesson_id</code></p>
 
 <h2 id="update-lesson">Update Lesson</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id -d params
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/lessons/:lesson_id -d params
 </span></code></pre>
 
 <blockquote>
@@ -1340,7 +1340,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/lessons/:lesson_id -d params</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/lessons/:lesson_id -d params</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1379,7 +1379,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="archive-lesson">Archive Lesson</h2>
-<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id/archive"</span>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/lessons/:lesson_id/archive"</span>
 </code></pre>
 
 <blockquote>
@@ -1416,7 +1416,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/lessons/:lesson_id/archive</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/lessons/:lesson_id/archive</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1437,7 +1437,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="restore-lesson">Restore Lesson</h2>
-<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id/restore"</span>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/lessons/:lesson_id/restore"</span>
 </code></pre>
 
 <blockquote>
@@ -1474,7 +1474,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/lessons/:lesson_id/restore</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/lessons/:lesson_id/restore</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1495,7 +1495,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="lesson-assignments">Lesson Assignments</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/lessons/:lesson_id/assignments
 </span></code></pre>
 
 <blockquote>
@@ -1541,7 +1541,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/lessons/:lesson_id/assignments</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1574,7 +1574,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="assign-lesson">Assign Lesson</h2>
-<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments"</span>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lessonly.com/api/v1/lessons/:lesson_id/assignments"</span>
 </code></pre>
 
 <blockquote>
@@ -1620,7 +1620,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments -d params</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/lessons/:lesson_id/assignments -d params</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1642,14 +1642,14 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>assignments</td>
 <td>no</td>
 <td>Hash</td>
-<td>A hash of assignments to be made to the lesson.  If the assignment for a particular user already exists, the user will be reassigned the lesson. By default, an email will be sent to the assignee; it will come from notifications@lesson.ly. To suppress the email notification set <code class="prettyprint">notify</code> to <code class="prettyprint">false</code>.</td>
+<td>A hash of assignments to be made to the lesson.  If the assignment for a particular user already exists, the user will be reassigned the lesson. By default, an email will be sent to the assignee; it will come from notifications@lessonly.com. To suppress the email notification set <code class="prettyprint">notify</code> to <code class="prettyprint">false</code>.</td>
 </tr>
 </tbody></table>
 
           <h1 id="courses">Courses</h1>
 
 <h2 id="list-courses">List Courses</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/courses"</span>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/courses"</span>
 </code></pre>
 
 <blockquote>
@@ -1674,10 +1674,10 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/courses</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/courses</code></p>
 
 <h2 id="show-course-details">Show Course Details</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/courses/:course_id
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/courses/:course_id
 </span></code></pre>
 
 <blockquote>
@@ -1724,7 +1724,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/courses/:course_id</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/courses/:course_id</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1745,7 +1745,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="archive-course">Archive Course</h2>
-<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/courses/:course_id/archive"</span>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/courses/:course_id/archive"</span>
 </code></pre>
 
 <blockquote>
@@ -1791,7 +1791,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/courses/:course_id/archive</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/courses/:course_id/archive</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1812,7 +1812,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="restore-course">Restore Course</h2>
-<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/courses/:course_id/restore"</span>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/courses/:course_id/restore"</span>
 </code></pre>
 
 <blockquote>
@@ -1858,7 +1858,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/courses/:course_id/restore</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/courses/:course_id/restore</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1879,7 +1879,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="course-assignments">Course Assignments</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/courses/:course_id/assignments
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/courses/:course_id/assignments
 </span></code></pre>
 
 <blockquote>
@@ -1929,7 +1929,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/courses/:course_id/assignments</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/courses/:course_id/assignments</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1962,7 +1962,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="assign-course">Assign Course</h2>
-<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lesson.ly/api/v1/courses/:course_id/assignments"</span>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lessonly.com/api/v1/courses/:course_id/assignments"</span>
 </code></pre>
 
 <blockquote>
@@ -2007,7 +2007,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/courses/:course_id/assignments -d params</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/courses/:course_id/assignments -d params</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -2029,14 +2029,14 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>assignments</td>
 <td>no</td>
 <td>Hash</td>
-<td>A hash of assignments to be made to the course.  If the assignment for a particular user already exists, the user will be reassigned the course. By default, an email will be sent to the assignee; it will come from notifications@lesson.ly. To suppress the email notification set <code class="prettyprint">notify</code> to <code class="prettyprint">false</code>.</td>
+<td>A hash of assignments to be made to the course.  If the assignment for a particular user already exists, the user will be reassigned the course. By default, an email will be sent to the assignee; it will come from notifications@lessonly.com. To suppress the email notification set <code class="prettyprint">notify</code> to <code class="prettyprint">false</code>.</td>
 </tr>
 </tbody></table>
 
           <h1 id="tags">Tags</h1>
 
 <h2 id="list-tags">List Tags</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/tags"</span>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/tags"</span>
 </code></pre>
 
 <blockquote>
@@ -2063,10 +2063,10 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/tags</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/tags</code></p>
 
 <h2 id="show-tag-details">Show Tag Details</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/tags/:tag_id
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/tags/:tag_id
 </span></code></pre>
 
 <blockquote>
@@ -2084,7 +2084,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/tags/:tag_id</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/tags/:tag_id</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -2105,7 +2105,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="tag-lessons">Tag Lessons</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/tags/:tag_id/lessons
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/tags/:tag_id/lessons
 </span></code></pre>
 
 <blockquote>
@@ -2140,7 +2140,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/tags/:tag_id/lessons</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/tags/:tag_id/lessons</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -2161,7 +2161,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="tag-courses">Tag Courses</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/tags/:tag_id/courses
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/tags/:tag_id/courses
 </span></code></pre>
 
 <blockquote>
@@ -2206,7 +2206,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/tags/:tag_id/courses</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/tags/:tag_id/courses</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -2229,7 +2229,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
           <h1 id="assignments">Assignments</h1>
 
 <h2 id="list-assignments">List Assignments</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/assignments"</span>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/assignments"</span>
 </code></pre>
 
 <blockquote>
@@ -2309,7 +2309,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/assignments</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/assignments</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -2342,7 +2342,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tbody></table>
 
 <h2 id="show-assignments-by-status">Show Assignments by Status</h2>
-<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lesson.ly/api/v1/assignments/:status"</span>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/assignments/:status"</span>
 </code></pre>
 
 <blockquote>
@@ -2377,7 +2377,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.lesson.ly/api/v1/assignments/:status</code></p>
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/assignments/:status</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -2400,7 +2400,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
           <h1 id="company-settings">Company Settings</h1>
 
 <h2 id="update-webhook-url">Update Webhook URL</h2>
-<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lesson.ly/api/v1/company_settings"</span>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lessonly.com/api/v1/company_settings"</span>
 </code></pre>
 
 <blockquote>
@@ -2425,7 +2425,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://api.lesson.ly/api/v1/company_settings</code></p>
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/company_settings</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
