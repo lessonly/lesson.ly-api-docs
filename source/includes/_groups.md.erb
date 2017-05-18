@@ -3,7 +3,7 @@
 ## List Groups
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups"
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups"
 ```
 
 > The above command returns JSON structured like this:
@@ -22,12 +22,12 @@ This endpoint retrieves all groups.
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1/groups`
+`GET https://api.lessonly.com/api/v1/groups`
 
 ## Show Group Details
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/groups/:group_id"
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups/:group_id"
 ```
 
 > The above command returns JSON structured like this:
@@ -60,7 +60,7 @@ group_id | yes | Positive Integer | The group to access.  The company must have 
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1/groups/:group_id`
+`GET https://api.lessonly.com/api/v1/groups/:group_id`
 
 ## Create Group
 
@@ -110,7 +110,7 @@ This endpoint allows you to create a group and its members and managers.
 
 ### HTTP Request
 
-`POST https://api.lesson.ly/api/v1/groups/ -d params`
+`POST https://api.lessonly.com/api/v1/groups/ -d params`
 
 ### Query Parameters
 
@@ -167,7 +167,7 @@ This endpoint allows you to update a group and its members and managers.
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/api/v1/groups/:group_id/ -d params`
+`PUT https://api.lessonly.com/api/v1/groups/:group_id/ -d params`
 
 ### Query Parameters
 
@@ -207,7 +207,7 @@ This endpoint allows the archiving of a single group.
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/api/v1/groups/:group_id/archive`
+`PUT https://api.lessonly.com/api/v1/groups/:group_id/archive`
 
 ### Query Parameters
 
@@ -244,7 +244,7 @@ This endpoint allows the restoring of a single archived group.
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/api/v1/groups/:group_id/restore`
+`PUT https://api.lessonly.com/api/v1/groups/:group_id/restore`
 
 ### Query Parameters
 
@@ -281,7 +281,7 @@ This endpoint returns a list of all lessons and courses that have been assigned 
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1/groups/:group_id/assignments`
+`GET https://api.lessonly.com/api/v1/groups/:group_id/assignments`
 
 ### Query Parameters
 

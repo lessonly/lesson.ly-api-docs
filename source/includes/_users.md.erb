@@ -39,7 +39,7 @@ This endpoint retrieves all users.
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1/users?filter[email]=email@example.com`
+`GET https://api.lessonly.com/api/v1/users?filter[email]=email@example.com`
 
 ### Query Parameters
 
@@ -82,7 +82,7 @@ This endpoint retrieves all the user's details including their custom field data
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1/users/:user_id`
+`GET https://api.lessonly.com/api/v1/users/:user_id`
 
 ### Query Parameters
 
@@ -114,7 +114,7 @@ This endpoint retrieves all the user's learning library statistics.
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1/users/:user_id/learning_library_statistics`
+`GET https://api.lessonly.com/api/v1/users/:user_id/learning_library_statistics`
 
 ### Query Parameters
 
@@ -180,7 +180,7 @@ This endpoint allows you to create a user in the api.
 
 ### HTTP Request
 
-`POST https://api.lesson.ly/api/v1/users/ -d params`
+`POST https://api.lessonly.com/api/v1/users/ -d params`
 
 ### Query Parameters
 
@@ -251,7 +251,7 @@ This endpoint allows you to update a user in the api.
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/api/v1/users/:user_id -d params`
+`PUT https://api.lessonly.com/api/v1/users/:user_id -d params`
 
 ### Query Parameters
 
@@ -292,7 +292,7 @@ This endpoint allows the archiving of a single user.
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/api/v1/users/:user_id/archive`
+`PUT https://api.lessonly.com/api/v1/users/:user_id/archive`
 
 ### Query Parameters
 
@@ -327,7 +327,7 @@ This endpoint allows the restoring of a single archived user.
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/api/v1/users/:user_id/restore`
+`PUT https://api.lessonly.com/api/v1/users/:user_id/restore`
 
 ### Query Parameters
 
@@ -338,7 +338,7 @@ user_id | yes | Positive Integer | The user to restore.  The company must have a
 ## Delete User
 
 ```shell
-curl -X DELETE -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/users/:user_id"
+curl -X DELETE -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/users/:user_id"
 ```
 
 > A successful update returns JSON consisting of the id of the deleted user
@@ -354,7 +354,7 @@ This endpoint allows you to delete a user in the API.
 
 ### HTTP Request
 
-`DELETE https://api.lesson.ly/api/v1/users/:user_id`
+`DELETE https://api.lessonly.com/api/v1/users/:user_id`
 
 ### Query Parameters
 
@@ -390,7 +390,7 @@ This endpoint allows you to list out a user's group memberships and groups they 
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1/users/:user_id/groups`
+`GET https://api.lessonly.com/api/v1/users/:user_id/groups`
 
 ### Query Parameters
 
@@ -444,7 +444,7 @@ This endpoint allows you to update a user's involvement in various groups.
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/api/v1/users/:user_id/groups`
+`PUT https://api.lessonly.com/api/v1/users/:user_id/groups`
 
 ### Query Parameters
 
@@ -505,7 +505,7 @@ This endpoint returns a list of assignments for a given user.
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1/users/:user_id/assignments`
+`GET https://api.lessonly.com/api/v1/users/:user_id/assignments`
 
 ### Query Parameters
 
@@ -585,11 +585,11 @@ This endpoint allows you to create assignments for a user.
 
 ### HTTP Request
 
-`POST https://api.lesson.ly/api/v1/users/:user_id/assignments`
+`POST https://api.lessonly.com/api/v1/users/:user_id/assignments`
 
 ### Query Parameters
 
 Parameter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
-assignments | yes | Array |  Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of "Lesson" or "Course". By default, an email will be sent to the assignee; it will come from notifications@lesson.ly. To suppress the email notification set `notify` to `false`.
+assignments | yes | Array |  Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of "Lesson" or "Course". By default, an email will be sent to the assignee; it will come from notifications@lessonly.com. To suppress the email notification set `notify` to `false`.
