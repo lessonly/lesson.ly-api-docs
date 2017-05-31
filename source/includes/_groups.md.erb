@@ -1,0 +1,290 @@
+# Groups
+
+## List Groups
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "groups",
+  "groups": [
+    {"id": 1, "name": "Group 1"},
+    {"id": 2, "name": "Group 2"},
+  ]
+}
+```
+
+This endpoint retrieves all groups.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1/groups`
+
+## Show Group Details
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups/:group_id"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "group",
+  "resource_type": "group",
+  "id": 12345,
+  "name": "Test Group",
+  "members": [
+         {"id": 1, "ext_uid": "ABC123", "name": "Test Name"},
+         {"id": 2, "ext_uid": "DEF456", "name": "Test Name 2"}
+    ],
+  "managers":  [
+         {"id": 1, "ext_uid": "ABC123", "name": "Test Name"},
+   ],
+   "archived_at": null,
+   "archived_by_user_id": null
+}
+```
+
+This endpoint retrieves a listing of a groups members and managers.
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+group_id | yes | Positive Integer | The group to access.  The company must have access to the group.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1/groups/:group_id`
+
+## Create Group
+
+```shell
+<%= post_request("/groups") %>
+```
+
+> The following are sample parameters for this request:
+
+```json
+{
+  "name": "create_group",
+  "members":
+    [
+      {"id": 1 },
+      {"id": 2 }
+
+    ],
+  "managers":
+    [
+      {"id":  3 },
+      {"id":  4 }
+    ]
+
+}
+```
+> A successful update will return JSON consisting of the group details repsonse:
+
+```json
+{
+  "type": "create_group",
+  "resource_type": "group",
+  "id": 12345,
+  "name": "New Name",
+  "members": [
+         {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"},
+         {"id": 2, "ext_uid": "ABC123", "name": "Test Name 2"}
+    ],
+  "managers":  [
+         {"id": 3, "ext_uid": "JKL012", "name": "Test Name 3"},
+         {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"}
+   ]
+}
+```
+
+This endpoint allows you to create a group and its members and managers.
+
+### HTTP Request
+
+`POST https://api.lessonly.com/api/v1/groups/ -d params`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+name | yes | String | The name of the group
+members | no | Array |  The members of a group.
+managers | no | Array | The managers of a group.
+
+
+## Update Group
+
+```shell
+<%= put_request("/groups/:group_id", params: true) %>
+```
+
+> The following are sample parameters for this request:
+
+```json
+{
+  "name": "New Name",
+  "members":
+    [
+      {"id": 1 },
+      {"id": 2, "remove": "true"}
+
+    ],
+  "managers":
+    [
+      {"id":  3, "remove": "true" },
+      {"id":  4 }
+    ]
+
+}
+```
+> A successful update will return JSON consisting of the group details repsonse:
+
+```json
+{
+  "type": "update_group",
+  "resource_type": "group",
+  "id": 12345,
+  "name": "New Name",
+  "members": [
+         {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"},
+    ],
+  "managers":  [
+         {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"},
+   ]
+}
+```
+
+This endpoint allows you to update a group and its members and managers.
+
+### HTTP Request
+
+`PUT https://api.lessonly.com/api/v1/groups/:group_id/ -d params`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+group_id | yes | Positive Integer | The group to access.  The company must have access to the group.
+name | no | String | The name of the group.
+members | no | Array |  The members of a group.  Passing "remove": "true" will remove this association.
+managers | no | Array | The managers of a group.  Passing "remove": "true" will remove this association.
+
+## Archive Group
+
+```shell
+<%= put_request("/groups/:group_id/archive") %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "archived_at": "2016-09-26T13:05:01.174-04:00",
+    "archived_by_user_id": null,
+    "id": 12631,
+    "members": [
+           {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"}
+      ],
+    "managers":  [
+           {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"}
+     ],
+    "name": "/",
+    "resource_type": "group",
+    "type": "group"
+}
+```
+
+This endpoint allows the archiving of a single group.
+
+### HTTP Request
+
+`PUT https://api.lessonly.com/api/v1/groups/:group_id/archive`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+group_id | yes | Positive Integer | The group to archive.  The company must have access to the group.
+
+## Restore Group
+
+```shell
+<%= put_request("/groups/:group_id/restore") %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "archived_at": null,
+    "archived_by_user_id": null,
+    "id": 12631,
+    "members": [
+           {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"}
+      ],
+    "managers":  [
+           {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"}
+     ],
+    "name": "/",
+    "resource_type": "group",
+    "type": "group"
+}
+```
+
+This endpoint allows the restoring of a single archived group.
+
+### HTTP Request
+
+`PUT https://api.lessonly.com/api/v1/groups/:group_id/restore`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+group_id | yes | Positive Integer | The group to restore.  The company must have access to the group.
+
+## Group Assignments
+
+```shell
+<%= api_get_request("/groups/:group_id/assignments") %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1,
+    "assignable_id": 10,
+    "assignable_type": "Lesson",
+    "group_id": 5
+  },
+  {
+    "id": 2,
+    "assignable_id": 15,
+    "assignable_type": "Course",
+    "group_id": 5
+  }
+]
+```
+
+This endpoint returns a list of all lessons and courses that have been assigned to the given group, in no particular order. Results include both archived and unarchived learning content.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1/groups/:group_id/assignments`
+
+### Query Parameters
+
+Parameter | Required | Type             |  Description
+----------|----------|------------------|-------------
+group_id  | yes      | Positive Integer | The group whose assignments to access

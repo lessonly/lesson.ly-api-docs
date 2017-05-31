@@ -3,7 +3,7 @@
 ## List Lessons
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons"
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons"
 ```
 
 > The above command returns JSON structured like this:
@@ -28,12 +28,12 @@ This endpoint retrieves all lessons.
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1/lessons`
+`GET https://api.lessonly.com/api/v1/lessons`
 
 ## Show Lesson Details
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id
 ```
 
 > The above command returns JSON structured like this:
@@ -53,19 +53,23 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id
   "tags" : [
     {
       "id": 1,
-      "name": "test_tag"
+      "name": "test_tag",
+      "resource_type": "tag"
     }
   ],
   "links" : {
-    "shareable": "https://lesson-shareable-link"
-  }
+    "overview": "https://mycompany.lessonly.com/lessons/1-lesson-1",
+    "shareable": "https://mycompany.lessonly.com/lesson/1-lesson-1"
+  },
+  "archived_at": null,
+  "archived_by_user_id": null
 }
 ```
 
 This endpoint retrieves all the lesson details including statistics about the completion of the lesson.
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1/lessons/:lesson_id`
+`GET https://api.lessonly.com/api/v1/lessons/:lesson_id`
 
 ## Show Lesson Details (v1.1)
 
@@ -106,7 +110,7 @@ This endpoint retrieves the lesson's information. For a count of completed assig
 ## Update Lesson
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id -d params
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id -d params
 ```
 
 > The above command returns JSON structured like this:
@@ -130,29 +134,127 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id -d par
     }
   ],
   "links" : {
-    "shareable": "https://lesson-shareable-link"
+    "overview": "https://mycompany.lessonly.com/lessons/1-lesson-1",
+    "shareable": "https://mycompany.lessonly.com/lesson/1-lesson-1"
   }
 }
 ```
 
-This endpoint allows the updating of a single lesson and its attributes
+This endpoint allows the updating of a single lesson and its attributes.
+
 ### HTTP Request
 
-`PUT https://api.lesson.ly/api/v1/lessons/:lesson_id -d params`
+`PUT https://api.lessonly.com/api/v1/lessons/:lesson_id -d params`
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 lesson_id | yes | Positive Integer | The lesson to access.  The company must have access to the lesson.
 title | no | String | The title of the lesson.
 retake_score | no | Positive Integer | The retake score of the lesson.
 public | no | Boolean | Whether or not the lesson is public
 
+## Archive Lesson
+
+```shell
+<%= put_request("/lessons/:lesson_id/archive") %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "archived_at": "2016-10-12T16:12:09.850-04:00",
+    "archived_by_user_id": null,
+    "assignees_count": 0,
+    "completed_count": 0,
+    "created_at": "2016-10-06T16:09:41Z",
+    "description": null,
+    "id": 43530,
+    "last_updated_at": "2016-10-06T16:18:01Z",
+    "links": {
+      "overview": "https://mycompany.lessonly.com/lessons/43530-untitled-lesson",
+      "shareable": "https://mycompany.lessonly.com/lesson/43530-untitled-lesson"
+    },
+    "public": false,
+    "resource_type": "lesson",
+    "retake_score": 90,
+    "tags": [
+      {
+        "id": 1,
+        "name": "test_tag"
+      }
+    ],
+    "title": "Untitled Lesson",
+    "type": "lesson"
+}
+```
+
+This endpoint allows the archiving of a single lesson.
+
+### HTTP Request
+
+`PUT https://api.lessonly.com/api/v1/lessons/:lesson_id/archive`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+lesson_id | yes | Positive Integer | The lesson to archive.  The company must have access to the lesson.
+
+## Restore Lesson
+
+```shell
+<%= put_request("/lessons/:lesson_id/restore") %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "archived_at": null,
+    "archived_by_user_id": null,
+    "assignees_count": 0,
+    "completed_count": 0,
+    "created_at": "2016-10-06T16:09:41Z",
+    "description": null,
+    "id": 43530,
+    "last_updated_at": "2016-10-06T16:18:01Z",
+    "links": {
+      "overview": "https://mycompany.lessonly.com/lessons/43530-untitled-lesson",
+      "shareable": "https://mycompany.lessonly.com/lesson/43530-untitled-lesson"
+    },
+    "public": false,
+    "resource_type": "lesson",
+    "retake_score": 90,
+    "tags": [
+      {
+        "id": 1,
+        "name": "test_tag"
+      }
+    ],
+    "title": "Untitled Lesson",
+    "type": "lesson"
+}
+```
+
+This endpoint allows the restoring of a single archived lesson.
+
+### HTTP Request
+
+`PUT https://api.lessonly.com/api/v1/lessons/:lesson_id/restore`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+lesson_id | yes | Positive Integer | The lesson to restore.  The company must have access to the lesson.
+
 ## Lesson Assignments
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id/assignments
 ```
 
 > The above command returns JSON structured like this:
@@ -188,7 +290,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
       "completed_at": null,
       "updated_at": "2020-09-30T00:00:00Z",
       "status": "Incomplete",
-      "score": 0
+      "score": null
     }
   ]
 }
@@ -197,11 +299,11 @@ curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1/lessons/:lesson_id/assign
 This endpoint retrieves all the assignments for a particular lesson.
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments`
+`GET https://api.lessonly.com/api/v1/lessons/:lesson_id/assignments`
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 lesson_id | yes | Positive Integer | The lesson to access.  The company must have access to the lesson.
 page | no | which page in the pagination to fetch.  Default = 1
@@ -231,7 +333,7 @@ This endpoint retrieves the number of completed assignments for a given lesson.
 ## Assign Lesson
 
 ```shell
-<%= put_request("/lessons/:lesson_id/assignments") %>
+<%= put_request("/lessons/:lesson_id/assignments", params: true) %>
 ```
 
 > The following are sample parameters for this request:
@@ -267,7 +369,7 @@ This endpoint retrieves the number of completed assignments for a given lesson.
       "completed_at": "2020-09-30T00:00:00Z",
       "updated_at": "2020-09-30T00:00:00Z",
       "status": "Incomplete",
-      "score": 0
+      "score": null
     }
   ]
 }
@@ -277,11 +379,11 @@ This endpoint allows you to make assignments to a particular lesson in the API.
 
 ### HTTP Request
 
-`PUT https://api.lesson.ly/api/v1/lessons/:lesson_id/assignments -d params`
+`PUT https://api.lessonly.com/api/v1/lessons/:lesson_id/assignments -d params`
 
 ### Query Parameters
 
-Paramter | Required | Type |  Description
+Parameter | Required | Type |  Description
 --- | --- | --- | ---
 lesson_id | yes | Positive Integer | The lesson to access.  The company must have access to the user.
-assignments | no | Hash | A hash of assignments to be made to the lesson.  If the assignment for a particular user already exists, the user will be reassigned the lesson. By default, an email will be sent to the assignee; it will come from notifications@lesson.ly. To suppress the email notification set `notify` to `false`.
+assignments | no | Hash | A hash of assignments to be made to the lesson.  If the assignment for a particular user already exists, the user will be reassigned the lesson. By default, an email will be sent to the assignee; it will come from notifications@lessonly.com. To suppress the email notification set `notify` to `false`.

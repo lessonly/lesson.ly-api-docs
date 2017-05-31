@@ -15,6 +15,8 @@ includes:
   - lessons
   - courses
   - tags
+  - assignments
+  - company_settings
   - rates
   - errors
 
