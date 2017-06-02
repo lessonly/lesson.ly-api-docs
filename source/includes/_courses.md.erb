@@ -91,7 +91,7 @@ course_id | yes | Positive Integer | The course to access.  The company must hav
 ## Show Course Details (v1.1)
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1.1/courses/:course_id"
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/courses/:course_id"
 ```
 
 
@@ -120,7 +120,7 @@ This endpoint retrieves all the details of the course, including its lessons. Fo
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1/courses/:course_id`
+`GET https://api.lessonly.com/api/v1/courses/:course_id`
 
 ### Query Parameters
 
@@ -240,7 +240,6 @@ This endpoint allows the restoring of a single archived course.
 Parameter | Required | Type |  Description
 --- | --- | --- | ---
 course_id | yes | Positive Integer | The course to restore.  The company must have access to the course.
->>>>>>> master
 
 ## Course Assignments
 
@@ -308,7 +307,7 @@ per_page | no | how many results to return in each page.  Default = 50
 ## Course Assignments Completed (v1.1)
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lesson.ly/api/v1.1/courses/:course_id/assignments/completed
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/courses/:course_id/assignments/completed
 ```
 
 > The above command returns JSON structured like this:
@@ -324,7 +323,7 @@ This endpoint retrieves the count of completed assignments for a particular cour
 
 ### HTTP Request
 
-`GET https://api.lesson.ly/api/v1.1/courses/:course_id/assignments`
+`GET https://api.lessonly.com/api/v1.1/courses/:course_id/assignments`
 
 
 ## Assign Course
