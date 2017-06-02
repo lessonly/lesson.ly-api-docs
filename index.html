@@ -1305,6 +1305,40 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <p><code class="prettyprint">GET https://api.lessonly.com/api/v1/lessons/:lesson_id</code></p>
 
+<h2 id="show-lesson-details-(v1.1)">Show Lesson Details (v1.1)</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1.1/lessons/:lesson_id
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lesson 1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"retake_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"shareable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://lesson-shareable-link"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves the lesson&rsquo;s information. For a count of completed assignments, please see <a href="#lesson-completed-assignments-(v1.1)">Lesson Completed Assignments</a>.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1.1/lessons/:lesson_id</code></p>
+
 <h2 id="update-lesson">Update Lesson</h2>
 <pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/lessons/:lesson_id -d params
 </span></code></pre>
@@ -1573,6 +1607,25 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tr>
 </tbody></table>
 
+<h2 id="lesson-completed-assignments-(v1.1)">Lesson Completed Assignments (v1.1)</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1.1/lessons/:lesson_id/assignments/completed"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson_assignments_completed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves the number of completed assignments for a given lesson.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1.1/lessons/:lesson_id/assignments/completed</code></p>
+
 <h2 id="assign-lesson">Assign Lesson</h2>
 <pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lessonly.com/api/v1/lessons/:lesson_id/assignments"</span>
 </code></pre>
@@ -1744,48 +1797,96 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tr>
 </tbody></table>
 
+<h2 id="show-course-details-(v1.1)">Show Course Details (v1.1)</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1.1/courses/:course_id"</span>
+</code></pre>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"owner_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course 1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description of Course 1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lessons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Lesson"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Second Lesson"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all the details of the course, including its lessons. For completed assignments information, please see <a href="#course-assignments-completed-(v1.1)">Completed Course Assignments</a>.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/courses/:course_id</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Paramter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>course_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The course to access.  The company must have access to the course.</td>
+</tr>
+</tbody></table>
+
 <h2 id="archive-course">Archive Course</h2>
 <pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/courses/:course_id/archive"</span>
 </code></pre>
 
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above command returns JSON structured like this:
+<code class="prettyprint">json
+  {
+    &quot;archived_at&quot;: &quot;2016-10-13T09:51:13.549-04:00&quot;,
+    &quot;archived_by_user_id&quot;: null,
+    &quot;assignees_count&quot;: 4,
+    &quot;completed_count&quot;: 0,
+    &quot;created_at&quot;: &quot;2016-04-30T15:23:12Z&quot;,
+    &quot;description&quot;: &quot;&quot;,
+    &quot;id&quot;: 3934,
+    &quot;last_updated_at&quot;: null,
+    &quot;lessons&quot;: [
+      {
+        &quot;id&quot;: 1,
+        &quot;title&quot;: &quot;First Lesson&quot;
+      },
+      {
+        &quot;id&quot;: 1,
+        &quot;title&quot;: &quot;Second Lesson&quot;
+      }
+    ],
+    &quot;links&quot;: {
+      &quot;overview&quot;: &quot;https://mycompany.lessonly.com/courses/3934-empty-course&quot;,
+      &quot;shareable&quot;: &quot;https://mycompany.lessonly.com/course/3934-empty-course&quot;
+    },
+    &quot;public&quot;: false,
+    &quot;resource_type&quot;: &quot;course&quot;,
+    &quot;tags&quot;: [
+      {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;test_tag&quot;
+      }
+    ],
+    &quot;title&quot;: &quot;Empty Course&quot;,
+    &quot;type&quot;: &quot;course&quot;
+}
+</code></p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-13T09:51:13.549-04:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-30T15:23:12Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3934</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"lessons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Lesson"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Second Lesson"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"overview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mycompany.lessonly.com/courses/3934-empty-course"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"shareable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mycompany.lessonly.com/course/3934-empty-course"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empty Course"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 
 <p>This endpoint allows the archiving of a single course.</p>
 
@@ -1960,6 +2061,25 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td></td>
 </tr>
 </tbody></table>
+
+<h2 id="course-assignments-completed-(v1.1)">Course Assignments Completed (v1.1)</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1.1/courses/:course_id/assignments/completed
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course_assignments_completed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves the count of completed assignments for a particular course.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1.1/courses/:course_id/assignments</code></p>
 
 <h2 id="assign-course">Assign Course</h2>
 <pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lessonly.com/api/v1/courses/:course_id/assignments"</span>
