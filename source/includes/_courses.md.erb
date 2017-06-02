@@ -88,6 +88,46 @@ Parameter | Required | Type |  Description
 --- | --- | --- | ---
 course_id | yes | Positive Integer | The course to access.  The company must have access to the course.
 
+## Show Course Details (v1.1)
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/courses/:course_id"
+```
+
+
+```json
+{
+  "type": "course",
+  "resource_type": "course",
+  "id": 1,
+  "owner_id": 12,
+  "title": "Course 1",
+  "description": "Test Description of Course 1",
+  "lessons": [
+    {
+      "id": 1,
+      "title": "First Lesson"
+    },
+    {
+      "id": 1,
+      "title": "Second Lesson"
+    }
+  ]
+}
+```
+
+This endpoint retrieves all the details of the course, including its lessons. For completed assignments information, please see [Completed Course Assignments](#course-assignments-completed-(v1.1)).
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1/courses/:course_id`
+
+### Query Parameters
+
+Paramter | Required | Type |  Description
+--- | --- | --- | ---
+course_id | yes | Positive Integer | The course to access.  The company must have access to the course.
+
 ## Archive Course
 
 ```shell
@@ -95,9 +135,8 @@ course_id | yes | Positive Integer | The course to access.  The company must hav
 ```
 
 > The above command returns JSON structured like this:
-
 ```json
-{
+  {
     "archived_at": "2016-10-13T09:51:13.549-04:00",
     "archived_by_user_id": null,
     "assignees_count": 4,
@@ -264,6 +303,28 @@ Parameter | Required | Type |  Description
 course_id | yes | Positive Integer | The course to access.  The company must have access to the lesson.
 page | no | which page in the pagination to fetch.  Default = 1
 per_page | no | how many results to return in each page.  Default = 50
+
+## Course Assignments Completed (v1.1)
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/courses/:course_id/assignments/completed
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "course_assignments_completed",
+  "completed_count": 12
+}
+```
+
+This endpoint retrieves the count of completed assignments for a particular course.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1.1/courses/:course_id/assignments`
+
 
 ## Assign Course
 

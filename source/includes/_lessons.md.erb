@@ -71,6 +71,41 @@ This endpoint retrieves all the lesson details including statistics about the co
 
 `GET https://api.lessonly.com/api/v1/lessons/:lesson_id`
 
+## Show Lesson Details (v1.1)
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/lessons/:lesson_id
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "lesson",
+  "resource_type": "lesson",
+  "id": 1,
+  "title": "Lesson 1",
+  "retake_score": 80,
+  "public": false,
+  "created_at": "2020-09-30T00:00:00Z",
+  "last_updated_at": "2020-09-30T00:00:00Z",
+  "tags" : [
+    {
+      "id": 1,
+      "name": "test_tag"
+    }
+  ],
+  "links" : {
+    "shareable": "https://lesson-shareable-link"
+  }
+}
+```
+
+This endpoint retrieves the lesson's information. For a count of completed assignments, please see [Lesson Completed Assignments](#lesson-completed-assignments-(v1.1)).
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1.1/lessons/:lesson_id`
+
 
 ## Update Lesson
 
@@ -273,6 +308,27 @@ Parameter | Required | Type |  Description
 lesson_id | yes | Positive Integer | The lesson to access.  The company must have access to the lesson.
 page | no | which page in the pagination to fetch.  Default = 1
 per_page | no | how many results to return in each page.  Default = 50
+
+## Lesson Completed Assignments (v1.1)
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/lessons/:lesson_id/assignments/completed"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "lesson_assignments_completed",
+  "completed_count": 13
+}
+```
+
+This endpoint retrieves the number of completed assignments for a given lesson.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1.1/lessons/:lesson_id/assignments/completed`
 
 ## Assign Lesson
 
