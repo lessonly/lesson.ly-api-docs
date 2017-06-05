@@ -14,11 +14,15 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/courses"
   "courses":[
     {
       "id": 1,
-      "title": "Course 1"
+      "title": "Course 1",
+      "archived_at": null,
+      "archived_by_user_id": null
     },
     {
       "id": 2,
-      "title": "Course 2"
+      "title": "Course 2",
+      "archived_at": null,
+      "archived_by_user_id": null
     }
   ]
 }
@@ -50,11 +54,15 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/courses/:course_id
   "lessons": [
     {
       "id": 1,
-      "title": "First Lesson"
+      "title": "First Lesson",
+      "archived_at": null,
+      "archived_by_user_id": null
     },
     {
       "id": 2,
-      "title": "Second Lesson"
+      "title": "Second Lesson",
+      "archived_at": null,
+      "archived_by_user_id": null
     }
   ],
   "public": false,
