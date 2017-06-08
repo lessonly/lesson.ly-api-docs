@@ -1,9 +1,15 @@
 Lessonly API Docs
 ========
 
-The docs are built with [Slate](https://github.com/tripit/slate). See below.
+The docs are built with [Slate](https://github.com/tripit/slate).
 
-To update the docs, commit your changes and run:
+To view them locally, run:
+
+`$ bundle exec middleman`
+
+The documentation will be available at `localhost:4567`
+
+To deploy, commit your changes and run:
 
 `$ rake publish`
 
