@@ -94,14 +94,26 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email1@example.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="w">
+        </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account Executive"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Global"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Illinois"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-25"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"manager_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mary Doe"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email2@example.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="w">
+        </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineer"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Global"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IT"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-25"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"manager_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Doe"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -158,6 +170,12 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account Executive"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Global"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Illinois"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-25"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"manager_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mary Doe"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"custom_user_field_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -248,6 +266,12 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account Executive"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Global"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Illinois"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-25"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"manager_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mary Doe"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"custom_user_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"custom_user_field_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -272,6 +296,12 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account Executive"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Global"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Illinois"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-25"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"manager_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mary Doe"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"custom_user_field_data"</span><span class="p">:</span><span class="w">
     </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
@@ -329,6 +359,42 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>The user&rsquo;s ID in another system, useful for linking data.</td>
 </tr>
 <tr>
+<td>job_title</td>
+<td>no</td>
+<td>String</td>
+<td>User job title</td>
+</tr>
+<tr>
+<td>business_unit</td>
+<td>no</td>
+<td>String</td>
+<td>User business unit</td>
+</tr>
+<tr>
+<td>department</td>
+<td>no</td>
+<td>String</td>
+<td>User department</td>
+</tr>
+<tr>
+<td>location</td>
+<td>no</td>
+<td>String</td>
+<td>User location</td>
+</tr>
+<tr>
+<td>hire_date</td>
+<td>no</td>
+<td>String</td>
+<td>User hire date. Must be an ISO8601 formatted date (YYYY-MM-DD).</td>
+</tr>
+<tr>
+<td>manager_name</td>
+<td>no</td>
+<td>String</td>
+<td>User manager name</td>
+</tr>
+<tr>
 <td>notify</td>
 <td>no</td>
 <td>String</td>
@@ -354,6 +420,12 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account Executive"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Global"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Illinois"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-25"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"manager_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mary Doe"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"custom_user_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"custom_user_field_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -378,6 +450,12 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account Executive"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Global"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Illinois"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-25"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"manager_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mary Doe"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"custom_user_field_data"</span><span class="p">:</span><span class="w">
     </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
@@ -441,6 +519,42 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>The user&rsquo;s ID in another system, useful for linking data.</td>
 </tr>
 <tr>
+<td>job_title</td>
+<td>no</td>
+<td>String</td>
+<td>User job title</td>
+</tr>
+<tr>
+<td>business_unit</td>
+<td>no</td>
+<td>String</td>
+<td>User business unit</td>
+</tr>
+<tr>
+<td>department</td>
+<td>no</td>
+<td>String</td>
+<td>User department</td>
+</tr>
+<tr>
+<td>location</td>
+<td>no</td>
+<td>String</td>
+<td>User location</td>
+</tr>
+<tr>
+<td>hire_date</td>
+<td>no</td>
+<td>String</td>
+<td>User hire date. Must be an ISO8601 formatted date (YYYY-MM-DD).</td>
+</tr>
+<tr>
+<td>manager_name</td>
+<td>no</td>
+<td>String</td>
+<td>User manager name</td>
+</tr>
+<tr>
 <td>custom_user_fields</td>
 <td>no</td>
 <td>Array</td>
@@ -461,6 +575,12 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
     </span><span class="s2">"custom_user_field_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner@example.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account Executive"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Global"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Illinois"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"manager_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mary Doe"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">739413</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beta Learner"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
@@ -506,6 +626,12 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
     </span><span class="s2">"custom_user_field_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"learner@example.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account Executive"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Global"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Illinois"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"manager_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mary Doe"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">739413</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beta Learner"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
