@@ -22,14 +22,26 @@
         "name": "User Name",
         "email": "email1@example.com",
         "role": "learner",
-        "ext_uid": "ABC123"
+        "ext_uid": "ABC123",
+        "job_title": "Account Executive",
+        "business_unit": "Global",
+        "department": "Sales",
+        "location": "Illinois",
+        "hire_date": "2014-12-25",
+        "manager_name": "Mary Doe"
       },
       {
         "id": 2,
         "name": "User Name",
         "email": "email2@example.com",
         "role": "learner",
-        "ext_uid": "DEF456"
+        "ext_uid": "DEF456",
+        "job_title": "Engineer",
+        "business_unit": "Global",
+        "department": "IT",
+        "location": "California",
+        "hire_date": "2014-12-25",
+        "manager_name": "Jane Doe"
       }
     ]
 }
@@ -66,6 +78,12 @@ filter | no | String | Specified user filter for users list.  Supported filters 
   "email": "test@test.com",
   "role": "learner",
   "ext_uid": "ABC123",
+  "job_title": "Account Executive",
+  "business_unit": "Global",
+  "department": "Sales",
+  "location": "Illinois",
+  "hire_date": "2014-12-25",
+  "manager_name": "Mary Doe",
   "custom_user_field_data": [
     {
       "id": 1,
@@ -136,6 +154,12 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
   "email": "email@example.com",
   "role": "learner",
   "ext_uid": "ABC123",
+  "job_title": "Account Executive",
+  "business_unit": "Global",
+  "department": "Sales",
+  "location": "Illinois",
+  "hire_date": "2014-12-25",
+  "manager_name": "Mary Doe",
   "custom_user_fields": [
     {
       "custom_user_field_id": 1,
@@ -160,6 +184,12 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
   "email": "email@example.com",
   "role": "learner",
   "ext_uid": "ABC123",
+  "job_title": "Account Executive",
+  "business_unit": "Global",
+  "department": "Sales",
+  "location": "Illinois",
+  "hire_date": "2014-12-25",
+  "manager_name": "Mary Doe",
   "custom_user_field_data":
     [
       {
@@ -190,6 +220,12 @@ name | yes | String | User full name. Cannot begin with a space and the followin
 email | yes | String | User Email
 role | yes | String | User role. Options: admin, manager, creator, learner
 ext_uid | no | String | The user's ID in another system, useful for linking data.
+job_title | no | String | User job title
+business_unit | no | String | User business unit
+department | no | String | User department
+location | no | String | User location
+hire_date | no | String | User hire date. Must be an ISO8601 formatted date (YYYY-MM-DD).
+manager_name | no | String | User manager name
 notify | no | String | Whether or not to notify the user.  Passing 'false' will not send an email notification to the user that their account has been created. Defaults to 'true'.
 custom_user_fields |  no | Array | Custom user field values for specified custom user field ids. Hashses must contain a "customer_user_field_id" and a "value".
 
@@ -207,6 +243,12 @@ custom_user_fields |  no | Array | Custom user field values for specified custom
   "email": "email@example.com",
   "role": "learner",
   "ext_uid": "ABC123",
+  "job_title": "Account Executive",
+  "business_unit": "Global",
+  "department": "Sales",
+  "location": "Illinois",
+  "hire_date": "2014-12-25",
+  "manager_name": "Mary Doe",
   "custom_user_fields": [
     {
       "custom_user_field_id": 1,
@@ -231,6 +273,12 @@ custom_user_fields |  no | Array | Custom user field values for specified custom
   "email": "email@example.com",
   "role": "learner",
   "ext_uid": "ABC123",
+  "job_title": "Account Executive",
+  "business_unit": "Global",
+  "department": "Sales",
+  "location": "Illinois",
+  "hire_date": "2014-12-25",
+  "manager_name": "Mary Doe",
   "custom_user_field_data":
     [
       {
@@ -262,6 +310,12 @@ name | no | String | User name to change user to
 email | no | String | User Email to change user to
 role | no | String | User role to change user to. Options: admin, manager, creator, learner
 ext_uid | no | String | The user's ID in another system, useful for linking data.
+job_title | no | String | User job title
+business_unit | no | String | User business unit
+department | no | String | User department
+location | no | String | User location
+hire_date | no | String | User hire date. Must be an ISO8601 formatted date (YYYY-MM-DD).
+manager_name | no | String | User manager name
 custom_user_fields |  no | Array | Custom user fields for the update.  If the user does not have a value for the specified "customer_user_field_id" it will be added, otherwise it will be updated to the specified "value".
 
 
@@ -280,6 +334,12 @@ custom_user_fields |  no | Array | Custom user fields for the update.  If the us
     "custom_user_field_data": [],
     "email": "learner@example.com",
     "ext_uid": null,
+    "job_title": "Account Executive",
+    "business_unit": "Global",
+    "department": "Sales",
+    "location": "Illinois",
+    "hire_date": "2014-12-25",
+    "manager_name": "Mary Doe",
     "id": 739413,
     "name": "Beta Learner",
     "resource_type": "user",
@@ -315,6 +375,12 @@ user_id | yes | Positive Integer | The user to archive.  The company must have a
     "custom_user_field_data": [],
     "email": "learner@example.com",
     "ext_uid": null,
+    "job_title": "Account Executive",
+    "business_unit": "Global",
+    "department": "Sales",
+    "location": "Illinois",
+    "hire_date": "2014-12-25",
+    "manager_name": "Mary Doe",
     "id": 739413,
     "name": "Beta Learner",
     "resource_type": "user",
