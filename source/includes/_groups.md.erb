@@ -262,6 +262,36 @@ Parameter | Required | Type |  Description
 --- | --- | --- | ---
 group_id | yes | Positive Integer | The group to restore.  The company must have access to the group.
 
+## Delete Group
+
+```shell
+curl -X DELETE -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups/:group_id"
+```
+
+> A successful update returns JSON consisting of the id of the deleted group
+
+```json
+{
+  "type": "delete_group",
+  "id": "3"
+  "name": "Group 3",
+  "archived_at": null,
+  "archived_by_user_id": null
+}
+```
+
+This endpoint allows you to delete a group in the API.
+
+### HTTP Request
+
+`DELETE https://api.lessonly.com/api/v1/groups/:group_id`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+group_id | yes | Positive Integer | The group to delete.  The company must have access to the group.
+
 ## Group Assignments
 
 ```shell
