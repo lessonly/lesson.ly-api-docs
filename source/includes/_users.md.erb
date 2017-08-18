@@ -535,6 +535,10 @@ managing | no | Array | The groups in which the user is managing.  Passing "remo
 ```json
 {
   "type": "user_assignments",
+  "total_assignments": 2000,
+  "total_pages": 1000,
+  "page": 1,
+  "per_page": 50,
   "assignments":[
     {
       "type": "Assignment",
@@ -581,7 +585,7 @@ This endpoint returns a list of assignments for a given user.
 Parameter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
-
+<%= pagination_query_params.chomp %>
 
 ## Create User Assignments
 
