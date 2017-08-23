@@ -89,8 +89,7 @@ To view assignments for a particular [user](#user-assignments), [lesson](#lesson
 
 Parameter | Required | Type | Description
 --------- | ------- | ------- | -----------
-page | no | Positive Integer | which page in the pagination to fetch.  Default = 1
-per_page | no | Positive Integer | how many results to return in each page.  Default = 50
+<%= pagination_query_params.chomp %>
 gt | no | String | Specified greater than filter for assignments list.  Supported filters are (updated_at). Please follow ISO8601 date format.
 
 ## Show Assignments by Status

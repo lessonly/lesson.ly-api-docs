@@ -310,8 +310,7 @@ This endpoint retrieves all the assignments for a particular lesson.
 Parameter | Required | Type |  Description
 --- | --- | --- | ---
 lesson_id | yes | Positive Integer | The lesson to access.  The company must have access to the lesson.
-page | no | which page in the pagination to fetch.  Default = 1
-per_page | no | how many results to return in each page.  Default = 50
+<%= pagination_query_params.chomp %>
 
 ## Lesson Completed Assignments (v1.1)
 

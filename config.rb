@@ -27,6 +27,13 @@ helpers do
     command << "\"https://api.lessonly.com/api/v1#{endpoint}\""
     command.join(' ')
   end
+
+  def pagination_query_params
+    <<~STRING
+    page | no | Positive Integer | which page in the pagination to fetch.  Default = 1
+    per_page | no | Positive Integer | how many results to return in each page.  Default = 50; Maximum = 5000. Numbers > 5000 are ignored and 5000 will be returned.
+    STRING
+  end
 end
 
 # Assets
