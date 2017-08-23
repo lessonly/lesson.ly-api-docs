@@ -149,7 +149,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>per_page</td>
 <td>no</td>
 <td>Positive Integer</td>
-<td>how many results to return in each page.  Default = 50</td>
+<td>how many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
 </tr>
 <tr>
 <td>filter</td>
@@ -1780,14 +1780,14 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <tr>
 <td>page</td>
 <td>no</td>
+<td>Positive Integer</td>
 <td>which page in the pagination to fetch.  Default = 1</td>
-<td></td>
 </tr>
 <tr>
 <td>per_page</td>
 <td>no</td>
-<td>how many results to return in each page.  Default = 50</td>
-<td></td>
+<td>Positive Integer</td>
+<td>how many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
 </tr>
 </tbody></table>
 
@@ -2239,14 +2239,14 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <tr>
 <td>page</td>
 <td>no</td>
+<td>Positive Integer</td>
 <td>which page in the pagination to fetch.  Default = 1</td>
-<td></td>
 </tr>
 <tr>
 <td>per_page</td>
 <td>no</td>
-<td>how many results to return in each page.  Default = 50</td>
-<td></td>
+<td>Positive Integer</td>
+<td>how many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
 </tr>
 </tbody></table>
 
@@ -2639,7 +2639,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>per_page</td>
 <td>no</td>
 <td>Positive Integer</td>
-<td>how many results to return in each page.  Default = 50</td>
+<td>how many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
 </tr>
 <tr>
 <td>gt</td>
