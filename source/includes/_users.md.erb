@@ -91,6 +91,7 @@ filter | no | String | Specified user filter for users list.  Supported filters 
     {
       "id": 1,
       "custom_user_field_id": 1,
+      "name": "Custom Field Name 1",
       "value": "Custom Value 1"
     }
   ],
@@ -149,7 +150,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 <%= post_request("/users") %>
 ```
 
-> The following are sample parameters for this request:
+> The following are sample parameters for this request. For each `custom_user_field` hash, either `custom_user_field_id` or `name` is required to represent the custom user field. If an unknown name is provided, a new custom user field will be created.
 
 ```json
 {
@@ -169,7 +170,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
       "value": "Custom Value 1"
     },
     {
-      "custom_user_field_id": 2,
+      "name": "Custom Field Name 2",
       "value": "Custom Value 2"
     }
   ]
@@ -198,11 +199,13 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
       {
         "id": 1,
         "custom_user_field_id": 1,
+        "name": "Custom Field Name 1",
         "value": "Custom Value 1"
       },
       {
         "id": 2,
         "custom_user_field_id": 2,
+        "name": "Custom Field Name 2",
         "value": "Custom Value 2"
       }
     ]
@@ -238,7 +241,7 @@ custom_user_fields |  no | Array | Custom user field values for specified custom
 <%= put_request("/users/:user_id", params: true) %>
 ```
 
-> The following are sample parameters for this request:
+> The following are sample parameters for this request. . For each `custom_user_field` hash, either `custom_user_field_id` or `name` is required to represent the custom user field. If an unknown name is provided, a new custom user field will be created.
 
 ```json
 {
@@ -258,7 +261,7 @@ custom_user_fields |  no | Array | Custom user field values for specified custom
       "value": "Custom Value 1"
     },
     {
-      "custom_user_field_id": 2,
+      "name": "Custom Field Name 2",
       "value": "Custom Value 2"
     }
   ]
@@ -287,11 +290,13 @@ custom_user_fields |  no | Array | Custom user field values for specified custom
       {
         "id": 1,
         "custom_user_field_id": 1,
+        "name": "Custom Field Name 1",
         "value": "Custom Value 1"
       },
       {
         "id": 2,
         "custom_user_field_id": 2,
+        "name": "Custom Field Name 2",
         "value": "Custom Value 2"
       }
     ]
