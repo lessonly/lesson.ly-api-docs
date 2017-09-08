@@ -150,7 +150,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 <%= post_request("/users") %>
 ```
 
-> The following are sample parameters for this request. For each `custom_user_field` hash, either `custom_user_field_id` or `name` is required to represent the custom user field. If an unknown name is provided, a new custom user field will be created.
+> The following are sample parameters for this request:
 
 ```json
 {
@@ -233,7 +233,7 @@ location | no | String | User location
 hire_date | no | String | User hire date. Must be an ISO8601 formatted date (YYYY-MM-DD).
 manager_name | no | String | User manager name
 notify | no | String | Whether or not to notify the user.  Passing 'false' will not send an email notification to the user that their account has been created. Defaults to 'true'.
-custom_user_fields |  no | Array | Custom user field values for specified custom user field ids. Hashses must contain a "customer_user_field_id" and a "value".
+custom_user_fields |  no | Array | Custom user fields for the user. Hashes must contain a "value" and either a "customer_user_field_id" or "name". If an unknown custom user field "name" is provided, a new custom user field will be created with that name.
 
 ## Update User
 
@@ -241,7 +241,7 @@ custom_user_fields |  no | Array | Custom user field values for specified custom
 <%= put_request("/users/:user_id", params: true) %>
 ```
 
-> The following are sample parameters for this request. . For each `custom_user_field` hash, either `custom_user_field_id` or `name` is required to represent the custom user field. If an unknown name is provided, a new custom user field will be created.
+> The following are sample parameters for this request.
 
 ```json
 {
@@ -324,8 +324,7 @@ department | no | String | User department
 location | no | String | User location
 hire_date | no | String | User hire date. Must be an ISO8601 formatted date (YYYY-MM-DD).
 manager_name | no | String | User manager name
-custom_user_fields |  no | Array | Custom user fields for the update.  If the user does not have a value for the specified "customer_user_field_id" it will be added, otherwise it will be updated to the specified "value".
-
+custom_user_fields |  no | Array | Custom user fields for the user. Hashes must contain a "value" and either a "customer_user_field_id" or "name". If an unknown custom user field "name" is provided, a new custom user field will be created with that name. If the user does not have a value for the specified customer user field it will be added, otherwise it will be updated to the specified "value".
 
 ## Archive User
 
