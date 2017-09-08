@@ -150,7 +150,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 <%= post_request("/users") %>
 ```
 
-> The following are sample parameters for this request:
+> The following are sample parameters for this request. For each `custom_user_field` hash, either `custom_user_field_id` or `name` is required to represent the custom user field. If an unknown name is provided, a new custom user field will be created.
 
 ```json
 {
@@ -241,7 +241,7 @@ custom_user_fields |  no | Array | Custom user field values for specified custom
 <%= put_request("/users/:user_id", params: true) %>
 ```
 
-> The following are sample parameters for this request:
+> The following are sample parameters for this request. . For each `custom_user_field` hash, either `custom_user_field_id` or `name` is required to represent the custom user field. If an unknown name is provided, a new custom user field will be created.
 
 ```json
 {
