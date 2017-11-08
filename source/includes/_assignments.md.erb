@@ -35,7 +35,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/assignments"
       "id": 2,
       "resource_type": "assignment",
       "assignee_id": 2,
-      "assignable_type": "Course",
+      "assignable_type": "Path",
       "assignable_id": 1,
       "ext_uid": "DEF456",
       "due_by": "2020-09-30T00:00:00Z",
@@ -49,7 +49,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/assignments"
       "id": 3,
       "resource_type": "assignment",
       "assignee_id": 3,
-      "assignable_type": "Course",
+      "assignable_type": "Path",
       "assignable_id": 1,
       "ext_uid": "DEF456",
       "due_by": "2016-03-27T14:15:17Z",
@@ -63,7 +63,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/assignments"
       "id": 4,
       "resource_type": "assignment",
       "assignee_id": 4,
-      "assignable_type": "Course",
+      "assignable_type": "Path",
       "assignable_id": 1,
       "ext_uid": "DEF456",
       "due_by": "2020-09-30T00:00:00Z",
@@ -77,9 +77,9 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/assignments"
 }
 ```
 
-This endpoint returns paginated assignments in no particular order across all of your users, lessons, and courses. Optionally, you can filter by assignments with activity after a given ISO8601 timestamp by passing `gt[updated_at]=TIMESTAMP` in the query string.
+This endpoint returns paginated assignments in no particular order across all of your users, lessons, and paths. Optionally, you can filter by assignments with activity after a given ISO8601 timestamp by passing `gt[updated_at]=TIMESTAMP` in the query string.
 
-To view assignments for a particular [user](#user-assignments), [lesson](#lesson-assignments), or [course](#course-assignments) please use those dedicated endpoints.
+To view assignments for a particular [user](#user-assignments), [lesson](#lesson-assignments), or [path](#path-assignments) please use those dedicated endpoints.
 
 ### HTTP Request
 
@@ -112,7 +112,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/assignments/:status"
       "id": 2,
       "resource_type": "assignment",
       "assignee_id": 2,
-      "assignable_type": "Course",
+      "assignable_type": "Path",
       "assignable_id": 1,
       "ext_uid": "DEF456",
       "due_by": "2020-09-30T00:00:00Z",
