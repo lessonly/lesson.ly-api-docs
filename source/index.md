@@ -14,6 +14,7 @@ includes:
   - groups
   - lessons
   - courses
+  - paths
   - tags
   - assignments
   - company_settings

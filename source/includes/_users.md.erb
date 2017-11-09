@@ -562,7 +562,7 @@ managing | no | Array | The groups in which the user is managing.  Passing "remo
       "assignee_id": 1,
       "ext_uid": "DEF456",
       "assignable_id": 2,
-      "assignable_type": "Course",
+      "assignable_type": "Path",
       "due_by": "2020-09-30T00:00:00Z",
       "reassigned_at": "2020-09-30T00:00:00Z",
       "completed_at": null,
@@ -607,7 +607,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
       }
       {
         "assignable_id": 3,
-        "assignable_type": "Course",
+        "assignable_type": "Path",
         "due_by": "2020-09-30",
         "notify": false
       }
@@ -642,7 +642,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
       "assignee_id": 2,
       "ext_uid": "DEF456",
       "assignable_id": 2,
-      "assignable_type": "Course",
+      "assignable_type": "Path",
       "due_by": "2020-09-30T00:00:00Z",
       "reassigned_at": "2020-09-30T00:00:00Z",
       "completed_at": null,
@@ -665,4 +665,4 @@ This endpoint allows you to create assignments for a user.
 Parameter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
-assignments | yes | Array |  Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of "Lesson" or "Course". By default, an email will be sent to the assignee; it will come from notifications@lessonly.com. To suppress the email notification set `notify` to `false`.
+assignments | yes | Array |  Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of "Lesson" or "Path". By default, an email will be sent to the assignee; it will come from notifications@lessonly.com. To suppress the email notification set `notify` to `false`.

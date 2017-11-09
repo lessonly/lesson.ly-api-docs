@@ -1,0 +1,442 @@
+# Paths
+
+## List Paths
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "paths",
+  "paths": [
+    {
+      "id": 1,
+      "title": "Path 1",
+      "archived_at": null,
+      "archived_by_user_id": null
+    },
+    {
+      "id": 2,
+      "title": "Path 2",
+      "archived_at": "2017-06-28T10:46:03.467-04:00",
+      "archived_by_user_id": 123
+    }
+  ]
+}
+```
+
+This endpoint retrieves all paths.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1/paths`
+
+## Show Path Details
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "path",
+  "id": 1,
+  "resource_type": "path",
+  "title": "Developer Onboarding",
+  "description": "All you need to know to get up-and-running.",
+  "enforced_order": true,
+  "public": false,
+  "created_at": "2017-07-24T10:47:23Z",
+  "last_updated_at": "2017-07-24T10:49:10Z",
+  "published_at": null,
+  "publisher_id": null,
+  "tags": [
+    {
+      "id": 1,
+      "resource_type": "tag",
+      "name": "Engineering"
+    }
+  ],
+  "links": {
+    "shareable": "https://mycompany.lessonly.com/path/1-developer-onboarding",
+    "overview": "https://mycompany.lessonly.com/paths/1-developer-onboarding"
+  },
+  "archived_at": null,
+  "archived_by_user_id": null,
+  "contents": [
+    {
+      "id": 10,
+      "resource_type": "lesson",
+      "title": "Setting up a development environment",
+      "archived_at": null,
+      "archived_by_user_id": null
+    },
+    {
+      "id": 2,
+      "resource_type": "wait_step",
+      "effect": "locked",
+      "condition": "prev_step_finished",
+      "unit": "days",
+      "amount": 3
+    },
+    {
+      "id": 20,
+      "resource_type": "path",
+      "title": "Know Your Tools",
+      "archived_at": null,
+      "archived_by_user_id": null,
+      "contents": [
+        {
+          "id": 4,
+          "type": "lesson",
+          "title": "Clubhouse 101",
+          "archived_at": null,
+          "archived_by_user_id": null
+        },
+        {
+          "id": 5,
+          "resource_type": "placeholder",
+          "description": "Add a lesson about Github"
+        }
+      ]
+    }
+  ]
+}
+```
+
+This endpoint retrieves all the path's details including their steps.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1/paths/:path_id`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+path_id | yes | Positive Integer | The path to access. The company must have access to the path.
+
+## Archive Path
+
+```shell
+curl -X PUT -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/archive"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "path",
+  "id": 1,
+  "resource_type": "path",
+  "title": "Developer Onboarding",
+  "description": "All you need to know to get up-and-running.",
+  "enforced_order": true,
+  "public": false,
+  "created_at": "2017-07-24T10:47:23Z",
+  "last_updated_at": "2017-07-24T10:49:10Z",
+  "published_at": null,
+  "publisher_id": null,
+  "tags": [
+    {
+      "id": 1,
+      "resource_type": "tag",
+      "name": "Engineering"
+    }
+  ],
+  "links": {
+    "shareable": "https://mycompany.lessonly.com/path/1-developer-onboarding",
+    "overview": "https://mycompany.lessonly.com/paths/1-developer-onboarding"
+  },
+  "archived_at": "2016-10-13T09:51:13.549-04:00",
+  "archived_by_user_id": 1,
+  "contents": [
+    {
+      "id": 10,
+      "resource_type": "lesson",
+      "title": "Setting up a development environment",
+      "archived_at": null,
+      "archived_by_user_id": null
+    },
+    {
+      "id": 2,
+      "resource_type": "wait_step",
+      "effect": "locked",
+      "condition": "prev_step_finished",
+      "unit": "days",
+      "amount": 3
+    },
+    {
+      "id": 20,
+      "resource_type": "path",
+      "title": "Know Your Tools",
+      "archived_at": null,
+      "archived_by_user_id": null,
+      "contents": [
+        {
+          "id": 4,
+          "type": "lesson",
+          "title": "Clubhouse 101",
+          "archived_at": null,
+          "archived_by_user_id": null
+        },
+        {
+          "id": 5,
+          "resource_type": "placeholder",
+          "description": "Add a lesson about Github"
+        }
+      ]
+    }
+  ]
+}
+```
+
+This endpoint allows the archiving of a single path.
+
+### HTTP Request
+
+`PUT https://api.lessonly.com/api/v1/paths/:path_id/archive`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+path_id | yes | Positive Integer | The path to archive. The company must have access to the path.
+
+## Restore Path
+
+```shell
+curl -X PUT -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/restore"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "path",
+  "id": 1,
+  "resource_type": "path",
+  "title": "Developer Onboarding",
+  "description": "All you need to know to get up-and-running.",
+  "enforced_order": true,
+  "public": false,
+  "created_at": "2017-07-24T10:47:23Z",
+  "last_updated_at": "2017-07-24T10:49:10Z",
+  "published_at": null,
+  "publisher_id": null,
+  "tags": [
+    {
+      "id": 1,
+      "resource_type": "tag",
+      "name": "Engineering"
+    }
+  ],
+  "links": {
+    "shareable": "https://mycompany.lessonly.com/path/1-developer-onboarding",
+    "overview": "https://mycompany.lessonly.com/paths/1-developer-onboarding"
+  },
+  "archived_at": null,
+  "archived_by_user_id": null,
+  "contents": [
+    {
+      "id": 10,
+      "resource_type": "lesson",
+      "title": "Setting up a development environment",
+      "archived_at": null,
+      "archived_by_user_id": null
+    },
+    {
+      "id": 2,
+      "resource_type": "wait_step",
+      "effect": "locked",
+      "condition": "prev_step_finished",
+      "unit": "days",
+      "amount": 3
+    },
+    {
+      "id": 20,
+      "resource_type": "path",
+      "title": "Know Your Tools",
+      "archived_at": null,
+      "archived_by_user_id": null,
+      "contents": [
+        {
+          "id": 4,
+          "type": "lesson",
+          "title": "Clubhouse 101",
+          "archived_at": null,
+          "archived_by_user_id": null
+        },
+        {
+          "id": 5,
+          "resource_type": "placeholder",
+          "description": "Add a lesson about Github"
+        }
+      ]
+    }
+  ]
+}
+```
+
+This endpoint allows the restoring of a single archived path.
+
+### HTTP Request
+
+`PUT https://api.lessonly.com/api/v1/paths/:path_id/restore`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+path_id | yes | Positive Integer | The path to restore.  The company must have access to the path.
+
+## Assigning a Path
+
+```shell
+curl -X PUT -H "Content-Type: application/json" -u "DOMAIN:API_KEY" -d 'JSON_PARAMS' "https://api.lessonly.com/api/v1/paths/:path_id/assignments"
+
+```
+
+> The following are sample parameters for this request:
+
+```json
+{
+  "assignments":[
+    {
+      "assignee_id": 1,
+      "due_by": "2020-09-30T00:00:00Z",
+      "notify": false
+    }
+  ]
+}
+```
+
+> A successful update returns a JSON formatted version of the assignments made:
+
+```json
+{
+  "type": "update_path_assignments",
+  "assignments": [
+    {
+      "id": 1,
+      "resource_type": "assignment",
+      "assignee_id": 1,
+      "assignable_type": "LearningPaths::Path",
+      "assignable_id": 1,
+      "ext_uid": "ABC123",
+      "due_by": "2020-09-30T00:00:00Z",
+      "reassigned_at": "2020-09-30T00:00:00Z",
+      "completed_at": "2020-09-30T00:00:00Z",
+      "status": "Incomplete",
+      "score": null
+    }
+  ]
+}
+```
+
+This endpoint allows you to make assignments to a particular path in the API.
+
+### HTTP Request
+
+`PUT https://api.lessonly.com/api/v1/paths/:path_id/assignments -d params`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+path_id | yes | Positive Integer | The path to access. The company must have access to the path.
+assignments | no | Hash | A hash of assignments to be made to the path.  If the assignment for a particular user already exists, the user will be reassigned the path. By default, an email will be sent to the assignee; it will come from notifications@lessonly.com. To suppress the email notification set `notify` to `false`.
+
+## List Path Assignments
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/assignments
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "path_assignments",
+  "total_assignments": 2,
+  "page": 1,
+  "per_page": 10,
+  "total_pages": 1,
+  "assignments":[
+    {
+      "id": 1,
+      "resource_type": "assignment",
+      "assignee_id": 2,
+      "assignable_type": "LearningPaths::Path",
+      "assignable_id": 1,
+      "ext_uid": "ABC123",
+      "due_by": "2020-09-30T00:00:00Z",
+      "assigned_at": "2020-03-20T00:00:00Z",
+      "reassigned_at": "2020-09-30T00:00:00Z",
+      "status": "Completed",
+      "started_at": "2016-03-28T14:15:17Z",
+      "completed_at": "2016-03-28T18:20:06Z",
+      "updated_at": "2016-03-28T18:20:06Z"
+    },
+    {
+      "id": 2,
+      "resource_type": "assignment",
+      "assignee_id": 3,
+      "assignable_type": "LearningPaths::Path",
+      "assignable_id": 1,
+      "ext_uid": "DEF456",
+      "due_by": "2020-09-30T00:00:00Z",
+      "reassigned_at": "2020-09-30T00:00:00Z",
+      "status": "Incomplete",
+      "started_at": "2016-03-28T14:15:17Z",
+      "completed_at": null,
+      "updated_at": "2016-03-28T18:20:06Z"
+    }
+  ]
+}
+```
+
+This endpoint retrieves all the assignments for a particular path.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1/paths/:path_id/assignments`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+path_id | yes | Positive Integer | The path to access.  The company must have access to the path.
+<%= pagination_query_params.chomp %>
+
+## Path Assignments Completed
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/assignments/completed
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "path_assignments_completed",
+  "completed_count": 11
+}
+```
+
+This endpoint retrieves the count of completed assignments for a particular path.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1/paths/:path_id/assignments/completed`
+
+### Query Parameters
+
+ Parameter | Required | Type |  Description
+ --- | --- | --- | ---
+ path_id | yes | Positive Integer | The path to access.  The company must have access to the path.
