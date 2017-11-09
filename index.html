@@ -863,7 +863,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
       </span><span class="nt">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nt">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Path"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -917,7 +917,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
       </span><span class="p">}</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nt">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Path"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -953,7 +953,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
       </span><span class="nt">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="nt">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Path"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -991,7 +991,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>assignments</td>
 <td>yes</td>
 <td>Array</td>
-<td>Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of &ldquo;Lesson&rdquo; or &ldquo;Course&rdquo;. By default, an email will be sent to the assignee; it will come from notifications@lessonly.com. To suppress the email notification set <code class="prettyprint">notify</code> to <code class="prettyprint">false</code>.</td>
+<td>Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of &ldquo;Lesson&rdquo; or &ldquo;Path&rdquo;. By default, an email will be sent to the assignee; it will come from notifications@lessonly.com. To suppress the email notification set <code class="prettyprint">notify</code> to <code class="prettyprint">false</code>.</td>
 </tr>
 </tbody></table>
 
@@ -1390,13 +1390,13 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
   </span><span class="p">{</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="nt">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Path"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint returns a list of all lessons and courses that have been assigned to the given group, in no particular order. Results include both archived and unarchived learning content.</p>
+<p>This endpoint returns a list of all lessons and paths that have been assigned to the given group, in no particular order. Results include both archived and unarchived learning content.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -2346,6 +2346,523 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </tr>
 </tbody></table>
 
+          <h1 id="paths">Paths</h1>
+
+<h2 id="list-paths">List Paths</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/paths"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paths"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"paths"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Path 1"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Path 2"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-28T10:46:03.467-04:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all paths.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/paths</code></p>
+
+<h2 id="show-path-details">Show Path Details</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/paths/:path_id"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Developer Onboarding"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All you need to know to get up-and-running."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"enforced_order"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-24T10:47:23Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"last_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-24T10:49:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"published_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"publisher_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineering"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"shareable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mycompany.lessonly.com/path/1-developer-onboarding"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"overview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mycompany.lessonly.com/paths/1-developer-onboarding"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"contents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Setting up a development environment"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait_step"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prev_step_finished"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"days"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Know Your Tools"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"contents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clubhouse 101"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"placeholder"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add a lesson about Github"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all the path&rsquo;s details including their steps.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/paths/:path_id</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>path_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The path to access. The company must have access to the path.</td>
+</tr>
+</tbody></table>
+
+<h2 id="archive-path">Archive Path</h2>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/paths/:path_id/archive"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Developer Onboarding"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All you need to know to get up-and-running."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"enforced_order"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-24T10:47:23Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"last_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-24T10:49:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"published_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"publisher_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineering"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"shareable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mycompany.lessonly.com/path/1-developer-onboarding"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"overview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mycompany.lessonly.com/paths/1-developer-onboarding"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-13T09:51:13.549-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"contents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Setting up a development environment"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait_step"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prev_step_finished"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"days"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Know Your Tools"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"contents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clubhouse 101"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"placeholder"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add a lesson about Github"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows the archiving of a single path.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/paths/:path_id/archive</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>path_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The path to archive. The company must have access to the path.</td>
+</tr>
+</tbody></table>
+
+<h2 id="restore-path">Restore Path</h2>
+<pre class="highlight shell"><code>curl -X PUT -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/paths/:path_id/restore"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Developer Onboarding"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All you need to know to get up-and-running."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"enforced_order"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-24T10:47:23Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"last_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-24T10:49:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"published_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"publisher_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineering"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"shareable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mycompany.lessonly.com/path/1-developer-onboarding"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"overview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mycompany.lessonly.com/paths/1-developer-onboarding"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"contents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Setting up a development environment"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait_step"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prev_step_finished"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"days"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Know Your Tools"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"contents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clubhouse 101"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"placeholder"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add a lesson about Github"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows the restoring of a single archived path.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/paths/:path_id/restore</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>path_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The path to restore.  The company must have access to the path.</td>
+</tr>
+</tbody></table>
+
+<h2 id="assigning-a-path">Assigning a Path</h2>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -u <span class="s2">"DOMAIN:API_KEY"</span> -d <span class="s1">'JSON_PARAMS'</span> <span class="s2">"https://api.lessonly.com/api/v1/paths/:path_id/assignments"</span>
+
+</code></pre>
+
+<blockquote>
+<p>The following are sample parameters for this request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"assignments"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>A successful update returns a JSON formatted version of the assignments made:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update_path_assignments"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"assignments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LearningPaths::Path"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incomplete"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint allows you to make assignments to a particular path in the API.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.lessonly.com/api/v1/paths/:path_id/assignments -d params</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>path_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The path to access. The company must have access to the path.</td>
+</tr>
+<tr>
+<td>assignments</td>
+<td>no</td>
+<td>Hash</td>
+<td>A hash of assignments to be made to the path.  If the assignment for a particular user already exists, the user will be reassigned the path. By default, an email will be sent to the assignee; it will come from notifications@lessonly.com. To suppress the email notification set <code class="prettyprint">notify</code> to <code class="prettyprint">false</code>.</td>
+</tr>
+</tbody></table>
+
+<h2 id="list-path-assignments">List Path Assignments</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/paths/:path_id/assignments
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path_assignments"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"total_assignments"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"assignments"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LearningPaths::Path"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-20T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Completed"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"started_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-28T14:15:17Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-28T18:20:06Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-28T18:20:06Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LearningPaths::Path"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"reassigned_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incomplete"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"started_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-28T14:15:17Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-28T18:20:06Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all the assignments for a particular path.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/paths/:path_id/assignments</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>path_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The path to access.  The company must have access to the path.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>no</td>
+<td>Positive Integer</td>
+<td>which page in the pagination to fetch.  Default = 1</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>no</td>
+<td>Positive Integer</td>
+<td>how many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
+</tr>
+</tbody></table>
+
+<h2 id="path-assignments-completed">Path Assignments Completed</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/paths/:path_id/assignments/completed
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path_assignments_completed"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves the count of completed assignments for a particular path.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/paths/:path_id/assignments/completed</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>path_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The path to access.  The company must have access to the path.</td>
+</tr>
+</tbody></table>
+
           <h1 id="tags">Tags</h1>
 
 <h2 id="list-tags">List Tags</h2>
@@ -2574,7 +3091,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Path"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nt">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
@@ -2588,7 +3105,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Path"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nt">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T14:15:17Z"</span><span class="p">,</span><span class="w">
@@ -2602,7 +3119,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
       </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Path"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nt">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
@@ -2616,9 +3133,9 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint returns paginated assignments in no particular order across all of your users, lessons, and courses. Optionally, you can filter by assignments with activity after a given ISO8601 timestamp by passing <code class="prettyprint">gt[updated_at]=TIMESTAMP</code> in the query string.</p>
+<p>This endpoint returns paginated assignments in no particular order across all of your users, lessons, and paths. Optionally, you can filter by assignments with activity after a given ISO8601 timestamp by passing <code class="prettyprint">gt[updated_at]=TIMESTAMP</code> in the query string.</p>
 
-<p>To view assignments for a particular <a href="#user-assignments">user</a>, <a href="#lesson-assignments">lesson</a>, or <a href="#course-assignments">course</a> please use those dedicated endpoints.</p>
+<p>To view assignments for a particular <a href="#user-assignments">user</a>, <a href="#lesson-assignments">lesson</a>, or <a href="#path-assignments">path</a> please use those dedicated endpoints.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -2672,7 +3189,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assignment"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Course"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assignable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Path"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"assignable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nt">"ext_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEF456"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"due_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-30T00:00:00Z"</span><span class="p">,</span><span class="w">
