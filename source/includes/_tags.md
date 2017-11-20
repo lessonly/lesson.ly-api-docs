@@ -74,7 +74,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/lessons
   "lessons": [
     {
       "id": 5,
-      "resource_type": "tag",
+      "resource_type": "lesson",
       "title": "Marketing 101",
       "assignees_count": 21,
       "completed_count": 1,
@@ -83,7 +83,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/lessons
     },
     {
       "id": 456,
-      "resource_type": "tag",
+      "resource_type": "lesson",
       "title": "Development 101",
       "assignees_count": 11,
       "completed_count": 5,
@@ -119,7 +119,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/courses
   "courses": [
     {
       "id": 123,
-      "resource_type": "tag",
+      "resource_type": "course",
       "title": "Onboarding Course",
       "assignees_count": 15,
       "completed_count": 11,
@@ -159,3 +159,73 @@ This endpoint retrieves all the courses tagged with a particular tag.
 Parameter | Required | Type |  Description
 --- | --- | --- | ---
 tag_id | yes | Positive Integer | The tag to access.  The company must have access to the tag.
+
+## Tag Paths
+
+```shell
+curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/paths
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "tag_paths",
+  "paths": [
+    {
+      "id": 123,
+      "resource_type": "path",
+      "title": "Onboarding Path",
+      "description": "This Path will get you up to speed in our company.",
+      "enforced_order": true,
+      "public": false,
+      "created_at": "2017-11-16T14:57:41Z",
+      "last_updated_at": null,
+      "published_at": "2017-11-16T14:57:42.351-05:00",
+      "publisher_id": 1,
+      "tags": [
+        {
+          "id": 1,
+          "resource_type": "tag",
+          "name": "First Tag"
+        },
+        {
+          "id": 2,
+          "resource_type": "tag",
+          "name": "Second tag"
+        }
+      ],
+      "links": {
+        "shareable": "http://dev123.lessonly.dev/path/9999-onboarding-test",
+        "overview": "http://dev123.lessonly.dev/paths/9999-onboarding-test"
+      },
+      "archived_at": null,
+      "archived_by_user_id": null,
+      "contents": [
+        {
+          "id": 1339,
+          "resource_type": "lesson",
+          "title": "Your first day",
+          "archived_at": null,
+          "archived_by_user_id": null
+        },
+        {
+          "id": 8,
+          "resource_type": "wait_step",
+          "effect": "locked",
+          "condition": "prev_step_finished",
+          "unit": "days",
+          "amount": 1
+        },
+        {
+          "id": 1339,
+          "resource_type": "lesson",
+          "title": "Getting started",
+          "archived_at": null,
+          "archived_by_user_id": null
+        }
+      ]
+    }
+  ]
+}
+```
