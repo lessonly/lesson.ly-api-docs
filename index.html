@@ -2946,7 +2946,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
   </span><span class="nt">"lessons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marketing 101"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
       </span><span class="nt">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -2955,7 +2955,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Development 101"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
       </span><span class="nt">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
@@ -3002,7 +3002,7 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
   </span><span class="nt">"courses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"course"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Onboarding Course"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"assignees_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
       </span><span class="nt">"completed_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
@@ -3055,6 +3055,74 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>The tag to access.  The company must have access to the tag.</td>
 </tr>
 </tbody></table>
+
+<h2 id="tag-paths">Tag Paths</h2>
+<pre class="highlight shell"><code>curl -u <span class="s2">"DOMAIN:API_KEY"</span> <span class="s2">"https://api.lessonly.com/api/v1/tags/:tag_id/paths
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag_paths"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"paths"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Onboarding Path"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This Path will get you up to speed in our company."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"enforced_order"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T14:57:41Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"published_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T14:57:42.351-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"publisher_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Tag"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Second tag"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"shareable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://dev123.lessonly.dev/path/9999-onboarding-test"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"overview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://dev123.lessonly.dev/paths/9999-onboarding-test"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"contents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1339</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your first day"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait_step"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prev_step_finished"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"days"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1339</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lesson"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Getting started"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"archived_by_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
           <h1 id="assignments">Assignments</h1>
 
