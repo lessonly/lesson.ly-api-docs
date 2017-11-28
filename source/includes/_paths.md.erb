@@ -109,7 +109,7 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id"
 }
 ```
 
-This endpoint retrieves all the path's details including their steps.
+This endpoint retrieves all the path's details including their steps. The `"resource_type"` of Paths’ `"contents"` will be one of `"lesson"`, `"wait_step"`, `"path"`, or `"placeholder"`. Paths’ `"contents"` may be nested.
 
 ### HTTP Request
 
