@@ -2455,6 +2455,10 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 
 <p>This endpoint retrieves all the path&rsquo;s details including their steps.</p>
 
+<p>The <code class="prettyprint">&quot;resource_type&quot;</code> of Paths’ <code class="prettyprint">&quot;contents&quot;</code> will be one of <code class="prettyprint">&quot;lesson&quot;</code>, <code class="prettyprint">&quot;wait_step&quot;</code>, <code class="prettyprint">&quot;path&quot;</code>, or <code class="prettyprint">&quot;placeholder&quot;</code>.</p>
+
+<p>Paths’ <code class="prettyprint">&quot;contents&quot;</code> may be nested.</p>
+
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://api.lessonly.com/api/v1/paths/:path_id</code></p>
