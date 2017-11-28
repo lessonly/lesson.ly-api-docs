@@ -229,3 +229,15 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/paths
   ]
 }
 ```
+
+This endpoint retrieves all the paths tagged with a particular tag.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1/tags/:tag_id/paths`
+
+### Query Parameters
+
+Parameter | Required | Type |  Description
+--- | --- | --- | ---
+tag_id | yes | Positive Integer | The tag to access.  The company must have access to the tag.
