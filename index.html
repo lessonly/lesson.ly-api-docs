@@ -3128,6 +3128,30 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
+<p>This endpoint retrieves all the paths tagged with a particular tag.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.lessonly.com/api/v1/tags/:tag_id/paths</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tag_id</td>
+<td>yes</td>
+<td>Positive Integer</td>
+<td>The tag to access.  The company must have access to the tag.</td>
+</tr>
+</tbody></table>
+
           <h1 id="assignments">Assignments</h1>
 
 <h2 id="list-assignments">List Assignments</h2>
