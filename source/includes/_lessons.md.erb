@@ -16,14 +16,43 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons"
         "id": 1,
         "title": "First Lesson",
         "archived_at": null,
-        "archived_by_user_id": null
+        "archived_by_user_id": null,
+        "retake_score": 80,
+        "public": false,
+        "created_at": "2020-09-30T00:00:00Z",
+        "last_updated_at": "2020-09-30T00:00:00Z",
+        "tags": [
+          {
+            "id": 1,
+            "name": "test_tag",
+            "resource_type": "tag"
+          }
+        ],
+        "links": {
+          "overview": "https://mycompany.lessonly.com/lessons/1-first-lesson"
+        }
       },
       {
         "id": 2,
         "title": "Second Lesson",
         "archived_at": null,
-        "archived_by_user_id": null
-      },
+        "archived_by_user_id": null,
+        "retake_score": 95,
+        "public": true,
+        "created_at": "2020-09-30T00:00:00Z",
+        "last_updated_at": "2020-09-30T00:00:00Z",
+        "tags": [
+          {
+            "id": 1,
+            "name": "test_tag",
+            "resource_type": "tag"
+          }
+        ],
+        "links": {
+          "overview": "https://mycompany.lessonly.com/lessons/2-second-lesson",
+          "shareable": "https://mycompany.lessonly.com/lesson/2-second-lesson"
+        }
+      }
     ]
 }
 ```
@@ -54,14 +83,14 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id
   "public": false,
   "created_at": "2020-09-30T00:00:00Z",
   "last_updated_at": "2020-09-30T00:00:00Z",
-  "tags" : [
+  "tags": [
     {
       "id": 1,
       "name": "test_tag",
       "resource_type": "tag"
     }
   ],
-  "links" : {
+  "links": {
     "overview": "https://mycompany.lessonly.com/lessons/1-lesson-1",
     "shareable": "https://mycompany.lessonly.com/lesson/1-lesson-1"
   },
@@ -93,13 +122,13 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/lessons/:lesson_id
   "public": false,
   "created_at": "2020-09-30T00:00:00Z",
   "last_updated_at": "2020-09-30T00:00:00Z",
-  "tags" : [
+  "tags": [
     {
       "id": 1,
       "name": "test_tag"
     }
   ],
-  "links" : {
+  "links": {
     "shareable": "https://lesson-shareable-link"
   }
 }
@@ -131,13 +160,13 @@ curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id -d 
   "public": false,
   "created_at": "2020-09-30T00:00:00Z",
   "last_updated_at": "2020-09-30T00:00:00Z",
-  "tags" : [
+  "tags": [
     {
       "id": 1,
       "name": "test_tag"
     }
   ],
-  "links" : {
+  "links": {
     "overview": "https://mycompany.lessonly.com/lessons/1-lesson-1",
     "shareable": "https://mycompany.lessonly.com/lesson/1-lesson-1"
   }
