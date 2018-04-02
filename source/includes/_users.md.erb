@@ -78,7 +78,7 @@ This endpoint retrieves all users.
 Parameter | Required | Type | Description
 --------- | ------- | ------- | -----------
 <%= pagination_query_params.chomp %>
-filter | no | String | Specified user filter for users list.  Supported filters are email and ext_uid.
+filter | no | String | Specified user filter for users list. Supported filters are email, ext_uid, sso_id, and custom_user_field. The SSO ID is the provider ID that we store from a successful SSO request. The format for custom_user_field is `filter[custom_user_field][FIELD_ID]=FIELD_VALUE`.
 
 ## Show User Details
 
