@@ -159,19 +159,19 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>page</td>
 <td>no</td>
 <td>Positive Integer</td>
-<td>which page in the pagination to fetch.  Default = 1</td>
+<td>Which page in the pagination to fetch.  Default = 1</td>
 </tr>
 <tr>
 <td>per_page</td>
 <td>no</td>
 <td>Positive Integer</td>
-<td>how many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
+<td>How many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
 </tr>
 <tr>
 <td>filter</td>
 <td>no</td>
 <td>String</td>
-<td>Specified user filter for users list.  Supported filters are email and ext_uid.</td>
+<td>Specified user filter for users list. Supported filters are email, ext_uid, sso_id, and custom_user_field. The SSO ID is the provider ID that we store from a successful SSO request. The format for custom_user_field is <code class="prettyprint">filter[custom_user_field][FIELD_ID]=FIELD_VALUE</code>.</td>
 </tr>
 </tbody></table>
 
@@ -1831,13 +1831,13 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>page</td>
 <td>no</td>
 <td>Positive Integer</td>
-<td>which page in the pagination to fetch.  Default = 1</td>
+<td>Which page in the pagination to fetch.  Default = 1</td>
 </tr>
 <tr>
 <td>per_page</td>
 <td>no</td>
 <td>Positive Integer</td>
-<td>how many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
+<td>How many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
 </tr>
 </tbody></table>
 
@@ -2290,13 +2290,13 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>page</td>
 <td>no</td>
 <td>Positive Integer</td>
-<td>which page in the pagination to fetch.  Default = 1</td>
+<td>Which page in the pagination to fetch.  Default = 1</td>
 </tr>
 <tr>
 <td>per_page</td>
 <td>no</td>
 <td>Positive Integer</td>
-<td>how many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
+<td>How many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
 </tr>
 </tbody></table>
 
@@ -2896,13 +2896,13 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>page</td>
 <td>no</td>
 <td>Positive Integer</td>
-<td>which page in the pagination to fetch.  Default = 1</td>
+<td>Which page in the pagination to fetch.  Default = 1</td>
 </tr>
 <tr>
 <td>per_page</td>
 <td>no</td>
 <td>Positive Integer</td>
-<td>how many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
+<td>How many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
 </tr>
 </tbody></table>
 
@@ -3327,13 +3327,13 @@ You must replace <code>DOMAIN</code> with your Lessonly domain and <code>API_KEY
 <td>page</td>
 <td>no</td>
 <td>Positive Integer</td>
-<td>which page in the pagination to fetch.  Default = 1</td>
+<td>Which page in the pagination to fetch.  Default = 1</td>
 </tr>
 <tr>
 <td>per_page</td>
 <td>no</td>
 <td>Positive Integer</td>
-<td>how many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
+<td>How many results to return in each page.  Default = 50; Maximum = 5000. Numbers &gt; 5000 are ignored and 5000 will be returned.</td>
 </tr>
 <tr>
 <td>gt</td>
