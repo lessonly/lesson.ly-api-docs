@@ -681,4 +681,4 @@ This endpoint allows you to create assignments for a user.
 Parameter | Required | Type |  Description
 --- | --- | --- | ---
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
-assignments | yes | Array |  Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of "Lesson" or "Path". By default, an email will be sent to the assignee; it will come from notifications@lessonly.com. To suppress the email notification set `notify` to `false`.
+assignments | yes | Array |  Array of assignments to be made to the user.  Each requires an assignable_id and assignable_type of "Lesson" or "LearningPaths::Path". By default, an email will be sent to the assignee; it will come from notifications@lessonly.com. To suppress the email notification set `notify` to `false`.
