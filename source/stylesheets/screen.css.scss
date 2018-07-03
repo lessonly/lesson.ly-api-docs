@@ -639,4 +639,16 @@ html, body {
   }
 }
 
+.deprecation-warning {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  font-size: 16px;
+  padding: .25em;
+  border-radius: .25em;
+  vertical-align: middle;
 
+  &:before {
+    content: '⚠️';
+  }
+}
