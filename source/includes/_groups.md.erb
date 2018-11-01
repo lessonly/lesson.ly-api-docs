@@ -3,7 +3,7 @@
 ## List Groups
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups"
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups"
 ```
 
 > The above command returns JSON structured like this:
@@ -37,7 +37,7 @@ This endpoint retrieves all groups.
 ## Show Group Details
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups/:group_id"
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups/:group_id"
 ```
 
 > The above command returns JSON structured like this:
@@ -265,7 +265,7 @@ group_id | yes | Positive Integer | The group to restore.  The company must have
 ## Delete Group
 
 ```shell
-curl -X DELETE -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups/:group_id"
+curl -X DELETE -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups/:group_id"
 ```
 
 > A successful update returns JSON consisting of the id of the deleted group

@@ -3,7 +3,7 @@
 ## List Courses
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/courses"
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/courses"
 ```
 
 > The above command returns JSON structured like this:
@@ -37,7 +37,7 @@ This endpoint retrieves all courses.
 ## Show Course Details
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/courses/:course_id
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/courses/:course_id
 ```
 
 > The above command returns JSON structured like this:
@@ -95,7 +95,7 @@ course_id | yes | Positive Integer | The course to access.  The company must hav
 ## Show Course Details (v1.1)
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/courses/:course_id"
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/courses/:course_id"
 ```
 
 
@@ -248,7 +248,7 @@ course_id | yes | Positive Integer | The course to restore.  The company must ha
 ## Course Assignments
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/courses/:course_id/assignments
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/courses/:course_id/assignments
 ```
 
 > The above command returns JSON structured like this:
@@ -310,7 +310,7 @@ course_id | yes | Positive Integer | The course to access.  The company must hav
 ## Course Assignments Completed (v1.1)
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/courses/:course_id/assignments/completed
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/courses/:course_id/assignments/completed
 ```
 
 > The above command returns JSON structured like this:

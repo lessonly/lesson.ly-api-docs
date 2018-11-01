@@ -3,7 +3,7 @@
 ## List Paths
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths"
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths"
 ```
 
 > The above command returns JSON structured like this:
@@ -68,7 +68,7 @@ This endpoint retrieves all paths.
 ## Show Path Details
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id"
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id"
 ```
 
 > The above command returns JSON structured like this:
@@ -159,7 +159,7 @@ path_id | yes | Positive Integer | The path to access. The company must have acc
 ## Archive Path
 
 ```shell
-curl -X PUT -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/archive"
+curl -X PUT -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/archive"
 ```
 
 > The above command returns JSON structured like this:
@@ -246,7 +246,7 @@ path_id | yes | Positive Integer | The path to archive. The company must have ac
 ## Restore Path
 
 ```shell
-curl -X PUT -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/restore"
+curl -X PUT -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/restore"
 ```
 
 > The above command returns JSON structured like this:
@@ -333,7 +333,7 @@ path_id | yes | Positive Integer | The path to restore.  The company must have a
 ## Assigning a Path
 
 ```shell
-curl -X PUT -H "Content-Type: application/json" -u "DOMAIN:API_KEY" -d 'JSON_PARAMS' "https://api.lessonly.com/api/v1/paths/:path_id/assignments"
+curl -X PUT -H "Content-Type: application/json" -u "SUBDOMAIN:API_KEY" -d 'JSON_PARAMS' "https://api.lessonly.com/api/v1/paths/:path_id/assignments"
 
 ```
 
@@ -390,7 +390,7 @@ assignments | no | Hash | A hash of assignments to be made to the path.  If the 
 ## List Path Assignments
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/assignments
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/assignments
 ```
 
 > The above command returns JSON structured like this:
@@ -452,7 +452,7 @@ path_id | yes | Positive Integer | The path to access.  The company must have ac
 ## Path Assignments Completed
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/assignments/completed
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/assignments/completed
 ```
 
 > The above command returns JSON structured like this:

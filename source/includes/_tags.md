@@ -3,7 +3,7 @@
 ## List Tags
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags"
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags"
 ```
 
 > The above command returns JSON structured like this:
@@ -35,7 +35,7 @@ This endpoint retrieves all tags.
 ## Show Tag Details
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id
 ```
 
 > The above command returns JSON structured like this:
@@ -63,7 +63,7 @@ tag_id | yes | Positive Integer | The tag to access.  The company must have acce
 ## Tag Lessons
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/lessons
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/lessons
 ```
 
 > The above command returns JSON structured like this:
@@ -108,7 +108,7 @@ tag_id | yes | Positive Integer | The tag to access.  The company must have acce
 ## Tag Courses
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/courses
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/courses
 ```
 
 > The above command returns JSON structured like this:
@@ -163,7 +163,7 @@ tag_id | yes | Positive Integer | The tag to access.  The company must have acce
 ## Tag Paths
 
 ```shell
-curl -u "DOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/paths
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/paths
 ```
 
 > The above command returns JSON structured like this:
