@@ -29,6 +29,7 @@
         "business_unit": "Global",
         "department": "Sales",
         "location": "Illinois",
+        "locale": "en",
         "hire_date": "2014-12-25",
         "manager_name": "Mary Doe",
         "custom_user_field_data": [
@@ -52,6 +53,7 @@
         "business_unit": "Global",
         "department": "IT",
         "location": "California",
+        "locale": "en",
         "hire_date": "2014-12-25",
         "manager_name": "Jane Doe",
         "custom_user_field_data": [
@@ -101,6 +103,7 @@ filter | no | String | Specified user filter for users list. Supported filters a
   "business_unit": "Global",
   "department": "Sales",
   "location": "Illinois",
+  "locale": "en",
   "hire_date": "2014-12-25",
   "manager_name": "Mary Doe",
   "custom_user_field_data": [
@@ -178,6 +181,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
   "business_unit": "Global",
   "department": "Sales",
   "location": "Illinois",
+  "locale": "en",
   "hire_date": "2014-12-25",
   "manager_name": "Mary Doe",
   "custom_user_fields": [
@@ -208,6 +212,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
   "business_unit": "Global",
   "department": "Sales",
   "location": "Illinois",
+  "locale": "en",
   "hire_date": "2014-12-25",
   "manager_name": "Mary Doe",
   "custom_user_field_data":
@@ -246,6 +251,7 @@ job_title | no | String | User job title
 business_unit | no | String | User business unit
 department | no | String | User department
 location | no | String | User location
+locale | no | String | User locale code to control the interface language. Options: ar, de, en, es, fr, it, ja, nl, pt, ru, sv, zh-CN. Defaults to 'en'.
 hire_date | no | String | User hire date. Must be an ISO8601 formatted date (YYYY-MM-DD).
 manager_name | no | String | User manager name
 notify | no | String | Whether or not to notify the user.  Passing 'false' will not send an email notification to the user that their account has been created. Defaults to 'true'.
@@ -269,6 +275,7 @@ custom_user_fields |  no | Array | Custom user fields for the user. Hashes must 
   "business_unit": "Global",
   "department": "Sales",
   "location": "Illinois",
+  "locale": "en",
   "hire_date": "2014-12-25",
   "manager_name": "Mary Doe",
   "custom_user_fields": [
@@ -299,6 +306,7 @@ custom_user_fields |  no | Array | Custom user fields for the user. Hashes must 
   "business_unit": "Global",
   "department": "Sales",
   "location": "Illinois",
+  "locale": "en",
   "hire_date": "2014-12-25",
   "manager_name": "Mary Doe",
   "custom_user_field_data":
@@ -338,6 +346,7 @@ job_title | no | String | User job title
 business_unit | no | String | User business unit
 department | no | String | User department
 location | no | String | User location
+locale | no | String | User locale code to control the interface language. Options: ar, de, en, es, fr, it, ja, nl, pt, ru, sv, zh-CN. Defaults to 'en'.
 hire_date | no | String | User hire date. Must be an ISO8601 formatted date (YYYY-MM-DD).
 manager_name | no | String | User manager name
 custom_user_fields |  no | Array | Custom user fields for the user. Hashes must contain a "value" and either a "customer_user_field_id" or "name". If an unknown custom user field "name" is provided, a new custom user field will be created with that name. If the user does not have a value for the specified customer user field it will be added, otherwise it will be updated to the specified "value".
@@ -361,6 +370,7 @@ custom_user_fields |  no | Array | Custom user fields for the user. Hashes must 
     "business_unit": "Global",
     "department": "Sales",
     "location": "Illinois",
+    "locale": "en",
     "hire_date": "2014-12-25",
     "manager_name": "Mary Doe",
     "id": 739413,
@@ -402,6 +412,7 @@ user_id | yes | Positive Integer | The user to archive.  The company must have a
     "business_unit": "Global",
     "department": "Sales",
     "location": "Illinois",
+    "locale": "en",
     "hire_date": "2014-12-25",
     "manager_name": "Mary Doe",
     "id": 739413,
