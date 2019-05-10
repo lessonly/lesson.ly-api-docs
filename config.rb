@@ -10,8 +10,8 @@ set :markdown,
     no_intra_emphasis: true
 
 helpers do
-  def api_get_request(endpoint)
-    "curl -u \"SUBDOMAIN:API_KEY\" \"https://api.lessonly.com/api/v1#{endpoint}\""
+  def api_get_request(endpoint, version = 'v1')
+    "curl -u \"SUBDOMAIN:API_KEY\" \"https://api.lessonly.com/api/#{version}#{endpoint}\""
   end
 
   def post_request(endpoint)
