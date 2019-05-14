@@ -110,13 +110,14 @@ curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id
 
 ```json
 {
+  "id": 1,
   "type": "lesson",
   "resource_type": "lesson",
-  "id": 1,
   "title": "Lesson 1",
   "assignees_count": 10,
   "completed_count": 5,
   "retake_score": 80,
+  "description": "just another lesson",
   "public": false,
   "created_at": "2020-09-30T00:00:00Z",
   "last_updated_at": "2020-09-30T00:00:00Z",
@@ -151,23 +152,28 @@ curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/lessons/:lesson_i
 
 ```json
 {
+  "id": 1,
   "type": "lesson",
   "resource_type": "lesson",
-  "id": 1,
   "title": "Lesson 1",
   "retake_score": 80,
+  "description": "just another lesson",
   "public": false,
   "created_at": "2020-09-30T00:00:00Z",
   "last_updated_at": "2020-09-30T00:00:00Z",
   "tags": [
     {
       "id": 1,
+      "resource_type": "tag",
       "name": "test_tag"
     }
   ],
   "links": {
-    "shareable": "https://lesson-shareable-link"
-  }
+    "shareable": "https://lesson-link",
+    "overview": "https://lesson-link"
+  },
+  "archived_at": "2016-08-12T08:54:52.982-04:00",
+  "archived_by_user_id": 78
 }
 ```
 
@@ -180,7 +186,7 @@ This endpoint retrieves the lesson's information. For a count of completed assig
 ## Update Lesson
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id -d params
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id" -d params
 ```
 
 > The above command returns JSON structured like this:
@@ -191,12 +197,15 @@ curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id 
   "resource_type": "lesson",
   "id": 1,
   "title": "Lesson 1",
+  "description": "just another lesson",
   "assignees_count": 10,
   "completed_count": 5,
   "retake_score": 80,
   "public": false,
   "created_at": "2020-09-30T00:00:00Z",
   "last_updated_at": "2020-09-30T00:00:00Z",
+  "archived_at": null,
+  "archived_by_user_id": null,
   "tags": [
     {
       "id": 1,
@@ -235,13 +244,15 @@ public | no | Boolean | Whether or not the lesson is public
 
 ```json
 {
+    "id": 43530,
+    "title": "Untitled Lesson",
+    "type": "lesson",
     "archived_at": "2016-10-12T16:12:09.850-04:00",
     "archived_by_user_id": null,
     "assignees_count": 0,
     "completed_count": 0,
     "created_at": "2016-10-06T16:09:41Z",
     "description": null,
-    "id": 43530,
     "last_updated_at": "2016-10-06T16:18:01Z",
     "links": {
       "overview": "https://mycompany.lessonly.com/lessons/43530-untitled-lesson",
@@ -253,11 +264,10 @@ public | no | Boolean | Whether or not the lesson is public
     "tags": [
       {
         "id": 1,
-        "name": "test_tag"
+        "name": "test_tag",
+        "resource_type": "tag"
       }
-    ],
-    "title": "Untitled Lesson",
-    "type": "lesson"
+    ]
 }
 ```
 
@@ -283,13 +293,15 @@ lesson_id | yes | Positive Integer | The lesson to archive.  The company must ha
 
 ```json
 {
+    "id": 43530,
+    "title": "Untitled Lesson",
+    "type": "lesson",
     "archived_at": null,
     "archived_by_user_id": null,
     "assignees_count": 0,
     "completed_count": 0,
     "created_at": "2016-10-06T16:09:41Z",
     "description": null,
-    "id": 43530,
     "last_updated_at": "2016-10-06T16:18:01Z",
     "links": {
       "overview": "https://mycompany.lessonly.com/lessons/43530-untitled-lesson",
@@ -301,11 +313,10 @@ lesson_id | yes | Positive Integer | The lesson to archive.  The company must ha
     "tags": [
       {
         "id": 1,
-        "name": "test_tag"
+        "name": "test_tag",
+        "resource_type": "tag"
       }
-    ],
-    "title": "Untitled Lesson",
-    "type": "lesson"
+    ]
 }
 ```
 
