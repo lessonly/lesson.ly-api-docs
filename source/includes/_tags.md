@@ -73,22 +73,29 @@ curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/lesson
   "type": "tag_lessons",
   "lessons": [
     {
-      "id": 5,
-      "resource_type": "lesson",
-      "title": "Marketing 101",
-      "assignees_count": 21,
-      "completed_count": 1,
-      "retake_score": 90,
-      "description": "A quick overview about how we do marketing."
-    },
-    {
-      "id": 456,
-      "resource_type": "lesson",
-      "title": "Development 101",
-      "assignees_count": 11,
-      "completed_count": 5,
-      "retake_score": 95,
-      "description": "A quick overview about how we do development."
+        "id": 19458,
+        "resource_type": "lesson",
+        "title": "Industry Update 10/16/15",
+        "assignees_count": 1,
+        "completed_count": 0,
+        "retake_score": 80,
+        "description": "A quick overview about how we do marketing.",
+        "public": true,
+        "created_at": "2015-10-15T23:22:31Z",
+        "last_updated_at": null,
+        "archived_at": "2016-09-07T12:19:55.453-04:00",
+        "archived_by_user_id": 651540,
+        "tags": [
+            {
+                "id": 18448,
+                "resource_type": "tag",
+                "name": "Archive"
+            }
+        ],
+        "links": {
+            "shareable": "https://adidas.lessonly.com/lesson/19458-industry-update-10-16-15",
+            "overview": "https://adidas.lessonly.com/lessons/19458-industry-update-10-16-15"
+        }
     }
   ]
 }

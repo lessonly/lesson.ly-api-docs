@@ -10,61 +10,46 @@
 
 ```json
 {
-  "type": "users",
-  "resource_type": "user",
-  "total_users": 2000,
-  "page": 1,
-  "per_page": 2,
-  "total_pages": 1000,
-  "users":[
-      {
-        "id": 1,
-        "name": "User Name",
-        "email": "email1@example.com",
-        "role": "learner",
-        "ext_uid": "ABC123",
-        "archived_at": null,
-        "archived_by_user_id": null,
-        "job_title": "Account Executive",
-        "business_unit": "Global",
-        "department": "Sales",
-        "location": "Illinois",
-        "locale": "en",
-        "hire_date": "2014-12-25",
-        "manager_name": "Mary Doe",
-        "custom_user_field_data": [
-          {
-            "id": 1,
-            "custom_user_field_id": 1,
-            "name": "Custom Field Name 1",
-            "value": "Custom Value 1"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "User Name",
-        "email": "email2@example.com",
-        "role": "learner",
-        "ext_uid": "DEF456",
-        "archived_at": null,
-        "archived_by_user_id": null,
-        "job_title": "Engineer",
-        "business_unit": "Global",
-        "department": "IT",
-        "location": "California",
-        "locale": "en",
-        "hire_date": "2014-12-25",
-        "manager_name": "Jane Doe",
-        "custom_user_field_data": [
-          {
-            "id": 2,
-            "custom_user_field_id": 1,
-            "name": "Custom Field Name 1",
-            "value": "Custom Value 2"
-          }
-        ]
-      }
+    "type": "users",
+    "total_users": 300,
+    "total_pages": 150,
+    "page": 1,
+    "per_page": 2,
+    "users": [
+        {
+            "id": 78,
+            "resource_type": "user",
+            "ext_uid": "5745365608",
+            "email": "joe@lessonly.com",
+            "name": "Joe Ubuntu",
+            "role": "admin",
+            "archived_at": null,
+            "archived_by_user_id": null,
+            "job_title": "",
+            "business_unit": "",
+            "department": "",
+            "location": "",
+            "locale": "en",
+            "hire_date": null,
+            "manager_name": ""
+        },
+        {
+            "id": 1694,
+            "resource_type": "user",
+            "ext_uid": null,
+            "email": "alexie@lessonly.com",
+            "name": "James alexie",
+            "role": "admin",
+            "archived_at": "2019-02-01T02:51:40.436-05:00",
+            "archived_by_user_id": 1640090,
+            "job_title": null,
+            "business_unit": null,
+            "department": null,
+            "location": null,
+            "locale": "en",
+            "hire_date": null,
+            "manager_name": null
+        }
     ]
 }
 ```
@@ -81,6 +66,88 @@ Parameter | Required | Type | Description
 --------- | ------- | ------- | -----------
 <%= pagination_query_params.chomp %>
 filter | no | String | Specified user filter for users list. Supported filters are email, ext_uid, sso_id, and custom_user_field. The SSO ID is the provider ID that we store from a successful SSO request. The format for custom_user_field is `filter[custom_user_field][FIELD_ID]=FIELD_VALUE`.
+
+## List Users (v1.1)
+
+```shell
+<%= api_get_request('/users', 'v1.1') %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "type": "users",
+    "total_users": 300,
+    "total_pages": 150,
+    "page": 1,
+    "per_page": 2,
+    "users": [
+        {
+            "id": 78,
+            "resource_type": "user",
+            "ext_uid": "5745365608",
+            "email": "max@lessonly.com",
+            "name": "Max Yoder",
+            "role": "admin",
+            "archived_at": null,
+            "archived_by_user_id": null,
+            "job_title": "",
+            "business_unit": "",
+            "department": "",
+            "location": "",
+            "locale": "en",
+            "hire_date": null,
+            "manager_name": "",
+            "mobile_phone_number": null,
+            "custom_user_field_data": [
+                {
+                    "id": 1823576,
+                    "custom_user_field_id": 2096,
+                    "value": "5745365608",
+                    "name": "SMS Reminder Phone Number"
+                },
+            ],
+            "groups": {
+                "member": [
+                    {
+                        "id": 38780,
+                        "name": "Corteva Mobile Test Group"
+                    },
+                    {
+                        "id": 15251,
+                        "name": "Leadership: Execs, Directors & Managers"
+                    }
+                ],
+                "manager": [
+                    {
+                        "id": 46421,
+                        "name": "Org - AE - West"
+                    },
+                    {
+                        "id": 46407,
+                        "name": "Org - Customer Support"
+                    },
+                ]
+            }
+        }
+    ]
+}
+```
+
+This endpoint retrieves all users.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1.1/users?filter[email]=email@example.com`
+
+### Query Parameters
+
+Parameter | Required | Type | Description
+--------- | ------- | ------- | -----------
+<%= pagination_query_params.chomp %>
+filter | no | String | Specified user filter for users list. Supported filters are email, ext_uid, sso_id, and custom_user_field. The SSO ID is the provider ID that we store from a successful SSO request. The format for custom_user_field is `filter[custom_user_field][FIELD_ID]=FIELD_VALUE`.
+
 
 ## Show User Details
 

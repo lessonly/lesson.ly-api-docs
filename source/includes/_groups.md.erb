@@ -23,7 +23,7 @@ curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups"
       "name": "Group 2",
       "archived_at": null,
       "archived_by_user_id": null
-    },
+    }
   ]
 }
 ```
@@ -44,19 +44,50 @@ curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups/:group_id"
 
 ```json
 {
+  "id": 12345,
   "type": "group",
   "resource_type": "group",
-  "id": 12345,
   "name": "Test Group",
+  "archived_at": null,
+  "archived_by_user_id": null,
   "members": [
-         {"id": 1, "ext_uid": "ABC123", "name": "Test Name"},
-         {"id": 2, "ext_uid": "DEF456", "name": "Test Name 2"}
-    ],
-  "managers":  [
-         {"id": 1, "ext_uid": "ABC123", "name": "Test Name"},
-   ],
-   "archived_at": null,
-   "archived_by_user_id": null
+    {
+        "id": 4308512,
+        "resource_type": "user",
+        "ext_uid": null,
+        "email": "joe.alec@lessonly.com",
+        "name": "Joe Alec",
+        "role": "admin",
+        "archived_at": null,
+        "archived_by_user_id": null,
+        "job_title": "",
+        "business_unit": "Andela",
+        "department": "Product",
+        "location": "",
+        "locale": "en",
+        "hire_date": null,
+        "manager_name": "Joe Metil"
+    }
+  ],
+  "managers": [
+      {
+          "id": 21494,
+          "resource_type": "user",
+          "ext_uid": "9083042864",
+          "email": "jay@lessonly.com",
+          "name": "Jay Bentley",
+          "role": "manager",
+          "archived_at": null,
+          "archived_by_user_id": null,
+          "job_title": "",
+          "business_unit": "",
+          "department": "Product",
+          "location": "",
+          "locale": "en",
+          "hire_date": null,
+          "manager_name": ""
+      }
+   ]
 }
 ```
 
@@ -94,10 +125,9 @@ group_id | yes | Positive Integer | The group to access.  The company must have 
       {"id":  3 },
       {"id":  4 }
     ]
-
 }
 ```
-> A successful update will return JSON consisting of the group details repsonse:
+> A successful post will return JSON consisting of the group details response:
 
 ```json
 {
@@ -105,18 +135,84 @@ group_id | yes | Positive Integer | The group to access.  The company must have 
   "resource_type": "group",
   "id": 12345,
   "name": "New Name",
+  "archived_at": null,
+  "archived_by_user_id": null,
   "members": [
-         {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"},
-         {"id": 2, "ext_uid": "ABC123", "name": "Test Name 2"}
-    ],
+    {
+      "id": 1,
+      "resource_type": "user",
+      "ext_uid": null,
+      "email": "joe.alec@lessonly.com",
+      "name": "Joe Alec",
+      "role": "admin",
+      "archived_at": null,
+      "archived_by_user_id": null,
+      "job_title": "",
+      "business_unit": "Andela",
+      "department": "Product",
+      "location": "",
+      "locale": "en",
+      "hire_date": null,
+      "manager_name": "Joe Metil"
+    },
+    {
+      "id": 2,
+      "resource_type": "user",
+      "ext_uid": null,
+      "email": "me@lessonly.com",
+      "name": "Henry Alec",
+      "role": "admin",
+      "archived_at": null,
+      "archived_by_user_id": null,
+      "job_title": "",
+      "business_unit": "Andela",
+      "department": "Product",
+      "location": "",
+      "locale": "en",
+      "hire_date": null,
+      "manager_name": "Joe Metil"
+    }
+   ],
   "managers":  [
-         {"id": 3, "ext_uid": "JKL012", "name": "Test Name 3"},
-         {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"}
+     {
+        "id": 3,
+        "resource_type": "user",
+        "ext_uid": "9083042864",
+        "email": "jay@lessonly.com",
+        "name": "Jay Bentley",
+        "role": "manager",
+        "archived_at": null,
+        "archived_by_user_id": null,
+        "job_title": "",
+        "business_unit": "",
+        "department": "Product",
+        "location": "",
+        "locale": "en",
+        "hire_date": null,
+        "manager_name": ""
+     },
+     {
+        "id": 4,
+        "resource_type": "user",
+        "ext_uid": "9083042864",
+        "email": "irene@lessonly.com",
+        "name": "Sandra Irene",
+        "role": "manager",
+        "archived_at": null,
+        "archived_by_user_id": null,
+        "job_title": "",
+        "business_unit": "",
+        "department": "Product",
+        "location": "",
+        "locale": "en",
+        "hire_date": null,
+        "manager_name": ""
+     }
    ]
 }
 ```
 
-This endpoint allows you to create a group and its members and managers.
+This endpoint allows you to create a group, its members and managers.
 
 ### HTTP Request
 
@@ -156,7 +252,7 @@ managers | no | Array | The managers of a group.
 
 }
 ```
-> A successful update will return JSON consisting of the group details repsonse:
+> A successful update will return JSON consisting of the group details response:
 
 ```json
 {
@@ -164,16 +260,50 @@ managers | no | Array | The managers of a group.
   "resource_type": "group",
   "id": 12345,
   "name": "New Name",
+  "archived_at": null,
+  "archived_by_user_id": null,
   "members": [
-         {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"},
-    ],
+    {
+      "id": 1,
+      "resource_type": "user",
+      "ext_uid": null,
+      "email": "me@lessonly.com",
+      "name": "Henry Alec",
+      "role": "learner",
+      "archived_at": null,
+      "archived_by_user_id": null,
+      "job_title": "",
+      "business_unit": "Andela",
+      "department": "Product",
+      "location": "",
+      "locale": "en",
+      "hire_date": null,
+      "manager_name": "Joe Metil"
+    }
+  ],
   "managers":  [
-         {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"},
+     {
+        "id": 4,
+        "resource_type": "user",
+        "ext_uid": "9083042864",
+        "email": "irene@lessonly.com",
+        "name": "Sandra Irene",
+        "role": "manager",
+        "archived_at": null,
+        "archived_by_user_id": null,
+        "job_title": "",
+        "business_unit": "",
+        "department": "Product",
+        "location": "",
+        "locale": "en",
+        "hire_date": null,
+        "manager_name": ""
+     }
    ]
 }
 ```
 
-This endpoint allows you to update a group and its members and managers.
+This endpoint allows you to update a group, its members and managers.
 
 ### HTTP Request
 
@@ -198,18 +328,50 @@ managers | no | Array | The managers of a group.  Passing "remove": "true" will 
 
 ```json
 {
+    "id": 12631,
+    "name": "Developer",
+    "resource_type": "group",
+    "type": "group",
     "archived_at": "2016-09-26T13:05:01.174-04:00",
     "archived_by_user_id": null,
-    "id": 12631,
     "members": [
-           {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"}
-      ],
-    "managers":  [
-           {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"}
-     ],
-    "name": "/",
-    "resource_type": "group",
-    "type": "group"
+      {
+        "id": 1,
+        "resource_type": "user",
+        "ext_uid": null,
+        "email": "me@lessonly.com",
+        "name": "Henry Alec",
+        "role": "learner",
+        "archived_at": null,
+        "archived_by_user_id": null,
+        "job_title": "",
+        "business_unit": "Andela",
+        "department": "Product",
+        "location": "",
+        "locale": "en",
+        "hire_date": null,
+        "manager_name": "Joe Metil"
+      }
+    ],
+    "managers": [
+       {
+          "id": 4,
+          "resource_type": "user",
+          "ext_uid": "9083042864",
+          "email": "irene@lessonly.com",
+          "name": "Sandra Irene",
+          "role": "manager",
+          "archived_at": null,
+          "archived_by_user_id": null,
+          "job_title": "",
+          "business_unit": "",
+          "department": "Product",
+          "location": "",
+          "locale": "en",
+          "hire_date": null,
+          "manager_name": ""
+       }
+    ]
 }
 ```
 
@@ -235,18 +397,50 @@ group_id | yes | Positive Integer | The group to archive.  The company must have
 
 ```json
 {
+    "id": 12631,
+    "name": "Developer",
+    "resource_type": "group",
+    "type": "group",
     "archived_at": null,
     "archived_by_user_id": null,
-    "id": 12631,
     "members": [
-           {"id": 1, "ext_uid": "ABC123", "name": "Test Name 1"}
-      ],
-    "managers":  [
-           {"id": 4, "ext_uid": "JKL012", "name": "Test Name 4"}
-     ],
-    "name": "/",
-    "resource_type": "group",
-    "type": "group"
+      {
+        "id": 1,
+        "resource_type": "user",
+        "ext_uid": null,
+        "email": "me@lessonly.com",
+        "name": "Henry Alec",
+        "role": "learner",
+        "archived_at": null,
+        "archived_by_user_id": null,
+        "job_title": "",
+        "business_unit": "Andela",
+        "department": "Product",
+        "location": "",
+        "locale": "en",
+        "hire_date": null,
+        "manager_name": "Joe Metil"
+      }
+    ],
+    "managers": [
+       {
+          "id": 4,
+          "resource_type": "user",
+          "ext_uid": "9083042864",
+          "email": "irene@lessonly.com",
+          "name": "Sandra Irene",
+          "role": "manager",
+          "archived_at": null,
+          "archived_by_user_id": null,
+          "job_title": "",
+          "business_unit": "",
+          "department": "Product",
+          "location": "",
+          "locale": "en",
+          "hire_date": null,
+          "manager_name": ""
+       }
+    ]
 }
 ```
 
@@ -268,7 +462,7 @@ group_id | yes | Positive Integer | The group to restore.  The company must have
 curl -X DELETE -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups/:group_id"
 ```
 
-> A successful update returns JSON consisting of the id of the deleted group
+> A successful delete returns JSON consisting of the id of the deleted group
 
 ```json
 {
