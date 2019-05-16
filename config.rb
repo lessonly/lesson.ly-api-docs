@@ -15,7 +15,7 @@ helpers do
   end
 
   def post_request(endpoint)
-    "curl -H \"Content-Type: application/json\" -u \"SUBDOMAIN:API_KEY\" -d 'JSON_PARAMS' \"https://api.lessonly.com/api/v1#{endpoint}\""
+    "curl -X POST \"https://api.lessonly.com/api/v1#{endpoint}\" -H \"Content-Type: application/json\" -u \"SUBDOMAIN:API_KEY\" -d 'JSON_PARAMS'"
   end
 
   def put_request(endpoint, params: false)

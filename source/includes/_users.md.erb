@@ -569,7 +569,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 ## Update User Groups
 
 ```shell
-<%= post_request("/users/:user_id/groups") %>
+<%= put_request("/users/:user_id/groups") %>
 ```
 
 > The following are sample parameters for this request:
@@ -625,7 +625,7 @@ managing | no | Array | The groups in which the user is managing.  Passing "remo
 ## User Assignments
 
 ```shell
-<%= post_request("/users/:user_id/assignments") %>
+<%= api_get_request("/users/:user_id/assignments") %>
 ```
 
 > The above command returns JSON structured like this:

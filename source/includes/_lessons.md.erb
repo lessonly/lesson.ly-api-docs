@@ -103,7 +103,7 @@ This endpoint retrieves all lessons.
 ## Show Lesson Details
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id"
 ```
 
 > The above command returns JSON structured like this:
@@ -186,7 +186,10 @@ This endpoint retrieves the lesson's information. For a count of completed assig
 ## Update Lesson
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id" -d params
+curl -X PUT https://api.lessonly.com/api/v1/lessons/:lesson_id \
+     -u SUBDOMAIN:API_KEY \
+     -H Content-Type: application/json \
+     -d '{"title": "Untitled Lesson"}'
 ```
 
 > The above command returns JSON structured like this:
@@ -335,7 +338,7 @@ lesson_id | yes | Positive Integer | The lesson to restore.  The company must ha
 ## Lesson Assignments
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id/assignments
+curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id/assignments"
 ```
 
 > The above command returns JSON structured like this:
