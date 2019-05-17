@@ -29,7 +29,7 @@ helpers do
 
   def delete_request(endpoint, version = 'v1')
     <<~STRING
-      curl -X DELETE https://api.lessonly.com/api/#{version}#{endpoint}
+      curl -X DELETE https://api.lessonly.com/api/#{version}#{endpoint} \\
       -u "SUBDOMAIN:API_KEY"
     STRING
   end
