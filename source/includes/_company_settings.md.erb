@@ -4,16 +4,12 @@
 
 ```shell
 <%= put_request("/company_settings", params: true) %>
-```
-
-> The following are sample parameters for this request:
-
-```json
-{
+-d '{
   "lesson_completed_callback_url": "https://webhook.mycompany.com",
   "lesson_completed_callback_authorization": "Tm93IGlzIHRo"
-}
+}'
 ```
+
 
 > A successful update returns a JSON representation of the updated webhook configuration:
 

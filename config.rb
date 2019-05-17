@@ -11,21 +11,35 @@ set :markdown,
 
 helpers do
   def api_get_request(endpoint, version = 'v1')
-    "curl -u \"SUBDOMAIN:API_KEY\" \"https://api.lessonly.com/api/#{version}#{endpoint}\""
+    request = <<~STRING
+    curl https://api.lessonly.com/api/#{version}#{endpoint} \\
+    -u "SUBDOMAIN:API_KEY"
+    STRING
+    request.chomp
   end
 
   def post_request(endpoint)
-    "curl -X POST \"https://api.lessonly.com/api/v1#{endpoint}\" -H \"Content-Type: application/json\" -u \"SUBDOMAIN:API_KEY\" -d 'JSON_PARAMS'"
+    request = <<~STRING
+    curl -X POST https://api.lessonly.com/api/v1#{endpoint} \\
+    -H "Content-Type: application/json" \\
+    -u "SUBDOMAIN:API_KEY" \\
+    STRING
+    request.chomp
+  end
+
+  def delete_request(endpoint, version = 'v1')
+    <<~STRING
+    curl -X DELETE https://api.lessonly.com/api/#{version}#{endpoint}
+    -u "SUBDOMAIN:API_KEY"
+    STRING
   end
 
   def put_request(endpoint, params: false)
     command = []
-    command << 'curl -X PUT'
-    command << '-H "Content-Type: application/json"' if params
-    command << '-u "SUBDOMAIN:API_KEY"'
-    command << "-d 'JSON_PARAMS'" if params
-    command << "\"https://api.lessonly.com/api/v1#{endpoint}\""
-    command.join(' ')
+    command << "curl -X PUT https://api.lessonly.com/api/v1#{endpoint} \\"
+    command << '-H "Content-Type: application/json" \\' if params
+    command << '-u "SUBDOMAIN:API_KEY" \\'
+    command.join("\n")
   end
 
   def pagination_query_params

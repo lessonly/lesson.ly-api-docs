@@ -3,7 +3,7 @@
 ## List Groups
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups"
+<%= api_get_request('/groups') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -37,7 +37,7 @@ This endpoint retrieves all groups.
 ## Show Group Details
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups/:group_id"
+<%= api_get_request('/groups/:group_id') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -52,41 +52,41 @@ curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups/:group_id"
   "archived_by_user_id": null,
   "members": [
     {
-        "id": 4308512,
-        "resource_type": "user",
-        "ext_uid": null,
-        "email": "joe.alec@lessonly.com",
-        "name": "Joe Alec",
-        "role": "admin",
-        "archived_at": null,
-        "archived_by_user_id": null,
-        "job_title": "",
-        "business_unit": "Andela",
-        "department": "Product",
-        "location": "",
-        "locale": "en",
-        "hire_date": null,
-        "manager_name": "Joe Metil"
+      "id": 4308512,
+      "resource_type": "user",
+      "ext_uid": null,
+      "email": "joe.alec@lessonly.com",
+      "name": "Joe Alec",
+      "role": "admin",
+      "archived_at": null,
+      "archived_by_user_id": null,
+      "job_title": "",
+      "business_unit": "Andela",
+      "department": "Product",
+      "location": "",
+      "locale": "en",
+      "hire_date": null,
+      "manager_name": "Joe Metil"
     }
   ],
   "managers": [
-      {
-          "id": 21494,
-          "resource_type": "user",
-          "ext_uid": "9083042864",
-          "email": "jay@lessonly.com",
-          "name": "Jay Bentley",
-          "role": "manager",
-          "archived_at": null,
-          "archived_by_user_id": null,
-          "job_title": "",
-          "business_unit": "",
-          "department": "Product",
-          "location": "",
-          "locale": "en",
-          "hire_date": null,
-          "manager_name": ""
-      }
+    {
+      "id": 21494,
+      "resource_type": "user",
+      "ext_uid": "9083042864",
+      "email": "jay@lessonly.com",
+      "name": "Jay Bentley",
+      "role": "manager",
+      "archived_at": null,
+      "archived_by_user_id": null,
+      "job_title": "",
+      "business_unit": "",
+      "department": "Product",
+      "location": "",
+      "locale": "en",
+      "hire_date": null,
+      "manager_name": ""
+    }
    ]
 }
 ```
@@ -107,26 +107,27 @@ group_id | yes | Positive Integer | The group to access.  The company must have 
 
 ```shell
 <%= post_request("/groups") %>
-```
-
-> The following are sample parameters for this request:
-
-```json
-{
+-d '{
   "name": "create_group",
-  "members":
-    [
-      {"id": 1 },
-      {"id": 2 }
-
-    ],
-  "managers":
-    [
-      {"id":  3 },
-      {"id":  4 }
-    ]
-}
+  "members": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    }
+  ],
+  "managers": [
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    }
+  ]
+}'
 ```
+
 > A successful post will return JSON consisting of the group details response:
 
 ```json
@@ -231,27 +232,29 @@ managers | no | Array | The managers of a group.
 
 ```shell
 <%= put_request("/groups/:group_id", params: true) %>
-```
-
-> The following are sample parameters for this request:
-
-```json
-{
+-d '{
   "name": "New Name",
-  "members":
-    [
-      {"id": 1 },
-      {"id": 2, "remove": "true"}
-
-    ],
-  "managers":
-    [
-      {"id":  3, "remove": "true" },
-      {"id":  4 }
-    ]
-
-}
+  "members": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2,
+      "remove": "true"
+    }
+  ],
+  "managers": [
+    {
+      "id": 3,
+      "remove": "true"
+    },
+    {
+      "id": 4
+    }
+  ]
+}'
 ```
+
 > A successful update will return JSON consisting of the group details response:
 
 ```json
@@ -321,7 +324,7 @@ managers | no | Array | The managers of a group.  Passing "remove": "true" will 
 ## Archive Group
 
 ```shell
-<%= put_request("/groups/:group_id/archive") %>
+<%= put_request("/groups/:group_id/archive").chomp(' \\') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -390,7 +393,7 @@ group_id | yes | Positive Integer | The group to archive.  The company must have
 ## Restore Group
 
 ```shell
-<%= put_request("/groups/:group_id/restore") %>
+<%= put_request("/groups/:group_id/restore").chomp(' \\') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -459,7 +462,7 @@ group_id | yes | Positive Integer | The group to restore.  The company must have
 ## Delete Group
 
 ```shell
-curl -X DELETE -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/groups/:group_id"
+<%= delete_request('/groups/:group_id') %>
 ```
 
 > A successful delete returns JSON consisting of the id of the deleted group

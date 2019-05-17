@@ -3,7 +3,7 @@
 ## List Lessons
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons"
+<%= api_get_request('/lessons') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -37,7 +37,7 @@ This endpoint retrieves all lessons.
 ## List Lessons (v1.1)
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/lessons"
+<%= api_get_request('/lessons', 'v1.1') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -45,51 +45,51 @@ curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/lessons"
 ```json
 {
   "type": "lessons",
-  "lessons":[
-      {
-        "id": 1,
-        "resource_type": "lesson",
-        "title": "First Lesson",
-        "archived_at": null,
-        "archived_by_user_id": null,
-        "retake_score": 80,
-        "public": false,
-        "created_at": "2020-09-30T00:00:00Z",
-        "last_updated_at": "2020-09-30T00:00:00Z",
-        "tags": [
-          {
-            "id": 1,
-            "name": "test_tag",
-            "resource_type": "tag"
-          }
-        ],
-        "links": {
-          "overview": "https://mycompany.lessonly.com/lessons/1-first-lesson"
+  "lessons": [
+    {
+      "id": 1,
+      "resource_type": "lesson",
+      "title": "First Lesson",
+      "archived_at": null,
+      "archived_by_user_id": null,
+      "retake_score": 80,
+      "public": false,
+      "created_at": "2020-09-30T00:00:00Z",
+      "last_updated_at": "2020-09-30T00:00:00Z",
+      "tags": [
+        {
+          "id": 1,
+          "name": "test_tag",
+          "resource_type": "tag"
         }
-      },
-      {
-        "id": 2,
-        "resource_type": "lesson",
-        "title": "Second Lesson",
-        "archived_at": null,
-        "archived_by_user_id": null,
-        "retake_score": 95,
-        "public": true,
-        "created_at": "2020-09-30T00:00:00Z",
-        "last_updated_at": "2020-09-30T00:00:00Z",
-        "tags": [
-          {
-            "id": 1,
-            "name": "test_tag",
-            "resource_type": "tag"
-          }
-        ],
-        "links": {
-          "overview": "https://mycompany.lessonly.com/lessons/2-second-lesson",
-          "shareable": "https://mycompany.lessonly.com/lesson/2-second-lesson"
-        }
+      ],
+      "links": {
+        "overview": "https://mycompany.lessonly.com/lessons/1-first-lesson"
       }
-    ]
+    },
+    {
+      "id": 2,
+      "resource_type": "lesson",
+      "title": "Second Lesson",
+      "archived_at": null,
+      "archived_by_user_id": null,
+      "retake_score": 95,
+      "public": true,
+      "created_at": "2020-09-30T00:00:00Z",
+      "last_updated_at": "2020-09-30T00:00:00Z",
+      "tags": [
+        {
+          "id": 1,
+          "name": "test_tag",
+          "resource_type": "tag"
+        }
+      ],
+      "links": {
+        "overview": "https://mycompany.lessonly.com/lessons/2-second-lesson",
+        "shareable": "https://mycompany.lessonly.com/lesson/2-second-lesson"
+      }
+    }
+  ]
 }
 ```
 
@@ -103,7 +103,7 @@ This endpoint retrieves all lessons.
 ## Show Lesson Details
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id"
+<%= api_get_request('/lessons/:lesson_id') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -145,7 +145,7 @@ This endpoint retrieves all the lesson details including statistics about the co
 ## Show Lesson Details (v1.1)
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/lessons/:lesson_id
+<%= api_get_request('/lessons/:lesson_id', 'v1.1') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -186,10 +186,12 @@ This endpoint retrieves the lesson's information. For a count of completed assig
 ## Update Lesson
 
 ```shell
-curl -X PUT https://api.lessonly.com/api/v1/lessons/:lesson_id \
-     -u SUBDOMAIN:API_KEY \
-     -H Content-Type: application/json \
-     -d '{"title": "Untitled Lesson"}'
+<%= put_request('/lessons/:lesson_id', params: true) %>
+-d '{
+  "title": "Untitled Lesson",
+  "retake_score": "80",
+  "public": true
+}'
 ```
 
 > The above command returns JSON structured like this:
@@ -199,12 +201,12 @@ curl -X PUT https://api.lessonly.com/api/v1/lessons/:lesson_id \
   "type": "update_lesson",
   "resource_type": "lesson",
   "id": 1,
-  "title": "Lesson 1",
+  "title": "Untitled Lesson",
   "description": "just another lesson",
   "assignees_count": 10,
   "completed_count": 5,
   "retake_score": 80,
-  "public": false,
+  "public": true,
   "created_at": "2020-09-30T00:00:00Z",
   "last_updated_at": "2020-09-30T00:00:00Z",
   "archived_at": null,
@@ -240,7 +242,7 @@ public | no | Boolean | Whether or not the lesson is public
 ## Archive Lesson
 
 ```shell
-<%= put_request("/lessons/:lesson_id/archive") %>
+<%= put_request("/lessons/:lesson_id/archive").chomp(' \\') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -289,7 +291,7 @@ lesson_id | yes | Positive Integer | The lesson to archive.  The company must ha
 ## Restore Lesson
 
 ```shell
-<%= put_request("/lessons/:lesson_id/restore") %>
+<%= put_request("/lessons/:lesson_id/restore").chomp(' \\') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -338,7 +340,7 @@ lesson_id | yes | Positive Integer | The lesson to restore.  The company must ha
 ## Lesson Assignments
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/lessons/:lesson_id/assignments"
+<%= api_get_request('/lessons/:lesson_id/assignments') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -405,7 +407,7 @@ lesson_id | yes | Positive Integer | The lesson to access.  The company must hav
 ## Lesson Completed Assignments (v1.1)
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/lessons/:lesson_id/assignments/completed"
+<%= api_get_request('/lessons/:lesson_id/assignments/completed', 'v1.1') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -431,21 +433,15 @@ This endpoint retrieves the number of completed assignments for a given lesson.
 
 ```shell
 <%= put_request("/lessons/:lesson_id/assignments", params: true) %>
-```
-
-> The following are sample parameters for this request:
-
-```json
-{
-  "assignments":[
+-d '{
+  "assignments": [
     {
       "assignee_id": 1,
       "due_by": "2020-09-30T00:00:00Z",
       "notify": false
     }
   ]
-}
-
+}'
 ```
 
 > A successful update returns JSON formatted version of the assignments made
