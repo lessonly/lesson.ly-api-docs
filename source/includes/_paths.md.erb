@@ -3,7 +3,7 @@
 ## List Paths
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths"
+<%= api_get_request('/paths') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -13,16 +13,16 @@ curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths"
   "type": "paths",
   "paths": [
     {
-        "id": 271,
-        "title": "Sales Onboarding",
-        "archived_at": "2018-02-28T08:53:40.614-05:00",
-        "archived_by_user_id": 78
+      "id": 271,
+      "title": "Sales Onboarding",
+      "archived_at": "2018-02-28T08:53:40.614-05:00",
+      "archived_by_user_id": 78
     },
     {
-        "id": 33,
-        "title": "Moderation Team Onboarding - August",
-        "archived_at": "2017-08-18T15:26:12.786-04:00",
-        "archived_by_user_id": 13018
+      "id": 33,
+      "title": "Moderation Team Onboarding - August",
+      "archived_at": "2017-08-18T15:26:12.786-04:00",
+      "archived_by_user_id": 13018
     }
   ]
 }
@@ -37,7 +37,7 @@ This endpoint retrieves all paths.
 ## List Paths (v1.1)
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/paths"
+<%= api_get_request('/paths', 'v1.1') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -47,27 +47,27 @@ curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1.1/paths"
   "type": "paths",
   "paths": [
     {
-        "resource_type": "path",
-        "id": 31,
-        "title": "Competition",
-        "archived_at": null,
-        "archived_by_user_id": null,
-        "public": true,
-        "created_at": "2017-08-17T13:09:35Z",
-        "last_updated_at": "2018-02-02T12:52:53Z",
-        "published_at": "2017-08-17T18:54:22.870-04:00",
-        "publisher_id": 668968,
-        "tags": [
-            {
-                "id": 3,
-                "resource_type": "tag",
-                "name": "Sales"
-            }
-        ],
-        "links": {
-            "shareable": "https://dev.lessonly.com/path/31-competition",
-            "overview": "https://dev.lessonly.com/paths/31-competition"
-        }
+      "resource_type": "path",
+      "id": 31,
+      "title": "Competition",
+      "archived_at": null,
+      "archived_by_user_id": null,
+      "public": true,
+      "created_at": "2017-08-17T13:09:35Z",
+      "last_updated_at": "2018-02-02T12:52:53Z",
+      "published_at": "2017-08-17T18:54:22.870-04:00",
+      "publisher_id": 668968,
+      "tags": [
+          {
+              "id": 3,
+              "resource_type": "tag",
+              "name": "Sales"
+          }
+      ],
+      "links": {
+          "shareable": "https://dev.lessonly.com/path/31-competition",
+          "overview": "https://dev.lessonly.com/paths/31-competition"
+      }
     }
   ]
 }
@@ -83,7 +83,7 @@ This endpoint retrieves all paths
 ## Show Path Details
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id"
+<%= api_get_request('/paths/:path_id') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -174,7 +174,7 @@ path_id | yes | Positive Integer | The path to access. The company must have acc
 ## Archive Path
 
 ```shell
-curl -X PUT -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/archive"
+<%= put_request('/paths/:path_id/archive').chomp(' \\') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -261,7 +261,7 @@ path_id | yes | Positive Integer | The path to archive. The company must have ac
 ## Restore Path
 
 ```shell
-curl -X PUT -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/restore"
+<%= put_request('/paths/:path_id/restore').chomp(' \\') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -348,23 +348,18 @@ path_id | yes | Positive Integer | The path to restore.  The company must have a
 ## Assigning a Path
 
 ```shell
-curl -X PUT -H "Content-Type: application/json" -u "SUBDOMAIN:API_KEY" -d 'JSON_PARAMS' "https://api.lessonly.com/api/v1/paths/:path_id/assignments"
-
-```
-
-> The following are sample parameters for this request:
-
-```json
-{
-  "assignments":[
+<%= put_request('/paths/:path_id/assignments', params: true) %>
+-d '{
+  "assignments": [
     {
       "assignee_id": 1,
       "due_by": "2020-09-30T00:00:00Z",
       "notify": false
     }
   ]
-}
+}'
 ```
+
 
 > A successful update returns a JSON formatted version of the assignments made:
 
@@ -405,7 +400,7 @@ assignments | no | Hash | A hash of assignments to be made to the path.  If the 
 ## List Path Assignments
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/assignments
+<%= api_get_request('/paths/:path_id/assignments') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -469,7 +464,7 @@ path_id | yes | Positive Integer | The path to access.  The company must have ac
 ## Path Assignments Completed
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/paths/:path_id/assignments/completed
+<%= api_get_request('/paths/:path_id/assignments/completed') %>
 ```
 
 > The above command returns JSON structured like this:

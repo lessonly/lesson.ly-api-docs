@@ -234,12 +234,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 
 ```shell
 <%= post_request("/users") %>
-```
-
-> The following are sample parameters for this request:
-
-```json
-{
+-d '{
   "name": "User Name",
   "email": "email@example.com",
   "role": "learner",
@@ -261,8 +256,9 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
       "value": "Custom Value 2"
     }
   ]
-}
+}'
 ```
+
 
 > A successful post returns JSON consisting of the show user detail response
 
@@ -328,12 +324,7 @@ custom_user_fields |  no | Array | Custom user fields for the user. Hashes must 
 
 ```shell
 <%= put_request("/users/:user_id", params: true) %>
-```
-
-> The following are sample parameters for this request.
-
-```json
-{
+-d '{
   "name": "User Name",
   "email": "email@example.com",
   "role": "learner",
@@ -355,7 +346,7 @@ custom_user_fields |  no | Array | Custom user fields for the user. Hashes must 
       "value": "Custom Value 2"
     }
   ]
-}
+}'
 ```
 
 > A successful update returns JSON consisting of the show user detail response
@@ -421,7 +412,7 @@ custom_user_fields |  no | Array | Custom user fields for the user. Hashes must 
 ## Archive User
 
 ```shell
-<%= put_request("/users/:user_id/archive") %>
+<%= put_request("/users/:user_id/archive").chomp(' \\') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -463,7 +454,7 @@ user_id | yes | Positive Integer | The user to archive.  The company must have a
 ## Restore User
 
 ```shell
-<%= put_request("/users/:user_id/restore") %>
+<%= put_request("/users/:user_id/restore").chomp(' \\') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -505,7 +496,7 @@ user_id | yes | Positive Integer | The user to restore.  The company must have a
 ## Delete User
 
 ```shell
-curl -X DELETE -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/users/:user_id"
+<%= delete_request('/users/:user_id') %>
 ```
 
 > A successful update returns JSON consisting of the id of the deleted user
@@ -539,17 +530,24 @@ user_id | yes | Positive Integer | The user to delete.  The company must have ac
 > The above command returns JSON structured like this:
 
 ```json
-
-{"type": "user_groups",
- "memberships":
-    [
-        {"id": 1, "name": "Test Group"},
-        {"id": 3, "name": "Test Group 3"},
-    ],
-  "managing":
-    [
-        {"id": 1, "name": "Test Group5"},
-    ]
+{
+  "type": "user_groups",
+  "memberships": [
+    {
+      "id": 1,
+      "name": "Test Group"
+    },
+    {
+      "id": 3,
+      "name": "Test Group 3"
+    }
+  ],
+  "managing": [
+    {
+      "id": 1,
+      "name": "Test Group5"
+    }
+  ]
 }
 ```
 
@@ -569,41 +567,50 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 ## Update User Groups
 
 ```shell
-<%= post_request("/users/:user_id/groups") %>
+<%= put_request("/users/:user_id/groups", params: true) %>
+-d '{
+  "memberships": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2,
+      "remove": "true"
+    }
+  ],
+  "managing": [
+    {
+      "id": 3,
+      "remove": "true"
+    },
+    {
+      "id": 4
+    }
+  ]
+}'
 ```
 
-> The following are sample parameters for this request:
-
-```json
-{
-  "memberships":
-    [
-      {"id": 1 },
-      {"id": 2, "remove": "true"}
-
-    ],
-  "managing":
-    [
-      {"id":  3, "remove": "true" },
-      {"id":  4 }
-    ]
-
-}
-```
 > A successful update will return JSON consisting of the user group repsonse:
 
 ```json
 {
   "type": "update_user_groups",
-  "memberships":
-    [
-        {"id": 1, "name": "Test Group"},
-        {"id": 3, "name": "Test Group 3"},
-    ],
-  "managing":
-    [
-        {"id": 1, "name": "Test Group5"},
-    ]
+  "memberships": [
+    {
+      "id": 1,
+      "name": "Test Group"
+    },
+    {
+      "id": 3,
+      "name": "Test Group 3"
+    }
+  ],
+  "managing": [
+    {
+      "id": 1,
+      "name": "Test Group5"
+    }
+  ]
 }
 ```
 
@@ -625,7 +632,7 @@ managing | no | Array | The groups in which the user is managing.  Passing "remo
 ## User Assignments
 
 ```shell
-<%= post_request("/users/:user_id/assignments") %>
+<%= api_get_request("/users/:user_id/assignments") %>
 ```
 
 > The above command returns JSON structured like this:
@@ -633,7 +640,7 @@ managing | no | Array | The groups in which the user is managing.  Passing "remo
 ```json
 {
   "type": "user_assignments",
-  "assignments":[
+  "assignments": [
     {
       "type": "Assignment",
       "resource_type": "assignment",
@@ -685,35 +692,30 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 
 ```shell
 <%= post_request("/users/:user_id/assignments") %>
+-d '{
+  "assignments": [
+    {
+      "assignable_id": 1,
+      "assignable_type": "Lesson",
+      "due_by": "2020-09-30",
+      "notify": false
+    },
+    {
+      "assignable_id": 3,
+      "assignable_type": "LearningPaths::Path",
+      "due_by": "2020-09-30",
+      "notify": false
+    }
+  ]
+}'
 ```
 
-> The following are sample parameters for this request:
-
-```json
-{
-  "assignments":
-    [
-      {
-        "assignable_id": 1,
-        "assignable_type": "Lesson",
-        "due_by": "2020-09-30",
-        "notify": false
-      },
-      {
-        "assignable_id": 3,
-        "assignable_type": "LearningPaths::Path",
-        "due_by": "2020-09-30",
-        "notify": false
-      }
-    ]
-}
-```
 > A successful update will return JSON consisting of the user assignment repsonse:
 
 ```json
 {
   "type": "create_user_assignments",
-  "assignments":[
+  "assignments": [
     {
       "type": "Assignment",
       "resource_type": "assignment",

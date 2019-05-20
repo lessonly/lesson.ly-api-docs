@@ -3,7 +3,7 @@
 ## List Assignments
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/assignments"
+<%= api_get_request('/assignments') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -99,7 +99,7 @@ gt | no | String | Specified greater than filter for assignments list.  Supporte
 ## Show Assignments by Status
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/assignments/:status"
+<%= api_get_request('/assignments/:status') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -112,39 +112,39 @@ curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/assignments/:status
   "per_page": 2,
   "total_pages": 1000,
   "assignments": [
-      {
-          "id": 5566,
-          "resource_type": "assignment",
-          "assignee_id": 1735,
-          "assignable_type": "Lesson",
-          "assignable_id": 855,
-          "ext_uid": "5745967403",
-          "assigned_at": "2014-01-20T20:07:07Z",
-          "due_by": "2014-05-13T04:00:00Z",
-          "reassigned_at": "2014-05-07T18:33:46Z",
-          "status": "Completed",
-          "updated_at": "2015-10-08T19:58:28Z",
-          "score": 100,
-          "started_at": "2014-08-04T14:31:42Z",
-          "completed_at": "2014-08-04T14:36:16Z"
-      },
-      {
-          "id": 6876654,
-          "resource_type": "assignment",
-          "assignee_id": 3120575,
-          "assignable_type": "LearningPaths::Path",
-          "assignable_id": 19433,
-          "ext_uid": null,
-          "assigned_at": "2018-12-12T13:02:21Z",
-          "due_by": null,
-          "reassigned_at": null,
-          "status": "Incomplete",
-          "updated_at": "2018-12-13T18:35:40Z",
-          "score": null,
-          "started_at": "2018-12-13T18:35:40Z",
-          "completed_at": null
-      }
-]
+    {
+      "id": 5566,
+      "resource_type": "assignment",
+      "assignee_id": 1735,
+      "assignable_type": "Lesson",
+      "assignable_id": 855,
+      "ext_uid": "5745967403",
+      "assigned_at": "2014-01-20T20:07:07Z",
+      "due_by": "2014-05-13T04:00:00Z",
+      "reassigned_at": "2014-05-07T18:33:46Z",
+      "status": "Completed",
+      "updated_at": "2015-10-08T19:58:28Z",
+      "score": 100,
+      "started_at": "2014-08-04T14:31:42Z",
+      "completed_at": "2014-08-04T14:36:16Z"
+    },
+    {
+      "id": 6876654,
+      "resource_type": "assignment",
+      "assignee_id": 3120575,
+      "assignable_type": "LearningPaths::Path",
+      "assignable_id": 19433,
+      "ext_uid": null,
+      "assigned_at": "2018-12-12T13:02:21Z",
+      "due_by": null,
+      "reassigned_at": null,
+      "status": "Incomplete",
+      "updated_at": "2018-12-13T18:35:40Z",
+      "score": null,
+      "started_at": "2018-12-13T18:35:40Z",
+      "completed_at": null
+    }
+  ]
 }
 ```
 

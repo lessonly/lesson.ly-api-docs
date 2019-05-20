@@ -3,7 +3,7 @@
 ## List Tags
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags"
+<%= api_get_request('/tags') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -35,7 +35,7 @@ This endpoint retrieves all tags.
 ## Show Tag Details
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id
+<%= api_get_request('/tags/:tag_id') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -63,7 +63,7 @@ tag_id | yes | Positive Integer | The tag to access.  The company must have acce
 ## Tag Lessons
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/lessons
+<%= api_get_request('/tags/:tag_id/lessons') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -73,29 +73,29 @@ curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/lesson
   "type": "tag_lessons",
   "lessons": [
     {
-        "id": 19458,
-        "resource_type": "lesson",
-        "title": "Industry Update 10/16/15",
-        "assignees_count": 1,
-        "completed_count": 0,
-        "retake_score": 80,
-        "description": "A quick overview about how we do marketing.",
-        "public": true,
-        "created_at": "2015-10-15T23:22:31Z",
-        "last_updated_at": null,
-        "archived_at": "2016-09-07T12:19:55.453-04:00",
-        "archived_by_user_id": 651540,
-        "tags": [
-            {
-                "id": 18448,
-                "resource_type": "tag",
-                "name": "Archive"
-            }
-        ],
-        "links": {
-            "shareable": "https://adidas.lessonly.com/lesson/19458-industry-update-10-16-15",
-            "overview": "https://adidas.lessonly.com/lessons/19458-industry-update-10-16-15"
+      "id": 19458,
+      "resource_type": "lesson",
+      "title": "Industry Update 10/16/15",
+      "assignees_count": 1,
+      "completed_count": 0,
+      "retake_score": 80,
+      "description": "A quick overview about how we do marketing.",
+      "public": true,
+      "created_at": "2015-10-15T23:22:31Z",
+      "last_updated_at": null,
+      "archived_at": "2016-09-07T12:19:55.453-04:00",
+      "archived_by_user_id": 651540,
+      "tags": [
+        {
+            "id": 18448,
+            "resource_type": "tag",
+            "name": "Archive"
         }
+      ],
+      "links": {
+        "shareable": "https://adidas.lessonly.com/lesson/19458-industry-update-10-16-15",
+        "overview": "https://adidas.lessonly.com/lessons/19458-industry-update-10-16-15"
+      }
     }
   ]
 }
@@ -115,7 +115,7 @@ tag_id | yes | Positive Integer | The tag to access.  The company must have acce
 ## Tag Courses
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/courses
+<%= api_get_request('/tags/:tag_id/courses') %>
 ```
 
 > The above command returns JSON structured like this:
@@ -170,7 +170,7 @@ tag_id | yes | Positive Integer | The tag to access.  The company must have acce
 ## Tag Paths
 
 ```shell
-curl -u "SUBDOMAIN:API_KEY" "https://api.lessonly.com/api/v1/tags/:tag_id/paths
+<%= api_get_request('/tags/:tag_id/paths') %>
 ```
 
 > The above command returns JSON structured like this:
