@@ -317,7 +317,7 @@ location | no | String | User location
 locale | no | String | User locale code to control the interface language. Options: ar, de, en, es, fr, it, ja, nl, pt, ru, sv, zh-CN. Defaults to 'en'.
 hire_date | no | String | User hire date. Must be an ISO8601 formatted date (YYYY-MM-DD).
 manager_name | no | String | User manager name
-notify | no | String | Whether or not to notify the user.  Passing 'false' will not send an email notification to the user that their account has been created. Defaults to 'true'.
+notify | no | String | Whether or not to notify the user.  Passing 'false' will not send an email notification to the user that their account has been created. Defaults to 'true' for admin, manager, creator and custom roles. Defaults to 'false' for learner role.
 custom_user_fields |  no | Array | Custom user fields for the user. Hashes must contain a "value" and either a "customer_user_field_id" or "name". If an unknown custom user field "name" is provided, a new custom user field will be created with that name.
 
 ## Update User
