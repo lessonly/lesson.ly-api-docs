@@ -23,6 +23,7 @@
             "email": "joe@lessonly.com",
             "name": "Joe Ubuntu",
             "role": "admin",
+            "role_id": 42,
             "archived_at": null,
             "archived_by_user_id": null,
             "job_title": "",
@@ -40,6 +41,7 @@
             "email": "alexie@lessonly.com",
             "name": "James alexie",
             "role": "admin",
+            "role_id": 42,
             "archived_at": "2019-02-01T02:51:40.436-05:00",
             "archived_by_user_id": 1640090,
             "job_title": null,
@@ -90,6 +92,7 @@ filter | no | String | Specified user filter for users list. Supported filters a
             "email": "max@lessonly.com",
             "name": "Max Yoder",
             "role": "admin",
+            "role_id": 42,
             "archived_at": null,
             "archived_by_user_id": null,
             "job_title": "",
@@ -165,6 +168,7 @@ filter | no | String | Specified user filter for users list. Supported filters a
   "name": "Test User",
   "email": "test@test.com",
   "role": "learner",
+  "role_id": 42,
   "ext_uid": "ABC123",
   "job_title": "Account Executive",
   "business_unit": "Global",
@@ -270,6 +274,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
   "name": "User Name",
   "email": "email@example.com",
   "role": "learner",
+  "role_id": 32,
   "ext_uid": "ABC123",
   "job_title": "Account Executive",
   "business_unit": "Global",
@@ -359,6 +364,7 @@ custom_user_fields |  no | Array | Custom user fields for the user. Hashes must 
   "name": "User Name",
   "email": "email@example.com",
   "role": "learner",
+  "role_id": 32,
   "ext_uid": "ABC123",
   "job_title": "Account Executive",
   "business_unit": "Global",
@@ -435,6 +441,7 @@ custom_user_fields |  no | Array | Custom user fields for the user. Hashes must 
     "name": "Beta Learner",
     "resource_type": "user",
     "role": "learner",
+    "role_id": 32,
     "type": "user"
 }
 ```
@@ -477,6 +484,7 @@ user_id | yes | Positive Integer | The user to archive.  The company must have a
     "name": "Beta Learner",
     "resource_type": "user",
     "role": "learner",
+    "role_id": 32,
     "type": "user"
 }
 ```
