@@ -380,7 +380,7 @@ You must replace <code>SUBDOMAIN</code> with your Lessonly subdomain and <code>A
 -d <span class="s1">'{
   "name": "User Name",
   "email": "email@example.com",
-  "role": "learner",
+  "role_id": 32,
   "ext_uid": "ABC123",
   "job_title": "Account Executive",
   "business_unit": "Global",
@@ -469,9 +469,15 @@ You must replace <code>SUBDOMAIN</code> with your Lessonly subdomain and <code>A
 </tr>
 <tr>
 <td>role</td>
-<td>yes</td>
+<td>role or role_id</td>
 <td>String</td>
-<td>User role. Options: admin, manager, creator, learner</td>
+<td>User role to change user to. Options: admin, manager, creator, learner. You must use either <code class="prettyprint">role</code> or <code class="prettyprint">role_id</code></td>
+</tr>
+<tr>
+<td>role_id</td>
+<td>role or role_id</td>
+<td>Integer</td>
+<td>The ID of the role to associate with the user. This is the prefered way to set a role. You must use either <code class="prettyprint">role</code> or <code class="prettyprint">role_id</code></td>
 </tr>
 <tr>
 <td>ext_uid</td>
@@ -542,7 +548,7 @@ You must replace <code>SUBDOMAIN</code> with your Lessonly subdomain and <code>A
 -d <span class="s1">'{
   "name": "User Name",
   "email": "email@example.com",
-  "role": "learner",
+  "role_id": 32,
   "ext_uid": "ABC123",
   "job_title": "Account Executive",
   "business_unit": "Global",
@@ -639,7 +645,13 @@ You must replace <code>SUBDOMAIN</code> with your Lessonly subdomain and <code>A
 <td>role</td>
 <td>no</td>
 <td>String</td>
-<td>User role to change user to. Options: admin, manager, creator, learner</td>
+<td>User role to change user to. Options: admin, manager, creator, learner. You must use either <code class="prettyprint">role</code> or <code class="prettyprint">role_id</code>.</td>
+</tr>
+<tr>
+<td>role_id</td>
+<td>no</td>
+<td>Integer</td>
+<td>The ID of the role to associate with the user. This is the prefered way to set a role. You must use either <code class="prettyprint">role</code> or <code class="prettyprint">role_id</code>.</td>
 </tr>
 <tr>
 <td>ext_uid</td>
