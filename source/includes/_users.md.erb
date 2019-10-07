@@ -241,7 +241,7 @@ user_id | yes | Positive Integer | The user to access.  The company must have ac
 -d '{
   "name": "User Name",
   "email": "email@example.com",
-  "role": "learner",
+  "role_id": 32,
   "ext_uid": "ABC123",
   "job_title": "Account Executive",
   "business_unit": "Global",
@@ -313,7 +313,8 @@ Parameter | Required | Type |  Description
 --- | --- | --- | ---
 name | yes | String | User full name. Cannot begin with a space and the following characters are restricted: `!@#\$%\^&*+=()&#124;[];
 email | yes | String | User Email
-role | yes | String | User role. Options: admin, manager, creator, learner
+role | role or role_id | String | User role to change user to. Options: admin, manager, creator, learner. You must use either `role` or `role_id`
+role_id | role or role_id | Integer | The ID of the role to associate with the user. This is the prefered way to set a role. You must use either `role` or `role_id`
 ext_uid | no | String | The user's ID in another system, useful for linking data.
 job_title | no | String | User job title
 business_unit | no | String | User business unit
@@ -332,7 +333,7 @@ custom_user_fields |  no | Array | Custom user fields for the user. Hashes must 
 -d '{
   "name": "User Name",
   "email": "email@example.com",
-  "role": "learner",
+  "role_id": 32,
   "ext_uid": "ABC123",
   "job_title": "Account Executive",
   "business_unit": "Global",
@@ -404,7 +405,8 @@ Parameter | Required | Type |  Description
 user_id | yes | Positive Integer | The user to access.  The company must have access to the user.
 name | no | String | User name to change user to
 email | no | String | User Email to change user to
-role | no | String | User role to change user to. Options: admin, manager, creator, learner
+role | no | String | User role to change user to. Options: admin, manager, creator, learner. You must use either `role` or `role_id`.
+role_id | no | Integer | The ID of the role to associate with the user. This is the prefered way to set a role. You must use either `role` or `role_id`.
 ext_uid | no | String | The user's ID in another system, useful for linking data.
 job_title | no | String | User job title
 business_unit | no | String | User business unit
