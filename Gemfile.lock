@@ -265,7 +265,7 @@ GEM
     minitest (5.13.0)
     multi_json (1.14.1)
     netrc (0.11.0)
-    nokogiri (1.10.4)
+    nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
     optimist (3.0.0)
     ovirt-engine-sdk (4.3.0)
