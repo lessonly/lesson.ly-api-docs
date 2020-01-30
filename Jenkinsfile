@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('deploy docs') {
             agent {
-                docker { image 'ruby:2.6.5-slim'}
+                docker { image 'ruby:2.6.5'}
             }
             steps {
                 script {
