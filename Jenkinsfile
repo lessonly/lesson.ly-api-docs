@@ -14,7 +14,7 @@ pipeline {
                 script {
                     sh 'bundle install'
                     sh 'bundle exec middleman build'
-                    sh 'bundle exec middleman deploy'
+                    sh 'bundle exec middleman s3_sync'
                     sh 'bundle exec middleman invalidate'
                 }
             }
