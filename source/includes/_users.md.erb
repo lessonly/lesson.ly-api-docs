@@ -149,7 +149,7 @@ This endpoint retrieves all users.
 Parameter | Required | Type | Description
 --------- | ------- | ------- | -----------
 <%= pagination_query_params.chomp %>
-filter | no | String | Specified user filter for users list. Supported filters are email, ext_uid, sso_id, and custom_user_field. The SSO ID is the provider ID that we store from a successful SSO request. The format for custom_user_field is `filter[custom_user_field][FIELD_ID]=FIELD_VALUE`.
+filter | no | String | Specified user filter for users list. Supported filters are email, ext_uid, sso_id, custom_user_field, created_since and active_only. The SSO ID is the provider ID that we store from a successful SSO request.  `created_since` takes a date format of "YYYY-MM-DD".  `active_only` returns only active users of the value "true" is passed.  Anything else will result in all users being returned.  The format for custom_user_field is `filter[custom_user_field][FIELD_ID]=FIELD_VALUE`.
 
 
 ## Show User Details
