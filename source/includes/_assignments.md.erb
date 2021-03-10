@@ -98,7 +98,6 @@ Parameter | Required | Type | Description
 --------- | ------- | ------- | -----------
 <%= pagination_query_params.chomp %>
 gt | no | String | Specified greater than filter for assignments list.  Supported filters are (updated_at). Please follow ISO8601 date format.
-filter | no | String | Specified assignment filter for assignments list. Supported filters are (group_id) which filters the list of assignments to only assignments for users who are currently members of the specified group.
 
 ## List Assignments (v1.1)
 
@@ -269,6 +268,7 @@ Parameter | Required | Type | Description
 --------- | ------- | ------- | -----------
 <%= pagination_query_params.chomp %>
 gt | no | String | Specified greater than filter for assignments list.  Supported filters are (updated_at). Please follow ISO8601 date format.
+filter | no | String | Specified assignment filter for assignments list. Supported filters are (group_id) which filters the list of assignments to only assignments for users who are currently members of the specified group.
 
 ## Show Assignments by Status
 
