@@ -429,6 +429,31 @@ This endpoint retrieves the number of completed assignments for a given lesson.
   We only count a lesson as assigned if the individual lesson was assigned. We do not count a lesson as assigned if it was part of a path.
 </aside>
 
+## Lesson Total Completions (v1)
+
+```shell
+<%= api_get_request('/lessons/:lesson_id/total_completions', 'v1') %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "lesson_total_completion_count",
+  "completion_count": 92
+}
+```
+
+This endpoint retrieves the number of completions for a given lesson.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1/lessons/:lesson_id/total_completions`
+
+<aside class="notice">
+  A learner is counted as complete if their lesson is in "completed" or "awaiting grade" status.
+</aside>
+
 ## Assign Lesson
 
 ```shell
