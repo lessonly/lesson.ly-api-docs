@@ -175,6 +175,28 @@ Parameter | Required | Type |  Description
 --- | --- | --- | ---
 path_id | yes | Positive Integer | The path to access. The company must have access to the path.
 
+## Path Total Completions (v1)
+
+```shell
+<%= api_get_request('/paths/:path_id/total_completions') %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "path_total_completion_count",
+  "completion_count": 44
+}
+```
+
+This endpoint retrieves the number of completions for a given path.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1/paths/:path/total_completions`
+
+
 ## Archive Path
 
 ```shell
