@@ -454,6 +454,33 @@ This endpoint retrieves the number of completions for a given lesson.
   A learner is counted as complete if their lesson is in "completed" or "awaiting grade" status.
 </aside>
 
+## Lesson Completion Breakdown (v1)
+
+```shell
+<%= api_get_request('/lessons/:lesson_id/completion_breakdown', 'v1') %>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "lesson_completion_breakdown",
+  "total": 92,
+  "via_assignment": 45,
+  "via_other": 47
+}
+```
+
+This endpoint retrieves the completion breakdown for a given lesson.
+
+### HTTP Request
+
+`GET https://api.lessonly.com/api/v1/lessons/:lesson_id/completion_breakdown`
+
+<aside class="notice">
+  A learner is counted as complete if their lesson is in "completed" or "awaiting grade" status.
+</aside>
+
 ## Assign Lesson
 
 ```shell
