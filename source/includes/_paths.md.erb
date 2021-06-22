@@ -196,6 +196,31 @@ This endpoint retrieves the number of completions for a given path.
 
 `GET https://api.lessonly.com/api/v1/paths/:path/total_completions`
 
+## Path Completion Breakdown (v1)
+
+```shell
+<%= api_get_request('/paths/:path_id/completion_breakdown') %>
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "path_completion_breakdown",
+  "total": 44,
+  "via_assignment": 22,
+  "via_other": 22
+}
+```
+
+This endpoint retrieves the completion breakdown for a given path.
+
+<aside class="notice">
+  A completion is only counted as via_assignment if the path was directly assigned to the learner, and not via another path.
+</aside>
+
+
 
 ## Archive Path
 
